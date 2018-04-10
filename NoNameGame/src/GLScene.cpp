@@ -137,7 +137,7 @@ case 1:
     glScaled(3.33,3.33,1.0);
     fog2->drawSquare(screenWidth,screenHeight);
     fog2->scroll(true,"right",0.005); //True = Scroll
-    std::cout<<"made it"<<endl;
+    //std::cout<<"made it"<<endl;
     glPopMatrix();
 
     glPushMatrix();

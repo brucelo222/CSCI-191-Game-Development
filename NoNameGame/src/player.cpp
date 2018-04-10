@@ -202,7 +202,9 @@ void player::actions(int action)
         isJump = true;
        if(T->getTicks()>20 && isJump == true){
 
-         mY+=jpVelo;
+         mY += jpVelo;
+         //mX += xSpeed;
+
 
         T->reset();
        }

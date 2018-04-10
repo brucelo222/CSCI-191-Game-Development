@@ -107,7 +107,9 @@ void Inputs::keyUp(player* ply)
         ply->isJump = false;
 
         if((ply->getPlyPosY() > ply->jpGround) && (ply->isJump == false))
-        ply->mY += ply->gravity;
+         ply->jpVelo += ply->gravity;
+
+
         break;
 
 
