@@ -76,6 +76,7 @@ void Inputs::keyPressed(Model* Mdl)
 /***** Player Key is Up ***/
 void Inputs::keyUp(player* ply)
 {
+    ply->actionTrigger = 0;
    // if(ply->actionTrigger == 2){
    // ply->actionTrigger = 3;
    // }
@@ -93,21 +94,27 @@ void Inputs::keyUp(player* ply)
     switch(wParam)
     {
 
-       case 0x41://A
+      /* case 0x41://A
        ply->actionTrigger = 3;
         break;
 
           case 0x44://D
        ply->actionTrigger = 0;
-        break;
+        break;*/
 
 
     case VK_RIGHT:
 
-        ply->isJump = false;
+        //ply->isJump = false;
 
-        if((ply->getPlyPosY() > ply->jpGround) && (ply->isJump == false))
+        if((ply->getPlyPosY() > ply->jpGround) && (ply->isJump == false)){
          ply->jpVelo += ply->gravity;
+
+        }
+        if(ply->mY == ply->jpGround){
+            ply->jpVelo = 0.0;
+           ply->mY = ply->jpGround;
+        }
 
 
         break;
@@ -147,6 +154,7 @@ void Inputs::keyPressed(player* ply)
         break;
 
     case VK_DOWN:
+         ply->actionTrigger = 5;
 
         break;
 

@@ -1236,7 +1236,7 @@
 1519873998 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\include\timer.h
 	<time.h>
 
-1521668360 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\include\player.h
+1523472110 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\include\player.h
 	<Model.h>
 	<gl/gl.h>
 	<textureLoader.h>
@@ -1396,12 +1396,13 @@
 1519874258 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\src\timer.cpp
 	"timer.h"
 
-1523395933 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\src\inputs.cpp
+1523532743 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\src\inputs.cpp
 	"Inputs.h"
 	<player.h>
 
-1523396429 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\src\player.cpp
+1523582753 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\src\player.cpp
 	<player.h>
 	<timer.h>
 	<textureLoader.h>
+	<iostream>
 

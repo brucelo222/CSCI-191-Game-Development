@@ -35,7 +35,7 @@ class player:Model
 
         float mX,mY,maxMX,maxMY;
         float xSpeed,ySpeed;
-        float gravity;
+        const float gravity = -0.4;
         bool isJump;
 float jpVelo;
 float jpGround;

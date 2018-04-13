@@ -1,16 +1,19 @@
 #include <player.h>
 #include <timer.h>
 #include <textureLoader.h>
+#include <iostream>
+using namespace std;
 
 
 timer *T = new timer();
 
 
-textureLoader runRight[7];
-textureLoader runLeft[7];
-textureLoader standL;
-textureLoader standR;
+textureLoader runRight[5];
+textureLoader runLeft[5];
+textureLoader standL[3];
+textureLoader standR[3];
 textureLoader stand;
+textureLoader atkR[3];
 
 
 
@@ -36,7 +39,7 @@ player::player()
     ySpeed = 0.0;
 
     //Jump Phys
-   gravity = -0.6;
+   gravity;
  jpVelo = 0.2;
  jpGround = -2.0;
  isJump = false;
@@ -50,8 +53,8 @@ player::~player()
 }
 void player::drawPlayer()
 {
-  //  glColor3f(1.0,0.0,0.0);
-   // glPushMatrix();
+    glColor3f(1.0,0.0,0.0);
+    glPushMatrix();
   glBegin(GL_QUADS);
 
     glTexCoord2f(0.0,1.0);
@@ -68,7 +71,7 @@ void player::drawPlayer()
 
     glEnd();
 
- //   glPopMatrix();
+    glPopMatrix();
 }
 
 void player::playerInit()
@@ -77,24 +80,34 @@ void player::playerInit()
     glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);//trans
 T->start();
 
-   standR.bindTexture("images/temp/tile015.png");
-    standL.bindTexture("images/temp/tile000.png");
+   standR[0].bindTexture("images/hero/tile005.png");
+   standR[1].bindTexture("images/hero/tile004.png");
+   standR[2].bindTexture("images/hero/tile003.png");
 
-    runLeft[0].bindTexture("images/temp/tile001.png");
-    runLeft[1].bindTexture("images/temp/tile002.png");
-   runLeft[2].bindTexture("images/temp/tile003.png");
-   runLeft[3].bindTexture("images/temp/tile004.png");
-   runLeft[4].bindTexture("images/temp/tile005.png");
-   runLeft[5].bindTexture("images/temp/tile006.png");
-   runLeft[6].bindTexture("images/temp/tile007.png");
+   standL[0].bindTexture("images/hero/tile000.png");
+   standL[1].bindTexture("images/hero/tile001.png");
+   standL[2].bindTexture("images/hero/tile002.png");
 
-    runRight[0].bindTexture("images/temp/tile014.png");
-   runRight[1].bindTexture("images/temp/tile013.png");
-   runRight[2].bindTexture("images/temp/tile012.png");
-   runRight[3].bindTexture("images/temp/tile011.png");
-   runRight[4].bindTexture("images/temp/tile010.png");
-   runRight[5].bindTexture("images/temp/tile009.png");
-   runRight[6].bindTexture("images/temp/tile008.png");
+
+
+
+
+
+    runLeft[0].bindTexture("images/hero/tile018.png");
+    runLeft[1].bindTexture("images/hero/tile019.png");
+   runLeft[2].bindTexture("images/hero/tile020.png");
+   runLeft[3].bindTexture("images/hero/tile021.png");
+   runLeft[4].bindTexture("images/hero/tile022.png");
+
+    runRight[0].bindTexture("images/hero/tile028.png");
+   runRight[1].bindTexture("images/hero/tile027.png");
+   runRight[2].bindTexture("images/hero/tile026.png");
+   runRight[3].bindTexture("images/hero/tile025.png");
+   runRight[4].bindTexture("images/hero/tile024.png");
+
+   atkR[0].bindTexture("images/hero/tile006.png");
+   atkR[1].bindTexture("images/hero/tile007.png");
+   atkR[2].bindTexture("images/hero/tile008.png");
 
   /*stand.bindTexture("images/player/play.png");
 
@@ -144,13 +157,27 @@ float player::getPlyPosY()
 void player::actions(int action)
 {
    switch(action){
-   case 0:
-       glPushMatrix();
+   case 0://stdR
+       /*glPushMatrix();
        glTranslated(mX,mY,-1.0);
        standR.binder();
        //stand.binder();
       //  glutSolidTeapot(1.5);
        drawPlayer();
+       glPopMatrix();
+       break;*/
+
+       glPushMatrix();
+       glTranslated(mX,mY,-1.0);
+       //if(T->getTicks()>200){
+
+        runspeed++;
+        runspeed = runspeed %10;
+       // T->reset();
+     //  }
+       standR[runspeed].binder();
+       drawPlayer();
+
        glPopMatrix();
        break;
 
@@ -187,13 +214,23 @@ void player::actions(int action)
        glPopMatrix();
        break;
 
-   case 3:
+   case 3://stdL
        glPushMatrix();
        glTranslated(mX,mY,-1.0);
-       standL.binder();
+
+       if(T->getTicks()>20){
+
+        runspeed++;
+
+        T->reset();
+       }
+
+       standL[runspeed].binder();
        drawPlayer();
+
        glPopMatrix();
        break;
+
 
    case 4: //jump
 
@@ -203,24 +240,47 @@ void player::actions(int action)
        if(T->getTicks()>20 && isJump == true){
 
          mY += jpVelo;
-         //mX += xSpeed;
-
 
         T->reset();
        }
 
+        if(mY >= 0.90){
+
+                jpVelo += gravity;
+        }
+
+        if( mY <= jpGround){
+           jpVelo = 0.0;
+            mY = jpGround;
+
+         //   cout<<isJump<<endl;
+        }
+        isJump = false;
 
 
 
-
-       // if((getPlyPosY() <jpGround) && (isJump = false))
-              //  mY = gravity;
-
-       standR.binder();
+       standR[3].binder();
        drawPlayer();
        glPopMatrix();
 
 break;
+
+ case 5://atk
+       glPushMatrix();
+       glTranslated(mX,mY,-1.0);
+
+       if(T->getTicks()>20){
+
+        runspeed++;
+
+        T->reset();
+       }
+
+       atkR[runspeed].binder();
+       drawPlayer();
+
+       glPopMatrix();
+       break;
 }
 }
 
