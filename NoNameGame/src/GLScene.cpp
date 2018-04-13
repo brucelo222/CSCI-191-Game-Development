@@ -179,6 +179,7 @@ case 1:
 
     //--Player
     glPushMatrix();
+    //glScaled(3.33,3.33,1.0);
     glTranslated(0,0,modelTeapot->Zoom);
     ply->actions(ply->actionTrigger);
     glPopMatrix();

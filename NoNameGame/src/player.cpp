@@ -12,8 +12,10 @@ textureLoader runRight[5];
 textureLoader runLeft[5];
 textureLoader standL[3];
 textureLoader standR[3];
-textureLoader stand;
 textureLoader atkR[3];
+textureLoader atkL[3];
+textureLoader jmpR[3];
+textureLoader jmpL[3];
 
 
 
@@ -53,8 +55,9 @@ player::~player()
 }
 void player::drawPlayer()
 {
-    glColor3f(1.0,0.0,0.0);
-    glPushMatrix();
+    //glColor3f(1.0,0.0,0.0);
+   // glPushMatrix();
+   glScaled(3.3,3.3,1.0);
   glBegin(GL_QUADS);
 
     glTexCoord2f(0.0,1.0);
@@ -71,7 +74,7 @@ void player::drawPlayer()
 
     glEnd();
 
-    glPopMatrix();
+    //glPopMatrix();
 }
 
 void player::playerInit()
@@ -88,11 +91,6 @@ T->start();
    standL[1].bindTexture("images/hero/tile001.png");
    standL[2].bindTexture("images/hero/tile002.png");
 
-
-
-
-
-
     runLeft[0].bindTexture("images/hero/tile018.png");
     runLeft[1].bindTexture("images/hero/tile019.png");
    runLeft[2].bindTexture("images/hero/tile020.png");
@@ -105,37 +103,21 @@ T->start();
    runRight[3].bindTexture("images/hero/tile025.png");
    runRight[4].bindTexture("images/hero/tile024.png");
 
-   atkR[0].bindTexture("images/hero/tile006.png");
-   atkR[1].bindTexture("images/hero/tile007.png");
-   atkR[2].bindTexture("images/hero/tile008.png");
+   atkL[0].bindTexture("images/hero/tile006.png");
+   atkL[1].bindTexture("images/hero/tile007.png");
+   atkL[2].bindTexture("images/hero/tile008.png");
 
-  /*stand.bindTexture("images/player/play.png");
+   atkR[0].bindTexture("images/hero/tile011.png");
+   atkR[1].bindTexture("images/hero/tile010.png");
+   atkR[2].bindTexture("images/hero/tile009.png");
 
-    runRight[0].bindTexture("images/player/player0.png");
-    runRight[1].bindTexture("images/player/player1.png");
-    runRight[2].bindTexture("images/player/player2.png");
-    runRight[3].bindTexture("images/player/player3.png");
-    runRight[4].bindTexture("images/player/player4.png");
-    runRight[5].bindTexture("images/player/player5.png");
-    runRight[6].bindTexture("images/player/player6.png");
-    runRight[7].bindTexture("images/player/player7.png");
-    runRight[8].bindTexture("images/player/player8.png");
-    runRight[9].bindTexture("images/player/player9.png");
+   jmpR[0].bindTexture("images/hero/tile012.png");
+   jmpR[1].bindTexture("images/hero/tile013.png");
+   jmpR[2].bindTexture("images/hero/tile014.png");
 
-    runLeft[0].bindTexture("images/player/Left0.png");
-    runLeft[1].bindTexture("images/player/Left1.png");
-    runLeft[2].bindTexture("images/player/Left2.png");
-    runLeft[3].bindTexture("images/player/Left3.png");
-    runLeft[4].bindTexture("images/player/Left4.png");
-    runLeft[5].bindTexture("images/player/Left5.png");
-    runLeft[6].bindTexture("images/player/Left6.png");
-    runLeft[7].bindTexture("images/player/Left7.png");
-    runLeft[8].bindTexture("images/player/Left8.png");
-    runLeft[9].bindTexture("images/player/Left9.png");*/
-
-
-
-
+   jmpL[0].bindTexture("images/hero/tile017.png");
+   jmpL[1].bindTexture("images/hero/tile016.png");
+   jmpL[2].bindTexture("images/hero/tile015.png");
 
 
 
@@ -158,23 +140,15 @@ void player::actions(int action)
 {
    switch(action){
    case 0://stdR
-       /*glPushMatrix();
-       glTranslated(mX,mY,-1.0);
-       standR.binder();
-       //stand.binder();
-      //  glutSolidTeapot(1.5);
-       drawPlayer();
-       glPopMatrix();
-       break;*/
 
        glPushMatrix();
        glTranslated(mX,mY,-1.0);
-       //if(T->getTicks()>200){
+       if(T->getTicks()>200){
 
         runspeed++;
-        runspeed = runspeed %10;
-       // T->reset();
-     //  }
+        runspeed = runspeed %2;
+        T->reset();
+      }
        standR[runspeed].binder();
        drawPlayer();
 
@@ -185,10 +159,10 @@ void player::actions(int action)
        glPushMatrix();
        glTranslated(mX,mY,-1.0);
 
-       if(T->getTicks()>20){
+       if(T->getTicks()>90){
         mX+=xSpeed;
         runspeed++;
-        runspeed = runspeed %10;
+        runspeed = runspeed %2;
         T->reset();
        }
 
@@ -202,10 +176,10 @@ void player::actions(int action)
        glPushMatrix();
        glTranslated(mX,mY,-1.0);
 
-       if(T->getTicks()>20){
+       if(T->getTicks()>90){
         mX-=xSpeed;
         runspeed++;
-        runspeed = runspeed %10;
+        runspeed = runspeed %2;
         T->reset();
        }
        runLeft[runspeed].binder();
@@ -215,16 +189,14 @@ void player::actions(int action)
        break;
 
    case 3://stdL
-       glPushMatrix();
+      glPushMatrix();
        glTranslated(mX,mY,-1.0);
-
-       if(T->getTicks()>20){
+       if(T->getTicks()>200){
 
         runspeed++;
-
+        runspeed = runspeed %2;
         T->reset();
-       }
-
+      }
        standL[runspeed].binder();
        drawPlayer();
 
@@ -265,18 +237,36 @@ void player::actions(int action)
 
 break;
 
- case 5://atk
+ case 5://atkR
+       glPushMatrix();
+       glTranslated(mX,mY,-1.0);
+
+       //if(T->getTicks()>100){
+
+        runspeed++;
+        runspeed = runspeed %2;
+
+        //T->reset();
+       //}
+
+       atkR[runspeed].binder();
+       drawPlayer();
+
+       glPopMatrix();
+       break;
+ case 6://atkL
        glPushMatrix();
        glTranslated(mX,mY,-1.0);
 
        if(T->getTicks()>20){
 
         runspeed++;
+        runspeed = runspeed %2;
 
         T->reset();
        }
 
-       atkR[runspeed].binder();
+       atkL[runspeed].binder();
        drawPlayer();
 
        glPopMatrix();

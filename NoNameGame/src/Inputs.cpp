@@ -76,7 +76,7 @@ void Inputs::keyPressed(Model* Mdl)
 /***** Player Key is Up ***/
 void Inputs::keyUp(player* ply)
 {
-    ply->actionTrigger = 0;
+    //ply->actionTrigger = 0;
    // if(ply->actionTrigger == 2){
    // ply->actionTrigger = 3;
    // }
@@ -94,13 +94,17 @@ void Inputs::keyUp(player* ply)
     switch(wParam)
     {
 
-      /* case 0x41://A
+       case 0x41://A
        ply->actionTrigger = 3;
         break;
 
           case 0x44://D
        ply->actionTrigger = 0;
-        break;*/
+        break;
+
+        case 0x47: //G
+            ply->actionTrigger = 0;
+            break;
 
 
     case VK_RIGHT:
@@ -145,6 +149,10 @@ void Inputs::keyPressed(player* ply)
        ply->actionTrigger = 1;
         //ply->mX+= ply->xSpeed;
        // ply->maxMX+= ply->xSpeed;
+        break;
+
+    case 0x47: //G
+        ply->actionTrigger = 5;
         break;
 
         case VK_RIGHT:

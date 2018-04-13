@@ -1248,7 +1248,7 @@
 1520847948 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\include\gllight.h
 	<GLScene.h>
 
-1523394187 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\src\glscene.cpp
+1523583824 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\src\glscene.cpp
 	"GLScene.h"
 	<GLLight.h>
 	<Model.h>
@@ -1396,11 +1396,11 @@
 1519874258 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\src\timer.cpp
 	"timer.h"
 
-1523532743 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\src\inputs.cpp
+1523585438 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\src\inputs.cpp
 	"Inputs.h"
 	<player.h>
 
-1523582753 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\src\player.cpp
+1523584415 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\src\player.cpp
 	<player.h>
 	<timer.h>
 	<textureLoader.h>
