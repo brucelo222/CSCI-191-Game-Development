@@ -1,0 +1,32 @@
+#ifndef PLAYER_H
+#define PLAYER_H
+
+#include "Graphics.h"
+#include "Physics.h"
+#include "Vector.h"
+#include "Agent.h"
+#include "Texture.h"
+#include "Timer.h"
+
+class Player : public Agent
+{
+
+    public:
+        Player();
+        virtual ~Player();
+
+        void Init();
+        void Update();
+        void actions();
+
+    private:
+        Gravity _gravity;
+        //remove later
+        Texture runRight[5];
+        Texture runLeft[5];
+        Texture standL[3];
+        Texture standR[3];
+        bool hasJump;
+};
+
+#endif // PLAYER_H

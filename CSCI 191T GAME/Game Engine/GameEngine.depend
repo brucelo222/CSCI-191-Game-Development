@@ -1,0 +1,322 @@
+# depslib dependency file v1.0
+1522634301 source:c:\users\shamus\desktop\new folder (3)\example opengl\main.cpp
+	<windows.h>
+	"GameLoop.h"
+	<stdlib.h>
+	<iostream>
+	<windows.h>
+
+1522638960 c:\users\shamus\desktop\new folder (3)\example opengl\include\gameloop.h
+	"Graphics.h"
+	"Inputs.h"
+	"Player.h"
+	<windows.h>
+	<GL/glut.h>
+
+1522614242 c:\users\shamus\desktop\new folder (3)\example opengl\include\graphics.h
+
+1517278988 c:\users\shamus\desktop\new folder (3)\common\include\gl\glut.h
+	<windows.h>
+	<stdlib.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1522641311 source:c:\users\shamus\desktop\new folder (3)\example opengl\src\gameloop.cpp
+	"GameLoop.h"
+	<iostream>
+
+1522614294 source:c:\users\shamus\desktop\new folder (3)\example opengl\src\graphics.cpp
+	"Graphics.h"
+	<GL/gl.h>
+
+1522638642 c:\users\shamus\desktop\new folder (3)\example opengl\include\inputs.h
+	"Vector.h"
+	"Player.h"
+	<Graphics.h>
+	<windows.h>
+	<GL/gl.h>
+
+1522622848 c:\users\shamus\desktop\new folder (3)\example opengl\include\vector.h
+
+1522641238 source:c:\users\shamus\desktop\new folder (3)\example opengl\src\inputs.cpp
+	"Inputs.h"
+	<iostream>
+
+1522641116 source:c:\users\shamus\desktop\new folder (3)\example opengl\src\player.cpp
+	"Player.h"
+	<GL/gl.h>
+
+1522641104 c:\users\shamus\desktop\new folder (3)\example opengl\include\player.h
+	"Graphics.h"
+	"Vector.h"
+
+1522634302 source:d:\example opengl\main.cpp
+	<windows.h>
+	"GameLoop.h"
+	<stdlib.h>
+	<iostream>
+	<windows.h>
+
+1522638962 d:\example opengl\include\gameloop.h
+	"Graphics.h"
+	"Inputs.h"
+	"Player.h"
+	<windows.h>
+	<GL/glut.h>
+
+1522614244 d:\example opengl\include\graphics.h
+
+1522638644 d:\example opengl\include\inputs.h
+	"Vector.h"
+	"Player.h"
+	<Graphics.h>
+	<windows.h>
+	<GL/gl.h>
+
+1522622850 d:\example opengl\include\vector.h
+
+1522641106 d:\example opengl\include\player.h
+	"Graphics.h"
+	"Vector.h"
+
+1522641312 source:d:\example opengl\src\gameloop.cpp
+	"GameLoop.h"
+	<iostream>
+
+1522614296 source:d:\example opengl\src\graphics.cpp
+	"Graphics.h"
+	<GL/gl.h>
+
+1522641240 source:d:\example opengl\src\inputs.cpp
+	"Inputs.h"
+	<iostream>
+
+1522641656 source:d:\example opengl\src\player.cpp
+	"Player.h"
+	<GL/gl.h>
+
+1523495296 source:c:\users\seamus\desktop\gameengine\example opengl\main.cpp
+	<windows.h>
+	"GameLoop.h"
+	<stdlib.h>
+	<iostream>
+	<windows.h>
+
+1524103519 c:\users\seamus\desktop\gameengine\example opengl\include\gameloop.h
+	"Graphics.h"
+	"Inputs.h"
+	"Player.h"
+	"Camera2D.h"
+	"Enemy.h"
+	"Texture.h"
+	"Particles.h"
+	<windows.h>
+	<GL/glut.h>
+
+1522614244 c:\users\seamus\desktop\gameengine\example opengl\include\graphics.h
+
+1522719700 c:\users\seamus\desktop\gameengine\example opengl\include\inputs.h
+	"Vector.h"
+	"Player.h"
+	<Graphics.h>
+	<windows.h>
+	<GL/gl.h>
+
+1524088437 c:\users\seamus\desktop\gameengine\example opengl\include\vector.h
+	<math.h>
+
+1524529573 c:\users\seamus\desktop\gameengine\example opengl\include\player.h
+	"Graphics.h"
+	"Physics.h"
+	"Vector.h"
+	"Agent.h"
+	"Texture.h"
+	"Timer.h"
+
+1517282588 c:\users\seamus\desktop\gameengine\common\include\gl\glut.h
+	<windows.h>
+	<stdlib.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1524533020 source:c:\users\seamus\desktop\gameengine\example opengl\src\gameloop.cpp
+	"GameLoop.h"
+	<iostream>
+
+1522893112 source:c:\users\seamus\desktop\gameengine\example opengl\src\graphics.cpp
+	"Graphics.h"
+	<GL/gl.h>
+
+1524528240 source:c:\users\seamus\desktop\gameengine\example opengl\src\inputs.cpp
+	"Inputs.h"
+	<iostream>
+
+1524529571 source:c:\users\seamus\desktop\gameengine\example opengl\src\player.cpp
+	"Player.h"
+	<GL/gl.h>
+
+1524524417 source:c:\users\seamus\desktop\gameengine\example opengl\src\camera2d.cpp
+	"Camera2D.h"
+	<GL/glu.h>
+
+1524090303 c:\users\seamus\desktop\gameengine\example opengl\include\camera2d.h
+	"Vector.h"
+
+1522720488 source:c:\users\seamus\desktop\gameengine\example opengl\src\texturemanager.cpp
+	"TextureManager.h"
+
+1522720488 c:\users\seamus\desktop\gameengine\example opengl\include\texturemanager.h
+
+1522721492 source:c:\users\seamus\desktop\gameengine\example opengl\src\texture.cpp
+	"Texture.h"
+	<iostream>
+
+1522721624 c:\users\seamus\desktop\gameengine\example opengl\include\texture.h
+	<SOIL.h>
+	<GL/gl.h>
+
+1518664350 c:\users\seamus\desktop\gameengine\common\include\soil.h
+
+1523657996 c:\users\seamus\desktop\gameengine\example opengl\include\physics.h
+	"Vector.h"
+
+1524530894 source:c:\users\seamus\desktop\gameengine\example opengl\src\agent.cpp
+	"Agent.h"
+	<GL/gl.h>
+
+1524530764 c:\users\seamus\desktop\gameengine\example opengl\include\agent.h
+	<Vector.h>
+	"Graphics.h"
+	"Timer.h"
+
+1523495296 source:c:\users\shamus\desktop\gameengine\example opengl\main.cpp
+	<windows.h>
+	"GameLoop.h"
+	<stdlib.h>
+	<iostream>
+	<windows.h>
+
+1523659299 c:\users\shamus\desktop\gameengine\example opengl\include\gameloop.h
+	"Graphics.h"
+	"Inputs.h"
+	"Player.h"
+	"Camera2D.h"
+	"Enemy.h"
+	"Texture.h"
+	<windows.h>
+	<GL/glut.h>
+
+1522614244 c:\users\shamus\desktop\gameengine\example opengl\include\graphics.h
+
+1522719700 c:\users\shamus\desktop\gameengine\example opengl\include\inputs.h
+	"Vector.h"
+	"Player.h"
+	<Graphics.h>
+	<windows.h>
+	<GL/gl.h>
+
+1522721024 c:\users\shamus\desktop\gameengine\example opengl\include\vector.h
+
+1523657262 c:\users\shamus\desktop\gameengine\example opengl\include\player.h
+	"Graphics.h"
+	"Physics.h"
+	"Vector.h"
+	"Agent.h"
+
+1523657994 c:\users\shamus\desktop\gameengine\example opengl\include\physics.h
+	"Vector.h"
+
+1523312034 c:\users\shamus\desktop\gameengine\example opengl\include\camera2d.h
+	"Vector.h"
+
+1522721624 c:\users\shamus\desktop\gameengine\example opengl\include\texture.h
+	<SOIL.h>
+	<GL/gl.h>
+
+1518660750 c:\users\shamus\desktop\gameengine\common\include\soil.h
+
+1517278988 c:\users\shamus\desktop\gameengine\common\include\gl\glut.h
+	<windows.h>
+	<stdlib.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1523324226 source:c:\users\shamus\desktop\gameengine\example opengl\src\camera2d.cpp
+	"Camera2D.h"
+	<GL/glu.h>
+
+1523659889 source:c:\users\shamus\desktop\gameengine\example opengl\src\gameloop.cpp
+	"GameLoop.h"
+	<iostream>
+
+1522893112 source:c:\users\shamus\desktop\gameengine\example opengl\src\graphics.cpp
+	"Graphics.h"
+	<GL/gl.h>
+
+1523658050 source:c:\users\shamus\desktop\gameengine\example opengl\src\inputs.cpp
+	"Inputs.h"
+	<iostream>
+
+1522721492 source:c:\users\shamus\desktop\gameengine\example opengl\src\texture.cpp
+	"Texture.h"
+	<iostream>
+
+1522720488 source:c:\users\shamus\desktop\gameengine\example opengl\src\texturemanager.cpp
+	"TextureManager.h"
+
+1522720488 c:\users\shamus\desktop\gameengine\example opengl\include\texturemanager.h
+
+1523659717 source:c:\users\shamus\desktop\gameengine\example opengl\src\player.cpp
+	"Player.h"
+	<GL/gl.h>
+
+1523658898 source:c:\users\shamus\desktop\gameengine\example opengl\src\agent.cpp
+	"Agent.h"
+	<GL/gl.h>
+
+1523657866 c:\users\shamus\desktop\gameengine\example opengl\include\agent.h
+	<Vector.h>
+	"Graphics.h"
+
+1523659932 source:c:\users\shamus\desktop\gameengine\example opengl\src\enemy.cpp
+	"Enemy.h"
+	<GL/gl.h>
+	<stdlib.h>
+
+1523659384 c:\users\shamus\desktop\gameengine\example opengl\include\enemy.h
+	"Agent.h"
+
+1524531010 c:\users\seamus\desktop\gameengine\example opengl\include\enemy.h
+	"Player.h"
+	"Agent.h"
+	"AI.h"
+
+1524533005 source:c:\users\seamus\desktop\gameengine\example opengl\src\enemy.cpp
+	"Enemy.h"
+	"Player.h"
+	<GL/gl.h>
+	<stdlib.h>
+	<iostream>
+
+1524096509 source:c:\users\seamus\desktop\gameengine\example opengl\src\ai.cpp
+	"AI.h"
+	<iostream>
+
+1523916033 c:\users\seamus\desktop\gameengine\example opengl\include\ai.h
+	"Vector.h"
+
+1524089882 source:c:\users\seamus\desktop\gameengine\example opengl\src\timer.cpp
+	"Timer.h"
+
+1524089975 c:\users\seamus\desktop\gameengine\example opengl\include\timer.h
+	<time.h>
+
+1524103462 c:\users\seamus\desktop\gameengine\example opengl\include\particles.h
+	<math.h>
+	<stdlib.h>
+	<iostream>
+
+1524104715 source:c:\users\seamus\desktop\gameengine\example opengl\src\particles.cpp
+	"Particles.h"
+	<GL/gl.h>
+
