@@ -22,7 +22,7 @@ Enemy::~Enemy()
 
 void Enemy::chase(Vec2 playerPosition)
 {
-        if (getPosition().x >= playerPosition.x)
+        if (getPosition().x <= playerPosition.x)
         {
             setAction(RUNR);
             setPosition(getPosition().x + .001*(playerPosition.x - getPosition().x),getPosition().y);
@@ -50,11 +50,33 @@ void Enemy::idle()
 return;
 }
 
+void Enemy::attack(Vec2 playerPosition)
+{
+        if (getPosition().x <= playerPosition.x)
+        {
+            setAction(ATKR);
+        }
+        else
+        {
+            setAction(ATKL);
+        }
+    return;
+}
+
+
 void Enemy::Init()
 {
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);//trans
     T->start();
+
+    EatkR[0].bindTexture("images/hero/tile011.png");
+    EatkR[1].bindTexture("images/hero/tile010.png");
+    EatkR[2].bindTexture("images/hero/tile009.png");
+
+    EatkL[0].bindTexture("images/hero/tile006.png");
+    EatkL[1].bindTexture("images/hero/tile007.png");
+    EatkL[2].bindTexture("images/hero/tile008.png");
 
     EstandR[0].bindTexture("images/hero/tile005.png");
     EstandR[1].bindTexture("images/hero/tile004.png");
@@ -89,7 +111,9 @@ void Enemy::Update(Vec2 playerPOS)
         case IDLE:
             idle();
         break;
-
+        case ATTACK:
+            attack(playerPOS);
+        break;
         default:
         break;
     }
@@ -112,7 +136,7 @@ void Enemy::actions()
            if(T->getTicks()>200){
 
             runspeed++;
-            runspeed = runspeed %2;
+            runspeed = runspeed %4;
             T->reset();
           }
            EstandR[runspeed].binder();
@@ -129,7 +153,7 @@ void Enemy::actions()
                 {
                   //  mX+=xSpeed;
                     runspeed++;
-                    runspeed = runspeed %2;
+                    runspeed = runspeed %4;
                     T->reset();
                 }
 
@@ -147,7 +171,7 @@ void Enemy::actions()
                 {
                     //mX-=xSpeed;
                     runspeed++;
-                    runspeed = runspeed %2;
+                    runspeed = runspeed %3;
                     T->reset();
                 }
 
@@ -163,11 +187,43 @@ void Enemy::actions()
                 if(T->getTicks()>200)
                 {
                     runspeed++;
-                    runspeed = runspeed %2;
+                    runspeed = runspeed %3;
                     T->reset();
                 }
 
                 EstandL[runspeed].binder();
+                Draw();
+            glPopMatrix();
+        break;
+
+        case ATKR://stdL
+            glPushMatrix();
+                //glTranslated(getPosition().x,getPosition().y,-1.0);
+
+                if(T->getTicks()>200)
+                {
+                    runspeed++;
+                    runspeed = runspeed %3;
+                    T->reset();
+                }
+
+                EatkR[runspeed].binder();
+                Draw();
+            glPopMatrix();
+        break;
+
+        case ATKL://stdL
+            glPushMatrix();
+                //glTranslated(getPosition().x,getPosition().y,-1.0);
+
+                if(T->getTicks()>200)
+                {
+                    runspeed++;
+                    runspeed = runspeed %3;
+                    T->reset();
+                }
+
+                EatkL[runspeed].binder();
                 Draw();
             glPopMatrix();
         break;

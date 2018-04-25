@@ -8,6 +8,7 @@ Player::Player()
     setPosition(10.0,0.0);
     hasJump = true;
     setAction(STANDR);
+    bool isAttacking = false;
 }
 
 Player::~Player()
@@ -20,6 +21,14 @@ void Player::Init()
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);//trans
     T->start();
+
+    atkR[0].bindTexture("images/hero/tile011.png");
+    atkR[1].bindTexture("images/hero/tile010.png");
+    atkR[2].bindTexture("images/hero/tile009.png");
+
+    atkL[0].bindTexture("images/hero/tile006.png");
+    atkL[1].bindTexture("images/hero/tile007.png");
+    atkL[2].bindTexture("images/hero/tile008.png");
 
     standR[0].bindTexture("images/hero/tile005.png");
     standR[1].bindTexture("images/hero/tile004.png");
@@ -121,6 +130,46 @@ void Player::actions()
                 }
 
                 standL[runspeed].binder();
+                Draw();
+            glPopMatrix();
+        break;
+
+        case ATKR://stdL
+            glPushMatrix();
+                //glTranslated(getPosition().x,getPosition().y,-1.0);
+
+                if(T->getTicks()>200)
+                {
+                    runspeed++;
+                    if (runspeed == 3)
+                    {
+                        setAttacking(false);
+                    }
+                    runspeed = runspeed %3;
+                    T->reset();
+                }
+                atkR[runspeed].binder();
+                Draw();
+            glPopMatrix();
+        break;
+
+        case ATKL://stdL
+            glPushMatrix();
+                //glTranslated(getPosition().x,getPosition().y,-1.0);
+
+                if(T->getTicks()>200)
+                {
+                    if (runspeed == 3)
+                    {
+                        setAttacking(false);
+                    }
+
+                    runspeed++;
+                    runspeed = runspeed %3;
+                    T->reset();
+                }
+
+                atkL[runspeed].binder();
                 Draw();
             glPopMatrix();
         break;

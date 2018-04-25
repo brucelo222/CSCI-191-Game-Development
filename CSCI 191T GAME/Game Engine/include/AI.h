@@ -10,7 +10,7 @@ class AI
         AI();
         virtual ~AI();
 
-        enum State{IDLE,PATROL,CHASE};
+        enum State{IDLE,PATROL,CHASE,ATTACK};
 
         void aiManager(Vec2, Vec2);
 

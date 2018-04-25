@@ -7,7 +7,7 @@
 #include "Timer.h"
 
 enum Direction{LEFT,RIGHT};
-enum Action{RUNR,RUNL,STANDR,STANDL};
+enum Action{RUNR,RUNL,STANDR,STANDL,ATKR,ATKL};
 
 class Agent
 {
@@ -28,6 +28,9 @@ class Agent
         void setAction(Action action){this->actionTrigger = action;};
         Action getAction(){return this->actionTrigger;};
 
+        void setAttacking(bool toggle){this->isAttacking = toggle;};
+        bool getAttacking(){return this->isAttacking;};
+
         Timer *T = new Timer();
         int runspeed;
     private:
@@ -35,6 +38,7 @@ class Agent
         Direction _dir;
         Action actionTrigger;
         Graphics *_shape = new Graphics();
+        bool isAttacking;
 };
 
 #endif // AGENT_H

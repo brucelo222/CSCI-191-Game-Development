@@ -27,8 +27,20 @@ void Inputs::keyPressed(Player* player)
         player->setDirection(RIGHT);
         player->setPosition(player->getPosition().x + 0.1, player->getPosition().y);
     break;
+    case 0x58:
+        if (player->getDirection() == RIGHT)
+        {
+            player->setAction(ATKR);
+        }
+        else
+        {
+            player->setAction(ATKL);
+            player->setAttacking(true);
+        }
+    break;
     case VK_SPACE:
         player->setAction(STANDR);
+        player->setAttacking(true);
     break;
        default:break;
     }
@@ -36,12 +48,23 @@ void Inputs::keyPressed(Player* player)
 
 void Inputs::keyReleased(Player* player)
 {
-    if(player->getDirection() == RIGHT)
+    if(player->getAttacking()==true)
+    {
+
+    }
+    else if(player->getDirection() == RIGHT)
+    {
         player->setAction(STANDR);
+    }
     else if(player->getDirection() == LEFT)
+    {
         player->setAction(STANDL);
+    }
     else
-    player->setAction(STANDR);
+    {
+       player->setAction(STANDR);
+    }
+
     switch(_wParam)
     {
        default:break;
