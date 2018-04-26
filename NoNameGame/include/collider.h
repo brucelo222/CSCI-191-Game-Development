@@ -2,14 +2,15 @@
 #define COLLIDER_H
 
 #include<GL/gl.h>
-
+#include "player.h"
+#include "fallingObject.h"
 class collider
 {
     public:
         collider();
         virtual ~collider();
 
-         bool checkCollision();
+         bool checkCollision(player *,fallingObject  *);
 
 
     protected:

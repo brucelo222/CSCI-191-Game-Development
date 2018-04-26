@@ -122,8 +122,8 @@ case 0:
             ply->resetPos();
         }
 
-        cout<<ply->mX<<endl;
-        cout<<goSet<<endl;
+        //cout<<ply->mX<<endl;
+        //cout<<goSet<<endl;
 
 break;
 
@@ -164,8 +164,8 @@ case 1:
             ply->resetPos();
         }
 
-        cout<<ply->mX<<endl;
-        cout<<goSet<<endl;
+        //cout<<ply->mX<<endl;
+        //cout<<goSet<<endl;
 
     break;
 
@@ -187,21 +187,33 @@ case 1:
     glPushMatrix();
       glScaled(0.33,0.33,1.0);
       fRock->fallingObjectUpdate();
+      bool hit=collision->checkCollision(ply,fRock);
       fRock1->fallingObjectUpdate();
+      bool hit1=collision->checkCollision(ply,fRock1);
       fRock2->fallingObjectUpdate();
+      bool hit2=collision->checkCollision(ply,fRock2);
       fRock3->fallingObjectUpdate();
+      bool hit3=collision->checkCollision(ply,fRock3);
       fRock4->fallingObjectUpdate();
+      bool hit4=collision->checkCollision(ply,fRock4);
       fRock5->fallingObjectUpdate();
+      bool hit5=collision->checkCollision(ply,fRock5);
       glPopMatrix();
 
+      if(hit || hit1 || hit2 || hit3 || hit4 || hit5){
+    glPushMatrix();
+    glTranslated(0,0,modelTeapot->Zoom);
+    ply->damaged();
+    glPopMatrix();
+    }
     if(ply->mX == -5.0){
             goSet = 0;
             setPro =0;
              ply->resetPos();
         }
 
-        cout<<ply->mX<<endl;
-        cout<<goSet<<endl;
+        //cout<<ply->mX<<endl;
+        //cout<<goSet<<endl;
 
     break;
 

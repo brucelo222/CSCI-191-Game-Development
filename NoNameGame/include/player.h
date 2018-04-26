@@ -37,6 +37,7 @@ class player:Model
         float xSpeed,ySpeed;
         const float gravity = -0.4;
         bool isJump;
+        void damaged();
 float jpVelo;
 float jpGround;
 

@@ -8,7 +8,7 @@
 
 #include<gl/gl.h>
 #include<iostream>
-
+#include "collider.h"
 using namespace std;
 
 class GLScene
@@ -37,6 +37,7 @@ class GLScene
         fallingObject *fRock4 = new fallingObject();
         fallingObject *fRock5 = new fallingObject();
 
+        collider *collision= new collider();
 
 
 

@@ -274,3 +274,14 @@ break;
 }
 }
 
+void player::damaged()
+{
+glPushMatrix();
+       glTranslated(mX,mY,-1.0);
+
+       atkR[0].binder();
+       drawPlayer();
+
+       glPopMatrix();
+
+}
