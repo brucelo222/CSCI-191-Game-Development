@@ -35,6 +35,7 @@ player::player()
 
     mX = -4.48;
     mY = -2.05;
+
     maxMX= 1.0;
     maxMY = 1.0;
     xSpeed = 0.08;
@@ -45,7 +46,7 @@ player::player()
  jpVelo = 0.2;
  jpGround = -2.0;
  isJump = false;
-
+    rightLeft=true;
 
 }
 
@@ -138,6 +139,7 @@ float player::getPlyPosY()
 }
 void player::actions(int action)
 {
+
    switch(action){
    case 0://stdR
 
@@ -206,36 +208,66 @@ void player::actions(int action)
 
    case 4: //jump
 
-       glPushMatrix();
-       glTranslated(mX,mY,-1.0);
-        isJump = true;
-       if(T->getTicks()>20 && isJump == true){
 
-         mY += jpVelo;
 
-        T->reset();
-       }
+     glPushMatrix();
+        if(isJump==false){
 
-        if(mY >= 0.90){
+            maxMY=mY+1.5;
+            falling=mY;
+            isJump=true;
+            isFalling=false;
+        }
+        glTranslated(mX,mY,-1.0);
+        if(isJump==true&&mY<=maxMY&&isFalling==false){
 
-                jpVelo += gravity;
+            if(T->getTicks()>40){
+            mY=mY+0.13;
+            T->reset();
+            }
+            if(mY>=maxMY){
+                isFalling=true;
+                            }
+        }
+        else if(isJump==true){
+            if(T->getTicks()>35){
+            mY=mY-0.13;
+            T->reset();
+            }
+
         }
 
-        if( mY <= jpGround){
-           jpVelo = 0.0;
-            mY = jpGround;
-
-         //   cout<<isJump<<endl;
+        if(mY<=falling+0.13&&isFalling==false){
+            if(rightLeft==true){
+            jmpL[0].binder();
+            }
+            else{
+            jmpR[0].binder();
+            }
         }
-        isJump = false;
+        else if(mY<=falling+0.40&&isFalling==false){
+            if(rightLeft==true){
+            jmpL[1].binder();
+            }
+            else{
+            jmpR[1].binder();
+            }
 
+        }
+        else{
+             if(rightLeft==true){
+            jmpL[2].binder();
+            }
+            else{
+            jmpR[2].binder();
+            }
+        }
 
-
-       standR[3].binder();
        drawPlayer();
+
        glPopMatrix();
 
-break;
+       break;
 
  case 5://atkR
        glPushMatrix();
@@ -271,7 +303,175 @@ break;
 
        glPopMatrix();
        break;
+ case 7:
+    glPushMatrix();
+     glTranslated(mX,mY,-1.0);
+      if(T->getTicks()>40){
+            T->reset();
+            }
+    if(mY<=falling+0.13&&isFalling==false){
+            if(rightLeft==true){
+            jmpL[0].binder();
+            }
+            else{
+            jmpR[0].binder();
+            }
+
+        }
+        else if(mY<=falling+0.40&&isFalling==false){
+
+            if(rightLeft==true){
+            jmpL[1].binder();
+            }
+            else{
+            jmpR[1].binder();
+            }
+        }
+        else{
+
+          if(rightLeft==true){
+            jmpL[2].binder();
+            }
+            else{
+            jmpR[2].binder();
+            }
+        }
+
+       drawPlayer();
+
+       glPopMatrix();
+
+
+    break;
+ case 8:////////////////////////////////////////////
+     glPushMatrix();
+
+        glTranslated(mX,mY,-1.0);
+
+        if(isJump==true&&mY<=maxMY&&isFalling==false){
+
+            if(T->getTicks()>40){
+            mY=mY+0.13;
+            mX=mX+0.13;
+            T->reset();
+            }
+            if(mY>=maxMY){
+                isFalling=true;
+                            }
+        }
+        else if(isJump==true){
+            if(T->getTicks()>35){
+            mY=mY-0.13;
+            mX=mX+0.13;
+            T->reset();
+            }
+
+        }
+
+        if(mY<=falling+0.13&&isFalling==false){
+            if(rightLeft==true){
+            jmpL[0].binder();
+            }
+            else{
+            jmpR[0].binder();
+            }
+        }
+        else if(mY<=falling+0.40&&isFalling==false){
+            if(rightLeft==true){
+            jmpL[1].binder();
+            }
+            else{
+            jmpR[1].binder();
+            }
+
+        }
+        else{
+             if(rightLeft==true){
+            jmpL[2].binder();
+            }
+            else{
+            jmpR[2].binder();
+            }
+        }
+
+       drawPlayer();
+
+       glPopMatrix();
+
+       break;
+ case 9:
+    glPushMatrix();
+
+        glTranslated(mX,mY,-1.0);
+
+        if(isJump==true&&mY<=maxMY&&isFalling==false){
+
+            if(T->getTicks()>40){
+            mY=mY+0.13;
+            mX=mX-0.13;
+            T->reset();
+            }
+            if(mY>=maxMY){
+                isFalling=true;
+                            }
+        }
+        else if(isJump==true){
+            if(T->getTicks()>35){
+            mY=mY-0.13;
+            mX=mX-0.13;
+            T->reset();
+            }
+
+        }
+
+        if(mY<=falling+0.13&&isFalling==false){
+            if(rightLeft==true){
+            jmpL[0].binder();
+            }
+            else{
+            jmpR[0].binder();
+            }
+        }
+        else if(mY<=falling+0.40&&isFalling==false){
+            if(rightLeft==true){
+            jmpL[1].binder();
+            }
+            else{
+            jmpR[1].binder();
+            }
+
+        }
+        else{
+             if(rightLeft==true){
+            jmpL[2].binder();
+            }
+            else{
+            jmpR[2].binder();
+            }
+        }
+
+       drawPlayer();
+
+       glPopMatrix();
+
+    break;
+ case 10:
+    glPushMatrix();
+       glTranslated(mX,mY,-1.0);
+       if(T->getTicks()>90){
+        mY=mY-0.08;
+        runspeed++;
+        runspeed = runspeed %2;
+        T->reset();
+      }
+       standR[runspeed].binder();
+       drawPlayer();
+
+       glPopMatrix();
+       break;
 }
+
+
 }
 
 void player::damaged()

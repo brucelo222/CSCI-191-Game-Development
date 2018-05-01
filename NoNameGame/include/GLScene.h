@@ -9,6 +9,7 @@
 #include<gl/gl.h>
 #include<iostream>
 #include "collider.h"
+#include "platform.h"
 using namespace std;
 
 class GLScene
@@ -38,21 +39,17 @@ class GLScene
         fallingObject *fRock5 = new fallingObject();
 
         collider *collision= new collider();
-
-
-
-
-
-
-
-
-
-
-
+        platform *s1plf1= new platform();
+        platform *s1plf2= new platform();
+        platform *s1plf3= new platform();
+        platform *s1plf4= new platform();
 
 
         int windMsg(HWND,UINT, WPARAM,LPARAM);
-
+        int platformCollide;
+        int i;
+        int collideSum;
+         platform * platforms[4];
 
         WPARAM wParam;
         float screenHeight;

@@ -33,10 +33,13 @@ class player:Model
 
         float getPlyPosY();
 
-        float mX,mY,maxMX,maxMY;
+        float mX,mY,maxMX,maxMY,falling;
         float xSpeed,ySpeed;
         const float gravity = -0.4;
+        float jumppY;
         bool isJump;
+        bool isFalling;
+        bool rightLeft;
         void damaged();
 float jpVelo;
 float jpGround;

@@ -52,6 +52,7 @@
 		<Unit filename="include/collider.h" />
 		<Unit filename="include/fallingObject.h" />
 		<Unit filename="include/parallax.h" />
+		<Unit filename="include/platform.h" />
 		<Unit filename="include/player.h" />
 		<Unit filename="include/skyBox.h" />
 		<Unit filename="include/sounds.h" />
@@ -66,6 +67,7 @@
 		<Unit filename="src/collider.cpp" />
 		<Unit filename="src/fallingObject.cpp" />
 		<Unit filename="src/parallax.cpp" />
+		<Unit filename="src/platform.cpp" />
 		<Unit filename="src/player.cpp" />
 		<Unit filename="src/skyBox.cpp" />
 		<Unit filename="src/sounds.cpp" />

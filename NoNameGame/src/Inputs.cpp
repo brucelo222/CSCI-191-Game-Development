@@ -95,17 +95,36 @@ void Inputs::keyUp(player* ply)
     {
 
        case 0x41://A
-       ply->actionTrigger = 3;
+        if(ply->isJump==false){
+           ply->actionTrigger = 3;
+        }
+       else{
+        ply->actionTrigger=7;
+       }
+       //ply->actionTrigger = 3;
+       ply->rightLeft=false;
         break;
 
           case 0x44://D
-       ply->actionTrigger = 0;
+              if(ply->isJump==false){
+           ply->actionTrigger = 0;
+        }
+       else{
+        ply->actionTrigger=7;
+       }
+           //ply->actionTrigger = 0;
+       ply->rightLeft=true;
         break;
 
         case 0x47: //G
             ply->actionTrigger = 0;
             break;
-
+    case 0x53://down
+     ply->actionTrigger=0;
+     break;
+        case 0x57://jump
+            ply->actionTrigger=7;
+            break;
 
     case VK_RIGHT:
 
@@ -134,7 +153,14 @@ void Inputs::keyPressed(player* ply)
     switch(wParam)
     {
         case 0x41://A
-       ply->actionTrigger = 2;
+            if(ply->isJump==false){
+           ply->actionTrigger = 2;
+        }
+       else{
+        ply->actionTrigger=9;
+       }
+       ply->rightLeft=false;
+      // ply->actionTrigger = 2;
         //ply->mX-= ply->xSpeed;
        // ply->maxMX-= ply->xSpeed;
         break;
@@ -146,9 +172,15 @@ void Inputs::keyPressed(player* ply)
         break;*/
 
     case 0x44://D
-       ply->actionTrigger = 1;
+       if(ply->isJump==false){
+           ply->actionTrigger = 1;
+        }
+       else{
+        ply->actionTrigger=8;
+       }
         //ply->mX+= ply->xSpeed;
        // ply->maxMX+= ply->xSpeed;
+       ply->rightLeft=true;
         break;
 
     case 0x47: //G
@@ -160,7 +192,12 @@ void Inputs::keyPressed(player* ply)
 
 
         break;
-
+    case 0x53:
+     ply->actionTrigger=10;
+     break;
+    case 0x57://w-jmp
+        ply->actionTrigger=4;
+        break;
     case VK_DOWN:
          ply->actionTrigger = 5;
 

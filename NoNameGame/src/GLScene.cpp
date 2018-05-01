@@ -97,6 +97,7 @@ GLint GLScene::drawGLScene()
 
 switch(setPro){
 case 0:
+
     glPushMatrix();
     glScaled(3.33,3.33,1.0);
     fog->drawSquare(screenWidth,screenHeight);
@@ -108,12 +109,82 @@ case 0:
     stg1->drawSquare(screenWidth,screenHeight);
     //fog->scroll(false,"right",0.005); //True = Scroll
     glPopMatrix();
-
+///////////////////////////////////////////////////////////////////
+    s1plf1->initPlatform(-0.6,-20.0,0.1,-2.9);
+    s1plf2->initPlatform(-2.9,-3.2,-3.1,-6.4);
+    s1plf3->initPlatform(-2.0,-3.2,3.5,1.2);
+    s1plf4->initPlatform(-3.5,-5.6,1.2,-3.1);
     //--Player
+    i=0;
+    collideSum=0;
+    platforms[0]= s1plf1;
+    platforms[1]= s1plf2;
+    platforms[2]= s1plf3;
+    platforms[3]= s1plf4;
+    for(i=0;i<4;i++){
+     collideSum+=collision->platformCollision(ply,platforms[i]);
+    }
+
+//////////////////////////////////////////////////////////////
     glPushMatrix();
     glScaled(1.0,1.0,1.0);
             glTranslated(0,0,modelTeapot->Zoom);
+        if((collideSum==0||collideSum==2||collideSum==4)&&ply->isJump==false){
+            ply->isJump=true;
+            ply->isFalling=true;
+            ply->actions(4);
+
+        }
+        else if(ply->isJump==true){
+         if(collideSum>=1&ply->isFalling==true){
+
+                ply->isJump=false;
+
+            if(ply->rightLeft==false){
+            ply->actionTrigger=3;
+            }
+            else{
+            ply->actionTrigger=0;
+            }
+
+            }
+         else if(ply->actionTrigger==8){
+         ply->actions(ply->actionTrigger);
+        }
+         else if(ply->actionTrigger==9){
+         ply->actions(ply->actionTrigger);
+        }
+         else
+        {ply->actions(4);}
+    }
+    else{
+
+        if(collideSum>=1&&(ply->actionTrigger==10)){
+            if(ply->rightLeft==false){
+            ply->actionTrigger=3;
+            }
+            else{
+            ply->actionTrigger=0;
+            }
+        }
+        else if((collideSum==2||collideSum==3)&&(ply->actionTrigger==1)){
+            if(ply->rightLeft==false){
+            ply->actionTrigger=3;
+            }
+            else{
+            ply->actionTrigger=0;
+            }
+        }
+        else if((collideSum==4||collideSum==5)&&(ply->actionTrigger==2)){
+         if(ply->rightLeft==false){
+            ply->actionTrigger=3;
+            }
+            else{
+            ply->actionTrigger=0;
+            }
+        }
         ply->actions(ply->actionTrigger);
+    }
     glPopMatrix();
 
         if(ply->mX >= 3.0){
@@ -125,7 +196,7 @@ case 0:
         //cout<<ply->mX<<endl;
         //cout<<goSet<<endl;
 
-break;
+    break;
 
 
 
@@ -148,7 +219,12 @@ case 1:
     //--Player
     glPushMatrix();
     glTranslated(0,0,modelTeapot->Zoom);
-    ply->actions(ply->actionTrigger);
+    if(ply->isJump==true){
+    ply->actions(4);
+    }
+    else{
+        ply->actions(ply->actionTrigger);
+    }
     glPopMatrix();
 
     /*if(ply->mX == -5.0){
