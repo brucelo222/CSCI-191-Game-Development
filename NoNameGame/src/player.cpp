@@ -58,7 +58,7 @@ void player::drawPlayer()
 {
     //glColor3f(1.0,0.0,0.0);
    // glPushMatrix();
-   glScaled(3.3,3.3,1.0);
+   glScaled(2.3,2.3,1.0);
   glBegin(GL_QUADS);
 
     glTexCoord2f(0.0,1.0);

@@ -1181,13 +1181,15 @@
 	<iostream>
 	<windows.h>
 
-1521680101 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\include\glscene.h
+1525306834 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\include\glscene.h
 	<windows.h>
 	<parallax.h>
 	<fallingObject.h>
 	<stage1.h>
 	<gl/gl.h>
 	<iostream>
+	"collider.h"
+	"platform.h"
 
 1521607756 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\include\parallax.h
 	<iostream>
@@ -1220,11 +1222,15 @@
 	<parallax.h>
 	<GLScene.h>
 
-1521365421 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\src\collider.cpp
+1525306834 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\src\collider.cpp
 	"collider.h"
+	<iostream>
 
-1521367065 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\include\collider.h
+1525306834 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\include\collider.h
+	"platform.h"
 	<GL/gl.h>
+	"player.h"
+	"fallingObject.h"
 
 1521598136 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\src\fallingobject.cpp
 	"fallingObject.h"
@@ -1236,7 +1242,7 @@
 1519873998 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\include\timer.h
 	<time.h>
 
-1523472110 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\include\player.h
+1525306834 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\include\player.h
 	<Model.h>
 	<gl/gl.h>
 	<textureLoader.h>
@@ -1248,7 +1254,7 @@
 1520847948 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\include\gllight.h
 	<GLScene.h>
 
-1523583824 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\src\glscene.cpp
+1525306834 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\src\glscene.cpp
 	"GLScene.h"
 	<GLLight.h>
 	<Model.h>
@@ -1396,7 +1402,7 @@
 1519874258 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\src\timer.cpp
 	"timer.h"
 
-1523585438 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\src\inputs.cpp
+1525306834 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\src\inputs.cpp
 	"Inputs.h"
 	<player.h>
 
@@ -1890,5 +1896,10 @@
 1525103962 c:\users\cristian lopez\documents\github\csci-191-game-development\nonamegame\include\platform.h
 
 1525104096 source:c:\users\cristian lopez\documents\github\csci-191-game-development\nonamegame\src\platform.cpp
+	"platform.h"
+
+1525306834 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\include\platform.h
+
+1525306834 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\nonamegame\src\platform.cpp
 	"platform.h"
 
