@@ -25,6 +25,10 @@ GLint GameLoop::Initialize()
     glDepthFunc(GL_LEQUAL);
 
     _backgroundTexture->bindTexture("images/bak.jpg");
+
+   // for(int i = 0; i < 20; i++){
+    //    _enemies[i]->Init();
+  //  }
     _player->Init();
     _enemy->Init();
     //_leftPlayer->bindTexture("images/volcano.jpg");
@@ -48,7 +52,7 @@ void GameLoop::Render()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glLoadIdentity();
-
+    _player->setPrevPosition(_player->getPosition().x,_player->getPosition().y);
     //render Camera
     _camera->updateCameraPosition(_player->getPosition().x, _player->getPosition().y);
     _camera->moveCamera();
@@ -76,6 +80,12 @@ void GameLoop::Render()
     _enemy->actions();
     glPopMatrix();
 
+    //for(int i = 0; i < 20; i++){
+      //  glPushMatrix();
+        //_enemies[i]->actions();
+        //glPopMatrix();
+    //}
+
     glPushMatrix();
     glDisable(GL_TEXTURE_2D);
     glTranslated(0.0,0.0,-1.0);
@@ -85,11 +95,27 @@ void GameLoop::Render()
     glColor3f(1.0,1.0,1.0);
     glEnable(GL_TEXTURE_2D);
     glPopMatrix();
-
 }
 
 void GameLoop::Update()
 {
+    cout<<_player->_hurtbox->collider.x << " "<< _enemy->_hitbox->collider.x<<endl;;
+    //add collision checks in update function for environment projectiles and enemies;
+    if(_player->_hurtbox->active == true && _collision->AABB(_player->_hurtbox->collider,_enemy->_hitbox->collider))
+    {
+        cout<<"enemy hit"<<endl;
+        _enemy->setVelocity(-1.0,0);
+    }
+    if(_collision->AABB(_player->_hitbox->collider,_enemy->_hitbox->collider))
+    {
+        if(_player->getDirection() == RIGHT)
+        {
+            //cout<<"collide on right"<<endl;
+            _player->setVelocity(-1.0,0);
+        }
+        //_player->setVelocity()
+        //_player->setPosition(_player->getPrevPosition().x,_player->getPrevPosition().y);
+    }
     _player->Update();
     _enemy->Update(_player->getPosition());
 }
@@ -132,18 +158,18 @@ void GameLoop::winInputs(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 GLint GameLoop::gameLoop()
 {
 //start fps limiter
-    //Input(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
-
+frameStart = _fpsTimer->getTicks();
     //update game objects
-    //set camera on player
-    //std::cout<<"x pos: "<< _player->getPosition().x<<std::endl<<"y pos: "<<_player->getPosition().y<<std::endl;
-
-  //  glLoadIdentity();
+    Render();
     //update physics
     Update();
     //render game scene
-    Render();
-    //end fps limiter
+//end fps limiter
+frameTime = _fpsTimer->getTicks() - frameStart;
+    if(frameDelay > frameTime)
+    {
+        Sleep(frameDelay - frameTime);
+    }
 }
 
 

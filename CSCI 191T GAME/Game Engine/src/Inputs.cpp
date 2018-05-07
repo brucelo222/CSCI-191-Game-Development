@@ -20,14 +20,15 @@ void Inputs::keyPressed(Player* player)
     case VK_LEFT:
         player->setAction(RUNL);
         player->setDirection(LEFT);
-        player->setPosition(player->getPosition().x -0.1, player->getPosition().y);
+       // player->setPosition(player->getPosition().x -0.1, player->getPosition().y);
     break;
     case VK_RIGHT:
         player->setAction(RUNR);
         player->setDirection(RIGHT);
-        player->setPosition(player->getPosition().x + 0.1, player->getPosition().y);
+     //   player->setPosition(player->getPosition().x + 0.1, player->getPosition().y);
     break;
     case 0x58:
+        player->setAttacking(true);
         if (player->getDirection() == RIGHT)
         {
             player->setAction(ATKR);
@@ -35,7 +36,6 @@ void Inputs::keyPressed(Player* player)
         else
         {
             player->setAction(ATKL);
-            player->setAttacking(true);
         }
     break;
     case VK_SPACE:
@@ -59,10 +59,6 @@ void Inputs::keyReleased(Player* player)
     else if(player->getDirection() == LEFT)
     {
         player->setAction(STANDL);
-    }
-    else
-    {
-       player->setAction(STANDR);
     }
 
     switch(_wParam)

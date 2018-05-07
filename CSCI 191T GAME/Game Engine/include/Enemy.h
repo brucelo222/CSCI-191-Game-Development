@@ -23,12 +23,14 @@ class Enemy : public Agent, public AI
         void actions();
 
     private:
+        float width;
+        float height;
         Texture ErunRight[5];
         Texture ErunLeft[5];
-        Texture EstandL[3];
-        Texture EstandR[3];
-        Texture EatkR[3];
-        Texture EatkL[3];
+        Texture EstandL[6];
+        Texture EstandR[6];
+        Texture EatkR[6];
+        Texture EatkL[6];
 };
 
 #endif // ENEMY_H

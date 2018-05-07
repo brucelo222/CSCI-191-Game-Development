@@ -1,6 +1,9 @@
 #include "Player.h"
 
 #include <GL/gl.h>
+#include <iostream>
+
+using namespace std;
 
 Player::Player()
 {
@@ -9,6 +12,15 @@ Player::Player()
     hasJump = true;
     setAction(STANDR);
     bool isAttacking = false;
+    width = 2.5;
+    height = 2.5;
+
+    _hitbox->active = true;
+    _hurtbox->active = false;
+    atkDistance = 1;
+
+    setVelocity(0,0);
+    setMaxSpeed(.3,.2);
 }
 
 Player::~Player()
@@ -18,6 +30,8 @@ Player::~Player()
 
 void Player::Init()
 {
+    _hitbox->init(getPosition(),0.25,0.25);
+    _hurtbox->init(getPosition(), 0.0,0.25);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);//trans
     T->start();
@@ -53,7 +67,12 @@ void Player::Init()
 
 void Player::Update()
 {
-//    _tex->binder();
+    _hitbox->update(getPosition());
+
+    if(getAttacking())
+    {
+    //    actions();
+    }
     glTranslated(getPosition().x,getPosition().y,-1.0);
     //apply physics
     if(getPosition().y > 0)
@@ -74,11 +93,11 @@ void Player::actions()
            if(T->getTicks()>200){
 
             runspeed++;
-            runspeed = runspeed %2;
+            runspeed = runspeed %3;
             T->reset();
           }
            standR[runspeed].binder();
-           Draw();
+           Draw(width,height);
 
            glPopMatrix();
            break;
@@ -87,16 +106,17 @@ void Player::actions()
            glPushMatrix();
                //glTranslated(getPosition().x,getPosition().y,-1.0);
 
-               if(T->getTicks()>90)
+               if(T->getTicks()>120)
                 {
-                  //  mX+=xSpeed;
+                    //move pos
+                    setPosition(getPosition().x + Accelerate(), getPosition().y);
                     runspeed++;
-                    runspeed = runspeed %2;
+                    runspeed = runspeed %4;
                     T->reset();
                 }
 
                runRight[runspeed].binder();
-               Draw();
+               Draw(width,height);
 
            glPopMatrix();
         break;
@@ -105,16 +125,19 @@ void Player::actions()
            glPushMatrix();
                //glTranslated(getPosition().x,getPosition().y,-1.0);
 
-               if(T->getTicks()>90)
+               if(T->getTicks()>120)
                 {
-                    //mX-=xSpeed;
+                    //move pos
+                    cout<<"player aceleration"<<endl;
+                    cout<<Accelerate()<<endl;
+                    setPosition(getPosition().x - Accelerate(), getPosition().y);
                     runspeed++;
-                    runspeed = runspeed %2;
+                    runspeed = runspeed %4;
                     T->reset();
                 }
 
                runLeft[runspeed].binder();
-               Draw();
+               Draw(width,height);
            glPopMatrix();
         break;
 
@@ -125,31 +148,36 @@ void Player::actions()
                 if(T->getTicks()>200)
                 {
                     runspeed++;
-                    runspeed = runspeed %2;
+                    runspeed = runspeed %3;
                     T->reset();
                 }
 
                 standL[runspeed].binder();
-                Draw();
+                Draw(width,height);
             glPopMatrix();
         break;
 
         case ATKR://stdL
             glPushMatrix();
                 //glTranslated(getPosition().x,getPosition().y,-1.0);
-
-                if(T->getTicks()>200)
+                cout<<_hurtbox->active<<" "<<_hurtbox->collider.x<<endl;
+                if(T->getTicks()>175)
                 {
+            _hurtbox->collider.x += 0.25;
+            _hurtbox->active = true;
                     runspeed++;
                     if (runspeed == 3)
                     {
+                        _hurtbox->collider.x = 0.0;
+                        _hurtbox->active = false;
                         setAttacking(false);
+                        setAction(STANDR);
                     }
                     runspeed = runspeed %3;
                     T->reset();
                 }
                 atkR[runspeed].binder();
-                Draw();
+                Draw(width,height);
             glPopMatrix();
         break;
 
@@ -157,20 +185,22 @@ void Player::actions()
             glPushMatrix();
                 //glTranslated(getPosition().x,getPosition().y,-1.0);
 
-                if(T->getTicks()>200)
+                if(T->getTicks()>175)
                 {
+                    runspeed++;
                     if (runspeed == 3)
                     {
                         setAttacking(false);
+                        setAction(STANDL);
                     }
 
-                    runspeed++;
                     runspeed = runspeed %3;
+
                     T->reset();
                 }
 
                 atkL[runspeed].binder();
-                Draw();
+                Draw(width,height);
             glPopMatrix();
         break;
      }
