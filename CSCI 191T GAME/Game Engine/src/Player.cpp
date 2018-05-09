@@ -14,6 +14,8 @@ Player::Player()
     bool isAttacking = false;
     width = 2.5;
     height = 2.5;
+    setHealth(100);
+    isObjectLive = true;
 
     _hitbox->active = true;
     _hurtbox->active = false;
@@ -31,7 +33,8 @@ Player::~Player()
 void Player::Init()
 {
     _hitbox->init(getPosition(),0.25,0.25);
-    _hurtbox->init(getPosition(), 0.0,0.25);
+    _hurtbox->init(getPosition(), 0.25,0.25);
+
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);//trans
     T->start();
@@ -80,6 +83,7 @@ void Player::Update()
        float Y = _gravity.applyGravity(getPosition().y);
        setPosition(getPosition().x,Y);
     }
+
 }
 
 void Player::actions()
@@ -104,14 +108,13 @@ void Player::actions()
 
        case RUNR:
            glPushMatrix();
-               //glTranslated(getPosition().x,getPosition().y,-1.0);
 
-               if(T->getTicks()>120)
+               if(T->getTicks()>90)
                 {
                     //move pos
                     setPosition(getPosition().x + Accelerate(), getPosition().y);
                     runspeed++;
-                    runspeed = runspeed %4;
+                    runspeed = runspeed %2;
                     T->reset();
                 }
 
@@ -125,14 +128,12 @@ void Player::actions()
            glPushMatrix();
                //glTranslated(getPosition().x,getPosition().y,-1.0);
 
-               if(T->getTicks()>120)
+               if(T->getTicks()>90)
                 {
                     //move pos
-                    cout<<"player aceleration"<<endl;
-                    cout<<Accelerate()<<endl;
                     setPosition(getPosition().x - Accelerate(), getPosition().y);
                     runspeed++;
-                    runspeed = runspeed %4;
+                    runspeed = runspeed %2;
                     T->reset();
                 }
 
@@ -160,15 +161,14 @@ void Player::actions()
         case ATKR://stdL
             glPushMatrix();
                 //glTranslated(getPosition().x,getPosition().y,-1.0);
-                cout<<_hurtbox->active<<" "<<_hurtbox->collider.x<<endl;
                 if(T->getTicks()>175)
                 {
-            _hurtbox->collider.x += 0.25;
+            _hurtbox->collider.x += 0.75;
             _hurtbox->active = true;
                     runspeed++;
                     if (runspeed == 3)
                     {
-                        _hurtbox->collider.x = 0.0;
+                        _hurtbox->collider.x = getPosition().x;
                         _hurtbox->active = false;
                         setAttacking(false);
                         setAction(STANDR);
@@ -184,12 +184,15 @@ void Player::actions()
         case ATKL://stdL
             glPushMatrix();
                 //glTranslated(getPosition().x,getPosition().y,-1.0);
-
                 if(T->getTicks()>175)
                 {
+                    _hurtbox->collider.x -= 0.75;
+                    _hurtbox->active = true;
                     runspeed++;
                     if (runspeed == 3)
                     {
+                        _hurtbox->collider.x = getPosition().x;
+                        _hurtbox->active = false;
                         setAttacking(false);
                         setAction(STANDL);
                     }

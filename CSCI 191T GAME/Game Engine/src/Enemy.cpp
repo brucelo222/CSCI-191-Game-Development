@@ -15,6 +15,8 @@ Enemy::Enemy()
     runspeed = 0;
     width = 0.9;
     height = 0.9;
+    setHealth(50);
+    isObjectLive = true;
 
     setMaxSpeed(0.01,0.1);
     setVelocity(0.0,0.0);

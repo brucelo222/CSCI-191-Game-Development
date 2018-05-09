@@ -44,6 +44,9 @@ class Agent
         void setAceleration(float x, float y){ this->_Acceleration.x = x; this->_Acceleration.y=y;};
         Vec2 getAceleration(){return _Acceleration;};
 
+        void setHealth(int hp){health = hp;};
+        int getHealth(){return health;};
+
         float Accelerate();
         float Decelerate();
 
@@ -53,14 +56,16 @@ class Agent
         int runspeed;
         float atkDistance;
         float width, height;
+        bool isObjectLive;
+
     private:
+        int health;
         Vec2 _prevPOS;
         Vec2 _Position;
         Direction _dir;
         Action actionTrigger;
         Graphics *_shape = new Graphics();
         bool isAttacking;
-        bool isObjectLive;
 
         Vec2 _Velocity;
         Vec2 _maxSpeed;

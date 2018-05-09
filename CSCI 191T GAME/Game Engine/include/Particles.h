@@ -1,6 +1,7 @@
 #ifndef PARTICLES_H
 #define PARTICLES_H
 
+#include <Vector.h>
 #include <math.h>
 #include <stdlib.h>
 #include <iostream>
@@ -32,7 +33,7 @@ class Particles
     int NumDrops;
     void draw();
     void lifeTime();
-    void generateParticles();
+    void generateParticles(Vec2);
     double dRand();
 
     private:

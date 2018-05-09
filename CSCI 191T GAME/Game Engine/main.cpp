@@ -1,8 +1,3 @@
-//add agents class
-//add enemies
-//add enemy ai
-//add collision
-
 #pragma once
 
 #ifdef _WIN32

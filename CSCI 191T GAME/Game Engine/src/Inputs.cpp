@@ -82,8 +82,6 @@ void Inputs::mouseEvent(Player* player, float x, float y)
         switch(_wParam)
         {
             case MK_LBUTTON:
-               // player->setPosition(x,y);
-                std::cout<<"left mouse button"<<std::endl;
             break;
 
 
