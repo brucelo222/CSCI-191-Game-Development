@@ -6,14 +6,17 @@
 #include "Camera2D.h"
 #include "Timer.h"
 #include "Collision.h"
+#include "Title.h"
+#include "Level1.h"
+#include "Level2.h"
 
-#include "Scene.h"
 #include "Particles.h"
 
 #include <windows.h>
 #include <GL/glut.h>
 
 enum GameState{PLAY,QUIT};
+enum SceneState{TITLE,LEVEL1,LEVEL2};
 
 class GameLoop
 {
@@ -28,6 +31,7 @@ class GameLoop
         GLint gameLoop();
 
         GameState gameState;
+        SceneState sceneState;
     private:
         //screen size variables
         float _screenHeight;
@@ -48,10 +52,9 @@ class GameLoop
         Camera2D* _camera = new Camera2D();
         Particles *p = new Particles();
         Collision *_collision = new Collision();
-        Scene *_level1 = new Scene();
-
-
-
+        Title *_title = new Title();
+        Level1 *_level1 = new Level1();
+        Level2 *_level2 = new Level2();
 };
 
 #endif // GAMELOOP_H

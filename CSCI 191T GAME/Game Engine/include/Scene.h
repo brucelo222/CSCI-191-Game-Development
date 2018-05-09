@@ -7,6 +7,8 @@
 #include "Enemy.h"
 #include "Player.h"
 
+#include <vector>
+
 //temp
 #include "Graphics.h"
 
@@ -17,18 +19,26 @@ class Scene
         Scene();
         virtual ~Scene();
 
-        void Init(Player*);
-        void Draw(Player*);
+        void Init(Player*, char*);
+        void Draw(Player*,int,int);
         void Update(Player*);
 
-        void initBackground();
-        void drawBackground();
+        void initBackground(char*);
+        void drawBackground(int, int);
         void initPlayer(Player*);
         void drawPlayer(Player*);
         void initEnemies();
         void drawEnemies();
 
-        Enemy *getEnemies(){return _enemies;};
+        vector<Enemy*> getEnemies(){return _enemies;};
+        void setNumEnemies(int size)
+        {
+        numEnemies = size;
+        for (int i = 0; i <numEnemies; i++)
+            {
+                _enemies.push_back(new Enemy);
+            }
+        };
 
     private:
         //create a background class with struct that contains background textures, middle, fore, background
@@ -36,8 +46,8 @@ class Scene
         Graphics *_shape = new Graphics();
         //array of enemies
         //create a data class that has level data
-        int numEnemies = 100;
-        Enemy _enemies[100];
+        int numEnemies;
+        vector<Enemy*> _enemies;
 };
 
 #endif // SCENE_H

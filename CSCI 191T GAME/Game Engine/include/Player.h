@@ -28,6 +28,8 @@ class Player : public Agent
         Texture standR[3];
         Texture atkR[3];
         Texture atkL[3];
+        Texture jmpR[3];
+        Texture jmpL[3];
 
         bool hasJump;
 };

@@ -1,5 +1,5 @@
 #include "Scene.h"
-
+#include <iostream>
 Scene::Scene()
 {
     //ctor
@@ -10,16 +10,20 @@ Scene::~Scene()
     //dtor
 }
 
-void Scene::Init(Player* _player)
+void Scene::Init(Player* _player, char* fileName)
 {
-    initBackground();
+    std::cout<<"scene init\n";
+    initBackground(fileName);
+    std::cout<<"init background"<<std::endl;
     initPlayer(_player);
+    std::cout<<"init players"<<std::endl;
     initEnemies();
+    std::cout<<"init enemies"<<std::endl;
 }
 
-void Scene::Draw(Player* _player)
+void Scene::Draw(Player* _player, int width, int height)
 {
-    drawBackground();
+    drawBackground(width, height);
     drawPlayer(_player);
     drawEnemies();
 }
@@ -29,24 +33,24 @@ void Scene::Update(Player *_player)
     _player->Update();
     for(int i = 0; i < numEnemies; i++)
     {
-        _enemies[i].Update(_player->getPosition());
+        _enemies[i]->Update(_player->getPosition());
     }
 }
 
-void Scene::drawBackground()
+void Scene::drawBackground(int width, int height)
 {
     glPushMatrix();
     glColor3f(1.0,1.0,1.0);
     _backgroundTexture->binder();
     glTranslated(0.0,0.0,-2.0);
-    _shape->drawQuad(50.0,15.0,-2.0,Color(1.0,1.0,1.0,1.0));
+    _shape->drawQuad(width,height,-2.0,Color(1.0,1.0,1.0,1.0));
     glEnable(GL_TEXTURE_2D);
     glPopMatrix();
 }
 
-void Scene::initBackground()
+void Scene::initBackground(char* fileName)
 {
-    _backgroundTexture->bindTexture("images/bak.jpg");
+    _backgroundTexture->bindTexture(fileName);
 }
 
 void Scene::initPlayer(Player* _player)
@@ -66,20 +70,20 @@ void Scene::drawPlayer(Player* _player)
 
 void Scene::initEnemies()
 {
-    for(int i = 0; i < 100; i++){
-        _enemies[i].Init();
-        _enemies[i].setPosition(((14) + (i*0.25)),0.0);
+    for(int i = 0; i < numEnemies; i++){
+        _enemies[i]->Init();
+        _enemies[i]->setPosition(((14) + (i*0.25)),0.0);
     }
 }
 
 void Scene::drawEnemies()
 {
     glPushMatrix();
-    for (int i = 0; i < 100; i ++)
+    for (int i = 0; i < numEnemies; i ++)
     {
-        if(_enemies[i].isObjectLive)
+        if(_enemies[i]->isObjectLive)
         {
-        _enemies[i].actions();
+        _enemies[i]->actions();
         }
     }
     glPopMatrix();

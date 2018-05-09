@@ -66,6 +66,14 @@ void Player::Init()
     runRight[2].bindTexture("images/hero/tile026.png");
     runRight[3].bindTexture("images/hero/tile025.png");
     runRight[4].bindTexture("images/hero/tile024.png");
+
+    jmpL[0].bindTexture("images/hero/tile012.png");
+    jmpL[1].bindTexture("images/hero/tile013.png");
+    jmpL[2].bindTexture("images/hero/tile014.png");
+
+    jmpR[0].bindTexture("images/hero/tile017.png");
+    jmpR[1].bindTexture("images/hero/tile016.png");
+    jmpR[2].bindTexture("images/hero/tile015.png");
 }
 
 void Player::Update()
@@ -101,8 +109,6 @@ void Player::actions()
             T->reset();
           }
            standR[runspeed].binder();
-           Draw(width,height);
-
            glPopMatrix();
            break;
 
@@ -119,8 +125,6 @@ void Player::actions()
                 }
 
                runRight[runspeed].binder();
-               Draw(width,height);
-
            glPopMatrix();
         break;
 
@@ -138,7 +142,6 @@ void Player::actions()
                 }
 
                runLeft[runspeed].binder();
-               Draw(width,height);
            glPopMatrix();
         break;
 
@@ -154,7 +157,6 @@ void Player::actions()
                 }
 
                 standL[runspeed].binder();
-                Draw(width,height);
             glPopMatrix();
         break;
 
@@ -177,7 +179,6 @@ void Player::actions()
                     T->reset();
                 }
                 atkR[runspeed].binder();
-                Draw(width,height);
             glPopMatrix();
         break;
 
@@ -203,10 +204,36 @@ void Player::actions()
                 }
 
                 atkL[runspeed].binder();
-                Draw(width,height);
             glPopMatrix();
         break;
-     }
+
+    case JMPR:
+        glPushMatrix();
+            if(T->getTicks()>200)
+            {
+                runspeed++;
+                runspeed = runspeed %3;
+                T->reset();
+            }
+
+            jmpR[runspeed].binder();
+        glPopMatrix();
+    break;
+
+    case JMPL:
+        glPushMatrix();
+            if(T->getTicks()>200)
+            {
+                runspeed++;
+                runspeed = runspeed %3;
+                T->reset();
+            }
+
+            jmpL[runspeed].binder();
+        glPopMatrix();
+    break;
+    }
+Draw(width,height);
 }
 
 

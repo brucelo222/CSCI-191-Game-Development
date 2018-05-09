@@ -39,8 +39,14 @@ void Inputs::keyPressed(Player* player)
         }
     break;
     case VK_SPACE:
-        player->setAction(STANDR);
-        player->setAttacking(true);
+        if (player->getDirection() == RIGHT)
+        {
+            player->setAction(JMPR);
+        }
+        else
+        {
+            player->setAction(JMPL);
+        }
     break;
        default:break;
     }

@@ -24,8 +24,10 @@ GLint GameLoop::Initialize()
     glDisable(GL_COLOR_MATERIAL);
     glDepthFunc(GL_LEQUAL);
 
-    _level1->Init(_player);
-
+    _title->Init();
+    cout<<"init title"<<endl;
+    _level1->Init(_player, "images/bak.jpg");
+    cout<<"init level"<<endl;
     return true;
 }
 
@@ -54,7 +56,14 @@ void GameLoop::Render()
     //switch to model matrix
     glMatrixMode(GL_MODELVIEW);
 
-    _level1->Draw(_player);
+    if(sceneState == TITLE)
+    {
+        _title->Draw(_player);
+    }
+    else if(sceneState == LEVEL1)
+    {
+        _level1->Draw(_player);
+    }
 
 //particles
 
@@ -73,51 +82,54 @@ void GameLoop::Render()
 void GameLoop::Update()
 {
 
-    for(int i = 0; i < 100; i++)
+    if(sceneState == LEVEL1)
     {
-        if(_level1->getEnemies()[i].getHealth() == 0)
+        for(int i = 0; i < _level1->getEnemies().size(); i++)
         {
-            _level1->getEnemies()[i].isObjectLive = false;
+            if(_level1->getEnemies().at(i)->getHealth() == 0)
+            {
+                _level1->getEnemies().at(i)->isObjectLive = false;
+            }
         }
-    }
-    if(_player->getHealth() == 0)
-    {
-        _player->isObjectLive = false;
-        gameState = QUIT;
-    }
+        if(_player->getHealth() == 0)
+        {
+            _player->isObjectLive = false;
+            gameState = QUIT;
+        }
 
-    //add collision checks in update function for environment projectiles and enemies;
-    for(int i = 0; i < 100; i++)
-    {
-        if(_level1->getEnemies()[i].isObjectLive && _player->_hurtbox->active == true && _collision->AABB(_player->_hurtbox->collider,_level1->getEnemies()[i]._hitbox->collider))
+        //add collision checks in update function for environment projectiles and enemies;
+        for(int i = 0; i < _level1->getEnemies().size(); i++)
         {
-            cout<<"enemy hit"<<endl;
-            if(_level1->getEnemies()[i].getDirection() == LEFT)
+            if(_level1->getEnemies()[i]->isObjectLive && _player->_hurtbox->active == true && _collision->AABB(_player->_hurtbox->collider,_level1->getEnemies()[i]->_hitbox->collider))
             {
-             _level1->getEnemies()[i].setVelocity(-1.0,0);
+                cout<<"enemy hit"<<endl;
+                if(_level1->getEnemies()[i]->getDirection() == LEFT)
+                {
+                 _level1->getEnemies()[i]->setVelocity(-1.0,0);
+                }
+                else{
+                _level1->getEnemies()[i]->setVelocity(1.0,0);
+                }
+                _level1->getEnemies()[i]->setHealth(_level1->getEnemies()[i]->getHealth() - 25);
             }
-            else{
-            _level1->getEnemies()[i].setVelocity(1.0,0);
+            if(_level1->getEnemies()[i]->isObjectLive == true && _collision->AABB(_player->_hitbox->collider,_level1->getEnemies()[i]->_hitbox->collider))
+            {
+                cout<<"collide with player"<<endl;
+                if(_level1->getEnemies()[i]->getDirection() == LEFT)
+                {
+                    cout<<"collide on right"<<endl;
+                    _player->setVelocity(0.0,5.0);
+                }
+                else
+                {
+                    _player->setVelocity(1.0,1.0);
+                }
+                //_player->setHealth(_player->getHealth() - 50);
+                cout<<_player->getHealth()<<endl;
             }
-            _level1->getEnemies()[i].setHealth(_level1->getEnemies()[i].getHealth() - 25);
         }
-        if(_level1->getEnemies()[i].isObjectLive == true && _collision->AABB(_player->_hitbox->collider,_level1->getEnemies()[i]._hitbox->collider))
-        {
-            cout<<"collide with player"<<endl;
-            if(_level1->getEnemies()[i].getDirection() == LEFT)
-            {
-                cout<<"collide on right"<<endl;
-                _player->setVelocity(0.0,5.0);
-            }
-            else
-            {
-                _player->setVelocity(1.0,1.0);
-            }
-            //_player->setHealth(_player->getHealth() - 50);
-            cout<<_player->getHealth()<<endl;
-        }
+        _level1->Update(_player);
     }
-    _level1->Update(_player);
 }
 
 void GameLoop::winInputs(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
@@ -140,7 +152,7 @@ void GameLoop::winInputs(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 
         case WM_LBUTTONDOWN:
         {
-
+            sceneState = LEVEL1;
         break;								// Jump Back
         }
 

@@ -13,8 +13,8 @@ class Inputs
     public:
         Inputs();
         virtual ~Inputs();
-        void keyPressed(Player *);
-        void keyReleased(Player *);
+        void keyPressed(Player*);
+        void keyReleased(Player*);
 
         void setMouseCoords(Player *,float,float);
         void mouseEvent(Player *,float,float);
