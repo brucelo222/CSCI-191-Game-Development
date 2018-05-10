@@ -10,7 +10,7 @@ class Title : public Scene
         Title();
         virtual ~Title();
 
-        void Init();
+        void Init(char*);
         void Draw(Player*);
 
     private:

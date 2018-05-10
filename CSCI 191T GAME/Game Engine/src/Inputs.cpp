@@ -23,10 +23,8 @@ void Inputs::keyPressed(Player* player, SceneManager* sceneState)
                 exit(0);
             break;
 
-            case 0x4E:
-            break;
-
             case 0x48:
+                sceneState->setScene(HELP);
             break;
 
             case VK_RETURN:
@@ -35,8 +33,26 @@ void Inputs::keyPressed(Player* player, SceneManager* sceneState)
         }
     }
 
+    if(sceneState->getScene() == PAUSE || sceneState->getScene() ==RETRY)
+    {
+        switch(_wParam)
+        {
+            case 0x52:
+                sceneState->setScene(LEVEL1);
+                player->setPosition(-18,-5);
+                player->setHealth(100);
+            break;
+            case VK_ESCAPE:
+                sceneState->setScene(TITLE);
+            break;
+        }
+    }
+
     switch(_wParam)
     {
+    case VK_ESCAPE:
+        sceneState->setScene(PAUSE);
+    break;
     case VK_LEFT:
         player->setDirection(LEFT);
         if(player->isJump==false)
@@ -58,6 +74,7 @@ void Inputs::keyPressed(Player* player, SceneManager* sceneState)
         player->setDirection(RIGHT);
         if(player->isJump==false)
         {
+            cout<<player->rightStop<<endl;
             player->setAction(RUNR);
             if(player->rightStop!=true)
             {

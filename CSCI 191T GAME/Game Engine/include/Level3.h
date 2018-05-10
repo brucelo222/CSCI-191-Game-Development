@@ -12,7 +12,9 @@ class Level3 : public Scene
         void Init(Player*, char*);
         void Draw(Player*);
 
-    protected:
+        platform *stg1_platform1=new platform;
+
+        platform *platforms[1];
 
     private:
 };

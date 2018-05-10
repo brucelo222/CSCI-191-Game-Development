@@ -45,6 +45,8 @@
 			<Add library="opengl32" />
 			<Add library="glu32" />
 			<Add library="gdi32" />
+			<Add library="../Common/lib/irrKlang.lib" />
+			<Add library="../Common/lib/libirrKlang.a" />
 		</Linker>
 		<Unit filename="include/AI.h" />
 		<Unit filename="include/Agent.h" />
@@ -71,6 +73,7 @@
 		<Unit filename="include/Vector.h" />
 		<Unit filename="include/platform.h" />
 		<Unit filename="include/platformCollision.h" />
+		<Unit filename="include/sounds.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/AI.cpp" />
 		<Unit filename="src/Agent.cpp" />
@@ -95,6 +98,7 @@
 		<Unit filename="src/Title.cpp" />
 		<Unit filename="src/platform.cpp" />
 		<Unit filename="src/platformCollision.cpp" />
+		<Unit filename="src/sounds.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -53,6 +53,10 @@ class GameLoop
         Camera2D* _camera = new Camera2D();
         Collision *_collision = new Collision();
         Title *_title = new Title();
+        Title *_help = new Title();
+        Title *_pause = new Title();
+        Title *_retry = new Title();
+
         Level1 *_level1 = new Level1();
         Level2 *_level2 = new Level2();
         Level3 *_level3 = new Level3();
@@ -61,6 +65,10 @@ class GameLoop
         int collideSum;
                 Particles *p = new Particles();
         SceneManager *_sceneManager = new SceneManager();
+
+                sounds * stg1 = new sounds();
+        sounds * stg2 = new sounds();
+        sounds * stg3 = new sounds();
 };
 
 #endif // GAMELOOP_H

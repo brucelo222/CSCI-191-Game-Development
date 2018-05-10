@@ -1,7 +1,7 @@
 #ifndef SCENEMANAGER_H
 #define SCENEMANAGER_H
 
-enum SceneState{TITLE,LEVEL1,LEVEL2,LEVEL3};
+enum SceneState{TITLE,LEVEL1,LEVEL2,LEVEL3,PAUSE,RETRY,HELP};
 
 class SceneManager
 {

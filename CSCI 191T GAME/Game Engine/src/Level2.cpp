@@ -19,7 +19,7 @@ void Level2::Init(Player *player, char* fileName)
     initEnemies();
     initGoal("images/entrance",18,0);
 
-    stg1_platform1->initPlatform(-5.5,-7.0,20.0,-20.0);
+    stg1_platform1->initPlatform(-5.5,-8.0,20.0,-20.0);
 
     platforms[0] = stg1_platform1;
 }

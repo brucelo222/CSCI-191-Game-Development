@@ -95,12 +95,12 @@ void Scene::initEnemies()
 
     for(int i = 0; i < numHellHounds; i++){
         _Hounds[i]->Init();
-        _Hounds[i]->setPosition(((16) + (i*0.25)),0.0);
+        _Hounds[i]->setPosition(((10) + (i*0.25)),0.0);
     }
     for (int i = 0; i < numComodos; i++)
     {
         _Comodo[i]->Init();
-        _Comodo[i]->setPosition(((14) + (i*0.25)),0.0);
+        _Comodo[i]->setPosition(((-4) + (i*0.25)),-0.0);
     }
 }
 

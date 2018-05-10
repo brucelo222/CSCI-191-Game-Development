@@ -7,6 +7,7 @@
 #include "Agent.h"
 #include "Texture.h"
 #include "Timer.h"
+#include "Sounds.h"
 
 class Player : public Agent
 {
@@ -28,6 +29,7 @@ class Player : public Agent
         float falling;
 
     private:
+        sounds * sfx = new sounds();
         Gravity _gravity;
         //remove later
         Texture runRight[5];

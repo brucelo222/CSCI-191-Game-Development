@@ -79,9 +79,9 @@ class Scene
         int numHellHounds;
         int numComodos;
         int numPlatforms;
+        vector<platform*> _Platforms;
         vector<Enemy*> _Hounds;
         vector<Comodo*> _Comodo;
-        vector<platform*> _Platforms;
 };
 
 #endif // SCENE_H

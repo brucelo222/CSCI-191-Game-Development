@@ -35,6 +35,7 @@ Player::~Player()
 
 void Player::Init()
 {
+    sfx->initSounds();
     _hitbox->init(getPosition(),0.25,0.25);
     _hurtbox->init(getPosition(), 0.25,0.25);
 
@@ -87,7 +88,7 @@ void Player::Update()
     {
     //    actions();
     }
-    glTranslated(getPosition().x,getPosition().y,-1.0);
+    //glTranslated(getPosition().x,getPosition().y,-1.0);
     //apply physics
 
 }
@@ -116,7 +117,7 @@ void Player::actions()
                if(T->getTicks()>90)
                 {
                     //move pos
-                    setPosition(getPosition().x + Accelerate(), getPosition().y);
+                    setPosition(getPosition().x + 0.1, getPosition().y);
                     runspeed++;
                     runspeed = runspeed %3;
                     T->reset();
@@ -133,7 +134,7 @@ void Player::actions()
                if(T->getTicks()>90)
                 {
                     //move pos
-                    setPosition(getPosition().x - Accelerate(), getPosition().y);
+                    setPosition(getPosition().x - 0.1, getPosition().y);
                     runspeed++;
                     runspeed = runspeed %3;
                     T->reset();
@@ -159,6 +160,7 @@ void Player::actions()
         break;
 
         case ATKR://stdL
+            sfx->playSound("audio/sfx/Attack3.ogg");
             glPushMatrix();
                 //glTranslated(getPosition().x,getPosition().y,-1.0);
                 if(T->getTicks()>175)
@@ -182,6 +184,7 @@ void Player::actions()
         break;
 
         case ATKL://stdL
+            sfx->playSound("audio/sfx/Attack3.ogg");
             glPushMatrix();
                 //glTranslated(getPosition().x,getPosition().y,-1.0);
                 if(T->getTicks()>175)
@@ -214,7 +217,7 @@ void Player::actions()
      glPushMatrix();
         if(isJump==false){
 
-            maxMY=this->getPosition().y+3;
+            maxMY=this->getPosition().y+5;
             falling=this->getPosition().y;
             isJump=true;
             isFalling=false;

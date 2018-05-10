@@ -8,6 +8,7 @@ GameLoop::GameLoop()
     _screenHeight= GetSystemMetrics(SM_CYSCREEN);
     _screenWidth = GetSystemMetrics(SM_CXSCREEN);
     gameState = PLAY;
+    _sceneManager->setScene(TITLE);
 }
 
 GameLoop::~GameLoop()
@@ -24,7 +25,13 @@ GLint GameLoop::Initialize()
     glDisable(GL_COLOR_MATERIAL);
     glDepthFunc(GL_LEQUAL);
 
-    _title->Init();
+    stg1->initSounds();
+    stg2->initSounds();
+    stg3->initSounds();
+
+    _title->Init("images/titles/title.png");
+    _help->Init("images/help.png");
+    _pause->Init("images/pause.png");
 
     _level1->Init(_player, "images/stg1-0/stg1.png");
     _level2->Init(_player,"images/stg1-1/stg1-1.png");
@@ -49,24 +56,36 @@ GLvoid GameLoop::resizeScreen(GLsizei width, GLsizei height)
 void GameLoop::Render()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        glLoadIdentity();
+    glLoadIdentity();
     _player->setPrevPosition(_player->getPosition().x,_player->getPosition().y);
+
+        _camera->updateCameraPosition(_player->getPosition().x, _player->getPosition().y);
+        _camera->moveCamera();
     //render Camera
     //switch to model matrix
     glMatrixMode(GL_MODELVIEW);
 
     if(_sceneManager->getScene() == TITLE)
     {
-        _camera->updateCameraPosition(_player->getPosition().x, _player->getPosition().y);
-        _camera->moveCamera();
         _title->Draw(_player);
+    }
+    else if(_sceneManager->getScene() == HELP)
+    {
+        _help->Draw(_player);
+    }
+    else if(_sceneManager->getScene() == PAUSE)
+    {
+        _pause->Draw(_player);
+    }
+    else if(_sceneManager->getScene() == RETRY)
+    {
+        _retry->Draw(_player);
     }
     else if(_sceneManager->getScene() == LEVEL1)
     {
-    _camera->updateCameraPosition(_player->getPosition().x+1, _player->getPosition().y+1);
-    _camera->moveCamera();
         if(_level1->spawn)
         {
+        stg1->playMusic("audio/bgm/stg1.bgm");
         _player->setPosition(-18,-5);
         _level1->spawn = false;
         }
@@ -74,24 +93,19 @@ void GameLoop::Render()
     }
     else if(_sceneManager->getScene() == LEVEL2)
     {
-    _camera->updateCameraPosition(_player->getPosition().x+1, _player->getPosition().y+1);
-    _camera->moveCamera();
         if(_level2->spawn)
         {
-        _player->setPosition(-10,-5);
-        cout<<_player->getPosition().x<<endl;
+        stg2->playMusic("audio/bgm/stg2.bgm");
+        _player->setPosition(-12,6);
         _level2->spawn = false;
         }
         _level2->Draw(_player);
     }
     else if(_sceneManager->getScene() == LEVEL3)
     {
-    _camera->updateCameraPosition(_player->getPosition().x+1, _player->getPosition().y+1);
-    _camera->moveCamera();
         if(_level3->spawn)
         {
-        _level3->startPOS.x = -18;
-        _level3->startPOS.y = -5;
+        stg3->playMusic("audio/bgm/stg3.bgm");
         _player->setPosition(-11,-5);
         _level3->spawn = false;
         }
@@ -102,18 +116,19 @@ void GameLoop::Render()
 
 void GameLoop::Update()
 {
-collideSum=0;
+    if(_sceneManager->getScene() != TITLE || _sceneManager->getScene() != RETRY || _sceneManager->getScene() != HELP || _sceneManager->getScene() != PAUSE){
     if(_sceneManager->getScene() == LEVEL1)
     {
+        collideSum=0;
             for(int i=0;i < 8;i++){
                 collideSum+=collision->collision(_player,_level1->platforms[i]);
-                cout<<_level1->platforms[i]->yTop<<" "<<_level1->platforms[i]->yBottom<<endl;
+                //cout<<_level1->platforms[i]->yTop<<" "<<_level1->platforms[i]->yBottom<<endl;
             }
 
         //player level collision
         if(_collision->AABB(_player->_hitbox->collider, _level1->_goal->_hitbox->collider))
         {
-            cout<<"collided goal 1\n";
+            //cout<<"collided goal 1\n";
             _sceneManager->setScene(LEVEL2);
         }
 
@@ -123,11 +138,6 @@ collideSum=0;
             {
                 _level1->getComodos().at(i)->isObjectLive = false;
             }
-        }
-        if(_player->getHealth() <= 0||_player->getPosition().y < -8)
-        {
-            _player->isObjectLive = false;
-            gameState = QUIT;
         }
 
         //add collision checks in update function for environment projectiles and enemies;
@@ -175,7 +185,7 @@ collideSum=0;
                 collideSum=0;
             for(int i=0;i < 8;i++){
                 collideSum+=collision->collision(_player,_level1->platforms[i]);
-                cout<<collideSum<<endl;
+               // cout<<collideSum<<endl;
             }
         if(_collision->AABB(_player->_hitbox->collider, _level2->_goal->_hitbox->collider))
         {
@@ -273,27 +283,22 @@ collideSum=0;
         }
 
         //check if player dies
-        if(_player->getHealth() <= 0)
-        {
-            _player->isObjectLive = false;
-            gameState = QUIT;
-        }
         _level2->Update(_player);
     }
 
     else if(_sceneManager->getScene() == LEVEL3)
     {
+        collideSum=0;
+            for(int i=0;i < 8;i++){
+                collideSum+=collision->collision(_player,_level1->platforms[i]);
+               // cout<<collideSum<<endl;
+            }
         for(int i = 0; i < _level3->getComodos().size(); i++)
         {
             if(_level3->getComodos().at(i)->getHealth() == 0)
             {
                 _level3->getComodos().at(i)->isObjectLive = false;
             }
-        }
-        if(_player->getHealth() <= 0)
-        {
-            _player->isObjectLive = false;
-            gameState = QUIT;
         }
 
         //add collision checks in update function for environment projectiles and enemies;
@@ -329,6 +334,12 @@ collideSum=0;
         }
         _level3->Update(_player);
     }
+
+            if(_player->getHealth() <= 0||_player->getPosition().y < -8)
+        {
+            _player->isObjectLive = false;
+            _sceneManager->setScene(RETRY);
+        }
 
   //wall collision
         glPushMatrix();
@@ -401,7 +412,7 @@ collideSum=0;
     }
     glPopMatrix();
 }
-
+}
 void GameLoop::winInputs(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
      switch (uMsg)									// Check For Windows Messages

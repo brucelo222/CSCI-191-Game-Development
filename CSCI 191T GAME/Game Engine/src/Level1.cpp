@@ -12,15 +12,16 @@ Level1::~Level1()
 
 void Level1::Init(Player *player, char* fileName)
 {
-    setNumComods(20);
+    setNumComods(5);
+    setNumHellHounds(10);
     initBackground(fileName);
     initPlayer(player);
     initEnemies();
     initGoal("images/entrance.png",18,-5);
-    stg1_platform1->initPlatform(-5.5,-7.0,3.0,-20.0);
-    stg1_platform2->initPlatform(-3.0,-5.6,1.0,-6.0);
-    stg1_platform3->initPlatform(-5.5,-15.0,10,5.6);
-    //stg1_platform4->initPlatform(-2.7,-5.0,-3.3,-5.3);
+    stg1_platform1->initPlatform(-5.0,-7.0,3.0,-20.0);
+    stg1_platform2->initPlatform(-2.6,-5.6,-5.9,-10.1);
+    stg1_platform3->initPlatform(-1.6,-5.6,10,5.6);
+    stg1_platform4->initPlatform(-4.0,-7.0,18,9);
    // stg1_platform5->initPlatform(-0.4,-20.0,-3.3,-5.3);
 
     //stg1_platform6->initPlatform(-2.1,-20.0,-1.0,-3.3);

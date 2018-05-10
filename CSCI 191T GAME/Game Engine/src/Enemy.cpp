@@ -142,7 +142,7 @@ if(isObjectLive)
         break;
     }
 
-    if(getPosition().y > -5)
+    if(getPosition().y > -5.5)
     {
        float Y = _gravity->applyGravity(getPosition().y);
        setPosition(getPosition().x,Y);

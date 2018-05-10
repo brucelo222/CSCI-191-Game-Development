@@ -16,6 +16,10 @@ void Level3::Init(Player *player, char* fileName)
     initBackground(fileName);
     initPlayer(player);
     initEnemies();
+
+    stg1_platform1->initPlatform(-6.0,-7.0,30.0,-30.0);
+
+    platforms[0] = stg1_platform1;
 }
 
 void Level3::Draw(Player *player)
