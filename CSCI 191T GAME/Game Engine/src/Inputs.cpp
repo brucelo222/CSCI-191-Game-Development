@@ -41,9 +41,10 @@ void Inputs::keyPressed(Player* player, SceneManager* sceneState)
                 sceneState->setScene(LEVEL1);
                 player->setPosition(-18,-5);
                 player->setHealth(100);
+                return;
             break;
             case VK_ESCAPE:
-                sceneState->setScene(TITLE);
+
             break;
         }
     }

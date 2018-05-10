@@ -32,6 +32,7 @@ GLint GameLoop::Initialize()
     _title->Init("images/titles/title.png");
     _help->Init("images/help.png");
     _pause->Init("images/pause.png");
+    _retry->Init("images/defeat.png");
 
     _level1->Init(_player, "images/stg1-0/stg1.png");
     _level2->Init(_player,"images/stg1-1/stg1-1.png");
