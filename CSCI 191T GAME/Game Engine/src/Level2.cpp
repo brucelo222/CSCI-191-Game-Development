@@ -17,7 +17,11 @@ void Level2::Init(Player *player, char* fileName)
     initBackground(fileName);
     initPlayer(player);
     initEnemies();
-    initGoal("images/entrance",10,-5);
+    initGoal("images/entrance",18,0);
+
+    stg1_platform1->initPlatform(-5.5,-7.0,20.0,-20.0);
+
+    platforms[0] = stg1_platform1;
 }
 
 void Level2::Draw(Player *player)

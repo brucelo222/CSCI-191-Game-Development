@@ -65,7 +65,7 @@ void Comodo::attack(Vec2 playerPosition)
 
 void Comodo::Init()
 {
-    _hitbox->init(getPosition(),0.75,0.75);
+    _hitbox->init(getPosition(),1,2);
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);//trans
     T->start();
@@ -121,7 +121,7 @@ if(isObjectLive)
         break;
     }
 
-    if(getPosition().y > -5)
+    if(getPosition().y > -5.3)
     {
        float Y = _gravity->applyGravity(getPosition().y);
        setPosition(getPosition().x,Y);

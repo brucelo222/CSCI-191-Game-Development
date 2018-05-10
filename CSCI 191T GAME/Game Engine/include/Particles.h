@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <iostream>
 
-#define MAX_DROPS 50000
+#define MAX_DROPS 1000
 #define GRAVITY -0.001
 
 using namespace std;

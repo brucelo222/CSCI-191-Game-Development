@@ -19,6 +19,14 @@ class Player : public Agent
         void Update();
         void actions();
 
+        bool hasJump;
+        bool isJump;
+        bool isFalling;
+        bool leftStop;
+        bool rightStop;
+        float maxMY;
+        float falling;
+
     private:
         Gravity _gravity;
         //remove later
@@ -30,8 +38,6 @@ class Player : public Agent
         Texture atkL[3];
         Texture jmpR[3];
         Texture jmpL[3];
-
-        bool hasJump;
 };
 
 #endif // PLAYER_H

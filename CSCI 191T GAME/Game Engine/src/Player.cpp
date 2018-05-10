@@ -8,12 +8,15 @@ using namespace std;
 Player::Player()
 {
     //ctor
-    setPosition(10.0,0.0);
     hasJump = true;
-    setAction(STANDR);
     bool isAttacking = false;
-    width = 2.5;
-    height = 2.5;
+    isJump=false;
+    leftStop=false;
+    rightStop=false;
+    setAction(STANDR);
+
+    width = 3;
+    height = 3;
     setHealth(100);
     isObjectLive = true;
 
@@ -86,11 +89,6 @@ void Player::Update()
     }
     glTranslated(getPosition().x,getPosition().y,-1.0);
     //apply physics
-    if(getPosition().y > -5)
-    {
-       float Y = _gravity.applyGravity(getPosition().y);
-       setPosition(getPosition().x,Y);
-    }
 
 }
 
@@ -209,33 +207,224 @@ void Player::actions()
             glPopMatrix();
         break;
 
-    case JMPR:
-        glPushMatrix();
-            if(T->getTicks()>200)
-            {
-                runspeed++;
-                runspeed = runspeed %3;
-                T->reset();
+
+
+    case JUMP:
+
+     glPushMatrix();
+        if(isJump==false){
+
+            maxMY=this->getPosition().y+3;
+            falling=this->getPosition().y;
+            isJump=true;
+            isFalling=false;
+        }
+        //glTranslated(mX,mY,-1.0);
+        if(isJump==true&&this->getPosition().y<=maxMY&&isFalling==false){
+
+
+            setPosition(getPosition().x,getPosition().y+0.1);
+
+            if(getPosition().y>=maxMY){
+                this->isFalling=true;
+                            }
+        }
+        else if(isJump==true){
+
+            setPosition(this->getPosition().x,this->getPosition().y-0.1);
+
+        }
+        else{
+
+             this->setPosition(this->getPosition().x,falling);
+             isJump=false;
             }
 
-            jmpR[runspeed].binder();
-        glPopMatrix();
-    break;
 
-    case JMPL:
-        glPushMatrix();
-            if(T->getTicks()>200)
-            {
-                runspeed++;
-                runspeed = runspeed %3;
-                T->reset();
+
+        if(this->getPosition().y<=falling+0.3&&isFalling==false){
+            if(this->getDirection()==0){
+            jmpL[0].binder();
+            }
+            else{
+            jmpR[0].binder();
+            }
+        }
+        else if(this->getPosition().y<=falling+0.40&&isFalling==false){
+            if(this->getDirection()==0){
+            jmpL[1].binder();
+            }
+            else{
+            jmpR[1].binder();
             }
 
-            jmpL[runspeed].binder();
-        glPopMatrix();
+        }
+        else{
+             if(this->getDirection()==0){
+            jmpL[2].binder();
+            }
+            else{
+            jmpR[2].binder();
+            }
+        }
+
+       Draw(width,height);
+
+       glPopMatrix();
+
     break;
-    }
-Draw(width,height);
+    case JUMPLEFT:
+        glPushMatrix();
+
+        //glTranslated(mX,mY,-1.0);
+        if(isJump==true&&this->getPosition().y<=maxMY&&isFalling==false){
+
+
+            this->setPosition(this->getPosition().x-0.2,this->getPosition().y+0.2);
+
+            if(this->getPosition().y>=maxMY){
+                isFalling=true;
+                            }
+        }
+       // else if(isJump==true&&this->getPosition().y>=falling){
+    else if(isJump==true){
+            this->setPosition(this->getPosition().x-0.2,this->getPosition().y-0.2);
+
+        }
+        /*else{
+
+             this->setPosition(this->getPosition().x,falling);
+             isJump=false;
+            }*/
+        if(this->getPosition().y<=falling+0.2&&isFalling==false){
+            if(this->getDirection()==0){
+            jmpL[0].binder();
+            }
+            else{
+            jmpR[0].binder();
+            }
+        }
+        else if(this->getPosition().y<=falling+0.2&&isFalling==false){
+            if(this->getDirection()==0){
+            jmpL[1].binder();
+            }
+            else{
+            jmpR[1].binder();
+            }
+
+        }
+        else{
+             if(this->getDirection()==0){
+            jmpL[2].binder();
+            }
+            else{
+            jmpR[2].binder();
+            }
+        }
+
+       Draw(width,height);
+
+       glPopMatrix();
+
+    break;
+    case JUMPRIGHT:
+        glPushMatrix();
+
+        //glTranslated(mX,mY,-1.0);
+        if(isJump==true&&this->getPosition().y<=maxMY&&isFalling==false){
+
+
+            this->setPosition(this->getPosition().x+0.2,this->getPosition().y+0.2);
+
+            if(this->getPosition().y>=maxMY){
+                isFalling=true;
+                            }
+        }
+        //else if(isJump==true&&this->getPosition().y>=falling){
+                 else if(isJump==true){
+
+
+            this->setPosition(this->getPosition().x+0.2,this->getPosition().y-0.2);
+
+        }
+        /*
+        else{
+
+             this->setPosition(this->getPosition().x,falling);
+             isJump=false;
+            }*/
+        if(this->getPosition().y<=falling+0.2&&isFalling==false){
+            if(this->getDirection()==0){
+            jmpL[0].binder();
+            }
+            else{
+            jmpR[0].binder();
+            }
+        }
+        else if(this->getPosition().y<=falling+0.2&&isFalling==false){
+            if(this->getDirection()==0){
+            jmpL[1].binder();
+            }
+            else{
+            jmpR[1].binder();
+            }
+
+        }
+        else{
+             if(this->getDirection()==0){
+            jmpL[2].binder();
+            }
+            else{
+            jmpR[2].binder();
+            }
+        }
+
+       Draw(width,height);
+
+       glPopMatrix();
+
+    break;
+    case FREEFALL:
+     glPushMatrix();
+
+    if(this->getPosition().y<=falling+0.13&&isFalling==false){
+            if(this->getDirection()==0){
+            jmpL[0].binder();
+            }
+            else{
+            jmpR[0].binder();
+            }
+
+        }
+        else if(this->getPosition().y<=falling+0.40&&isFalling==false){
+
+            if(this->getDirection()==0){
+            jmpL[1].binder();
+            }
+            else{
+            jmpR[1].binder();
+            }
+        }
+        else{
+
+          if(this->getDirection()==0){
+            jmpL[2].binder();
+            }
+            else{
+            jmpR[2].binder();
+            }
+        }
+
+       Draw(width,height);
+
+       glPopMatrix();
+
+
+    break;
+    case UP:
+
+    break;
 }
 
-
+Draw(width,height);
+}

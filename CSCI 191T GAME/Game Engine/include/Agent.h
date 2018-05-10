@@ -8,7 +8,7 @@
 #include "Hitbox.h"
 
 enum Direction{LEFT,RIGHT};
-enum Action{RUNR,RUNL,STANDR,STANDL,ATKR,ATKL,JMPR,JMPL};
+enum Action{RUNR,RUNL,STANDR,STANDL,ATKR,ATKL,JUMP,JUMPRIGHT,JUMPLEFT,FREEFALL,UP};
 
 class Agent
 {

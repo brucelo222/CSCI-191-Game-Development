@@ -22,7 +22,7 @@ void Particles::draw()
         {
             if(drops[i].alive)
             {
-                glVertex3f(drops[i].xpos,drops[i].ypos,-1.0);
+                glVertex3f(drops[i].xpos,drops[i].ypos,-0.5);
             }
             i++;
         }

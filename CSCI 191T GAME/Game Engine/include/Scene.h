@@ -8,6 +8,8 @@
 #include "Comodo.h"
 #include "Player.h"
 #include "Vector.h"
+#include "platform.h"
+#include "Particles.h"
 
 #include <vector>
 
@@ -33,6 +35,8 @@ class Scene
         void drawPlayer(Player*);
         void initEnemies();
         void drawEnemies();
+        void drawPlatforms(platform*);
+        void drawParticles(Vec2);
 
         vector<Enemy*> getHellHounds(){return _Hounds;};
         void setNumHellHounds(int size)
@@ -54,6 +58,15 @@ class Scene
             }
         };
 
+        vector<platform*> getPlatforms(){return _Platforms;};
+        void setNumPlatforms(int size)
+        {
+        numPlatforms = size;
+        for (int i = 0; i <numPlatforms; i++)
+            {
+                _Platforms.push_back(new platform);
+            }
+        };
         GameObject *_goal = new GameObject();
         Vec2 startPOS;
         void setInitialPOS(Player* player){player->setPosition(startPOS.x,startPOS.y);};
@@ -65,8 +78,10 @@ class Scene
         //array of enemies
         int numHellHounds;
         int numComodos;
+        int numPlatforms;
         vector<Enemy*> _Hounds;
         vector<Comodo*> _Comodo;
+        vector<platform*> _Platforms;
 };
 
 #endif // SCENE_H

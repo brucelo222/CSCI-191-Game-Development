@@ -34,16 +34,40 @@ void Inputs::keyPressed(Player* player, SceneManager* sceneState)
             break;
         }
     }
+
     switch(_wParam)
     {
     case VK_LEFT:
-        player->setAction(RUNL);
         player->setDirection(LEFT);
+        if(player->isJump==false)
+        {
+            player->setAction(RUNL);
+            if(player->leftStop!=true)
+            {
+                player->setPosition(player->getPosition().x -player->Accelerate(), player->getPosition().y);
+            }
+        }
+        else
+        {
+             player->setAction(JUMPLEFT);
+
+        }
        // player->setPosition(player->getPosition().x -0.1, player->getPosition().y);
     break;
     case VK_RIGHT:
-        player->setAction(RUNR);
         player->setDirection(RIGHT);
+        if(player->isJump==false)
+        {
+            player->setAction(RUNR);
+            if(player->rightStop!=true)
+            {
+                player->setPosition(player->getPosition().x + player->Accelerate(), player->getPosition().y);
+            }
+        }
+        else
+        {
+            player->setAction(JUMPRIGHT);
+        }
      //   player->setPosition(player->getPosition().x + 0.1, player->getPosition().y);
     break;
     case 0x58:
@@ -58,14 +82,7 @@ void Inputs::keyPressed(Player* player, SceneManager* sceneState)
         }
     break;
     case VK_SPACE:
-        if (player->getDirection() == RIGHT)
-        {
-            player->setAction(JMPR);
-        }
-        else
-        {
-            player->setAction(JMPL);
-        }
+        player->setAction(JUMP);
     break;
        default:break;
     }
@@ -77,30 +94,40 @@ void Inputs::keyReleased(Player* player)
     {
 
     }
-    else if (player->getAttacking() == false)
-    {
-        if(player->getDirection() == RIGHT)
-        {
-            player->setAction(STANDR);
-        }
-        else if(player->getDirection() == LEFT)
-        {
-            player->setAction(STANDL);
-        }
-    }
-
-    if(player->getDirection() == RIGHT)
-    {
-        player->setAction(STANDR);
-    }
-    else if(player->getDirection() == LEFT)
-    {
-        player->setAction(STANDL);
-    }
-
     switch(_wParam)
     {
-       default:break;
+        case VK_LEFT:
+
+            player->setDirection(LEFT);
+            if(player->isJump==false)
+            {
+                player->setAction(STANDL);
+            }
+            else
+            {
+                 player->setAction(FREEFALL);
+            }
+        break;
+        case VK_RIGHT:
+
+            player->setDirection(RIGHT);
+            if(player->isJump==false)
+            {
+                player->setAction(STANDR);
+            }
+            else
+            {
+                player->setAction(FREEFALL);
+            }
+        break;
+
+
+        case VK_SPACE:
+            player->setAction(FREEFALL);
+        break;
+
+        default:
+        break;
     }
 }
 

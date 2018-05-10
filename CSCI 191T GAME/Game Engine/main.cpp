@@ -25,7 +25,7 @@ HINSTANCE	hInstance;		// Holds The Instance Of The Application
 
 bool	keys[256];			// Array Used For The Keyboard Routine
 bool	active=TRUE;		// Window Active Flag Set To TRUE By Default
-bool	fullscreen=TRUE;	// Fullscreen Flag Set To Fullscreen Mode By Default
+bool	fullscreen=FALSE;	// Fullscreen Flag Set To Fullscreen Mode By Default
 
 LRESULT	CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);	// Declaration For WndProc
 
@@ -325,7 +325,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
 	//}
 
 	// Create Our OpenGL Window
-	if (!CreateGLWindow("Name of Game",fullscreenWidth,fullscreenHeight,256,fullscreen))
+	if (!CreateGLWindow("Hell Bourne",fullscreenWidth,fullscreenHeight,256,fullscreen))
 	{
 		return 0;									// Quit If Window Was Not Created
 	}
@@ -363,7 +363,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
 				KillGLWindow();						// Kill Our Current Window
 				fullscreen=!fullscreen;				// Toggle Fullscreen / Windowed Mode
 				// Recreate Our OpenGL Window
-				if (!CreateGLWindow("Name of Game",fullscreenWidth,fullscreenHeight,256,fullscreen))
+				if (!CreateGLWindow("Hell Bourne",fullscreenWidth,fullscreenHeight,256,fullscreen))
 				{
 					return 0;						// Quit If Window Was Not Created
 				}

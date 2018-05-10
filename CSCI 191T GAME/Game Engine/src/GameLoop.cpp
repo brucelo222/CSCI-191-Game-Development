@@ -24,7 +24,6 @@ GLint GameLoop::Initialize()
     glDisable(GL_COLOR_MATERIAL);
     glDepthFunc(GL_LEQUAL);
 
-
     _title->Init();
 
     _level1->Init(_player, "images/stg1-0/stg1.png");
@@ -99,25 +98,19 @@ void GameLoop::Render()
         _level3->Draw(_player);
     }
 
-//particles
-
-    glPushMatrix();
-    glDisable(GL_TEXTURE_2D);
-    glTranslated(0.0,0.0,-1.0);
-    p->generateParticles(_player->getPosition());
-    p->draw();
-    p->lifeTime();
-    glColor3f(1.0,1.0,1.0);
-    glEnable(GL_TEXTURE_2D);
-    glPopMatrix();
-
 }
 
 void GameLoop::Update()
 {
-
+collideSum=0;
     if(_sceneManager->getScene() == LEVEL1)
     {
+            for(int i=0;i < 8;i++){
+                collideSum+=collision->collision(_player,_level1->platforms[i]);
+                cout<<_level1->platforms[i]->yTop<<" "<<_level1->platforms[i]->yBottom<<endl;
+            }
+
+        //player level collision
         if(_collision->AABB(_player->_hitbox->collider, _level1->_goal->_hitbox->collider))
         {
             cout<<"collided goal 1\n";
@@ -131,7 +124,7 @@ void GameLoop::Update()
                 _level1->getComodos().at(i)->isObjectLive = false;
             }
         }
-        if(_player->getHealth() <= 0)
+        if(_player->getHealth() <= 0||_player->getPosition().y < -8)
         {
             _player->isObjectLive = false;
             gameState = QUIT;
@@ -142,7 +135,6 @@ void GameLoop::Update()
         {
             if(_level1->getComodos()[i]->isObjectLive && _player->_hurtbox->active == true && _collision->AABB(_player->_hurtbox->collider,_level1->getComodos()[i]->_hitbox->collider))
             {
-                cout<<"enemy hit"<<endl;
                 if(_level1->getComodos()[i]->getDirection() == LEFT)
                 {
                  _level1->getComodos()[i]->setVelocity(-1.0,0);
@@ -151,6 +143,16 @@ void GameLoop::Update()
                 _level1->getComodos()[i]->setVelocity(1.0,0);
                 }
                 _level1->getComodos()[i]->setHealth(_level1->getComodos()[i]->getHealth() - 25);
+                //particles
+                    glPushMatrix();
+                    glDisable(GL_TEXTURE_2D);
+                    glTranslated(0.0,0.0,-1.0);
+                    p->generateParticles(_level1->getComodos()[i]->getPosition());
+                    p->draw();
+                    p->lifeTime();
+                    glColor3f(1.0,1.0,1.0);
+                    glEnable(GL_TEXTURE_2D);
+                    glPopMatrix();
             }
             if(_level1->getComodos()[i]->isObjectLive == true && _collision->AABB(_player->_hitbox->collider,_level1->getComodos()[i]->_hitbox->collider))
             {
@@ -163,17 +165,20 @@ void GameLoop::Update()
                     _player->setVelocity(1.0,1.0);
                 }
                 _player->setHealth(_player->getHealth() - 10);
-                cout<<_player->getHealth()<<endl;
             }
         }
         _level1->Update(_player);
     }
 
-    if(_sceneManager->getScene() == LEVEL2)
+    else if(_sceneManager->getScene() == LEVEL2)
     {
+                collideSum=0;
+            for(int i=0;i < 8;i++){
+                collideSum+=collision->collision(_player,_level1->platforms[i]);
+                cout<<collideSum<<endl;
+            }
         if(_collision->AABB(_player->_hitbox->collider, _level2->_goal->_hitbox->collider))
         {
-            cout<<"collided goal 2\n";
             _sceneManager->setScene(LEVEL3);
         }
         if(_level2->getComodos().size() > 0)
@@ -189,7 +194,6 @@ void GameLoop::Update()
                        //add collision checks in update function for environment projectiles and enemies;
             if(_level2->getComodos()[i]->isObjectLive && _player->_hurtbox->active == true && _collision->AABB(_player->_hurtbox->collider,_level2->getComodos()[i]->_hitbox->collider))
             {
-                cout<<"enemy hit"<<endl;
                 if(_level2->getComodos()[i]->getDirection() == LEFT)
                 {
                  _level2->getComodos()[i]->setVelocity(-1.0,0);
@@ -198,6 +202,15 @@ void GameLoop::Update()
                 _level2->getComodos()[i]->setVelocity(1.0,0);
                 }
                 _level2->getComodos()[i]->setHealth(_level2->getComodos()[i]->getHealth() - 25);
+                                    glPushMatrix();
+                    glDisable(GL_TEXTURE_2D);
+                    glTranslated(0.0,0.0,-1.0);
+                    p->generateParticles(_level1->getComodos()[i]->getPosition());
+                    p->draw();
+                    p->lifeTime();
+                    glColor3f(1.0,1.0,1.0);
+                    glEnable(GL_TEXTURE_2D);
+                    glPopMatrix();
             }
             if(_level2->getComodos()[i]->isObjectLive == true && _collision->AABB(_player->_hitbox->collider,_level2->getComodos()[i]->_hitbox->collider))
             {
@@ -234,6 +247,15 @@ void GameLoop::Update()
                     _level2->getHellHounds()[i]->setVelocity(1.0,0);
                     }
                     _level2->getHellHounds()[i]->setHealth(_level2->getHellHounds()[i]->getHealth() - 25);
+                                        glPushMatrix();
+                    glDisable(GL_TEXTURE_2D);
+                    glTranslated(0.0,0.0,-1.0);
+                    p->generateParticles(_level1->getComodos()[i]->getPosition());
+                    p->draw();
+                    p->lifeTime();
+                    glColor3f(1.0,1.0,1.0);
+                    glEnable(GL_TEXTURE_2D);
+                    glPopMatrix();
                 }
                 if(_level2->getHellHounds()[i]->isObjectLive == true && _collision->AABB(_player->_hitbox->collider,_level2->getHellHounds()[i]->_hitbox->collider))
                 {
@@ -259,7 +281,7 @@ void GameLoop::Update()
         _level2->Update(_player);
     }
 
-    if(_sceneManager->getScene() == LEVEL3)
+    else if(_sceneManager->getScene() == LEVEL3)
     {
         for(int i = 0; i < _level3->getComodos().size(); i++)
         {
@@ -307,6 +329,77 @@ void GameLoop::Update()
         }
         _level3->Update(_player);
     }
+
+  //wall collision
+        glPushMatrix();
+    glScaled(1.0,1.0,0.0);
+        if((collideSum==0||collideSum==2||collideSum==4)&&_player->isJump==false){
+            _player->isJump=true;
+            _player->isFalling=true;
+            _player->setAction(JUMP);
+			_player->actions();
+			//cout<<"adfasdfasdf"<<endl;
+
+        }
+
+        else if(_player->isJump==true){
+         if(collideSum>=1&&_player->isFalling==true){
+                //cout<<"enter Here"<<endl;
+                _player->isJump=false;
+
+            if(_player->getDirection() == LEFT){
+            _player->setAction(STANDL);
+            }
+            else{
+            _player->setAction(STANDR);
+            }
+
+            }
+         else if(_player->getAction()==JUMPRIGHT){
+         _player->actions();
+        }
+         else if(_player->getAction()==JUMPLEFT){
+         _player->actions();
+        }
+         else
+        {
+			_player->setAction(JUMP);
+			_player->actions();
+			}
+    }
+    else{
+
+        if(collideSum==1){
+                cout<<collideSum<<endl;
+                _player->leftStop=false;
+                _player->rightStop=false;
+
+        }
+
+         if((collideSum==2||collideSum==3)&&(_player->getAction()==RUNR)){
+            cout<<collideSum<<endl;
+            _player->rightStop=true;
+            if(_player->getDirection() == LEFT){
+            _player->setAction(STANDL);
+            }
+            else{
+            _player->setAction(STANDR);
+            }
+        }
+        else if((collideSum==4||collideSum==5)&&(_player->getAction()==RUNL)){
+            cout<<collideSum<<endl;
+            _player->leftStop=true;
+         if(_player->getDirection() == LEFT){
+             _player->setAction(STANDL);
+            }
+            else{
+            _player->setAction(STANDR);
+            }
+        }
+        _player->actions();
+
+    }
+    glPopMatrix();
 }
 
 void GameLoop::winInputs(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)

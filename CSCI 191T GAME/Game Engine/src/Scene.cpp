@@ -128,3 +128,18 @@ void Scene::drawEnemies()
     glPopMatrix();
 }
 
+void Scene::drawPlatforms(platform* platforms)
+{
+    for(int i = 0; i < 8; i++)
+    {
+    platforms[i].drawPlatform(2.0,2.0);
+    }
+}
+
+void Scene::drawParticles(Vec2 pos)
+{
+
+}
+
+
+
