@@ -529,14 +529,14 @@
 	<GL/gl.h>
 	<GL/glu.h>
 
-1525740937 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\enemy.cpp
+1525913960 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\enemy.cpp
 	"Enemy.h"
 	"Player.h"
 	<GL/gl.h>
 	<stdlib.h>
 	<iostream>
 
-1525906161 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\gameloop.cpp
+1525914039 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\gameloop.cpp
 	"GameLoop.h"
 	<iostream>
 
@@ -552,7 +552,7 @@
 	"Particles.h"
 	<GL/gl.h>
 
-1525906766 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\player.cpp
+1525911495 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\player.cpp
 	"Player.h"
 	<GL/gl.h>
 	<iostream>
@@ -596,14 +596,15 @@
 1525738290 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\hitbox.cpp
 	"Hitbox.h"
 
-1525905397 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\scene.cpp
+1525913905 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\scene.cpp
 	"Scene.h"
 	<iostream>
 
-1525905371 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\scene.h
+1525913734 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\scene.h
 	"string"
 	"Texture.h"
 	"Enemy.h"
+	"Comodo.h"
 	"Player.h"
 	<vector>
 	"Graphics.h"
@@ -625,7 +626,7 @@
 
 1525897345 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\level2.h
 
-1525905164 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\level1.cpp
+1525913822 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\level1.cpp
 	"Level1.h"
 	"iostream"
 
@@ -643,4 +644,13 @@
 
 1525902695 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\gameobject.cpp
 	"GameObject.h"
+
+1525915993 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\comodo.h
+	"Texture.h"
+	"Vector.h"
+	"Agent.h"
+	"AI.h"
+
+1525914641 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\comodo.cpp
+	"Comodo.h"
 

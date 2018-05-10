@@ -5,6 +5,7 @@
 
 #include "Texture.h"
 #include "Enemy.h"
+#include "Comodo.h"
 #include "Player.h"
 
 #include <vector>
@@ -30,13 +31,23 @@ class Scene
         void initEnemies();
         void drawEnemies();
 
-        vector<Enemy*> getEnemies(){return _enemies;};
-        void setNumEnemies(int size)
+        vector<Enemy*> getHellHounds(){return _Hounds;};
+        void setNumHellHounds(int size)
         {
-        numEnemies = size;
-        for (int i = 0; i <numEnemies; i++)
+        numHellHounds = size;
+        for (int i = 0; i < numHellHounds; i++)
             {
-                _enemies.push_back(new Enemy);
+                _Hounds.push_back(new Enemy);
+            }
+        };
+
+        vector<Comodo*> getComodos(){return _Comodo;};
+        void setNumComods(int size)
+        {
+        numComodos = size;
+        for (int i = 0; i <numComodos; i++)
+            {
+                _Comodo.push_back(new Comodo);
             }
         };
 
@@ -46,8 +57,10 @@ class Scene
         Graphics *_shape = new Graphics();
         //array of enemies
         //create a data class that has level data
-        int numEnemies;
-        vector<Enemy*> _enemies;
+        int numHellHounds;
+        int numComodos;
+        vector<Enemy*> _Hounds;
+        vector<Comodo*> _Comodo;
 };
 
 #endif // SCENE_H

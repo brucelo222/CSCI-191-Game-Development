@@ -12,7 +12,7 @@ Level1::~Level1()
 
 void Level1::Init(Player *player, char* fileName)
 {
-    setNumEnemies(20);
+    setNumComods(20);
     initBackground(fileName);
     initPlayer(player);
     initEnemies();

@@ -31,9 +31,9 @@ void Scene::Draw(Player* _player, int width, int height)
 void Scene::Update(Player *_player)
 {
     _player->Update();
-    for(int i = 0; i < numEnemies; i++)
+    for(int i = 0; i < numComodos; i++)
     {
-        _enemies[i]->Update(_player->getPosition());
+        _Comodo[i]->Update(_player->getPosition());
     }
 }
 
@@ -70,20 +70,37 @@ void Scene::drawPlayer(Player* _player)
 
 void Scene::initEnemies()
 {
-    for(int i = 0; i < numEnemies; i++){
+    /*
+    for(int i = 0; i < numHellHounds; i++){
         _enemies[i]->Init();
         _enemies[i]->setPosition(((14) + (i*0.25)),0.0);
+    } */
+    for (int i = 0; i < numComodos; i++)
+    {
+        _Comodo[i]->Init();
+        _Comodo[i]->setPosition(((14) + (i*0.25)),0.0);
     }
 }
 
 void Scene::drawEnemies()
 {
+    /*
     glPushMatrix();
-    for (int i = 0; i < numEnemies; i ++)
+    for (int i = 0; i < numComodos; i ++)
     {
-        if(_enemies[i]->isObjectLive)
+        if(_Comodo[i]->isObjectLive)
         {
-        _enemies[i]->actions();
+        _Comodo[i]->actions();
+        }
+    }
+    glPopMatrix();
+    */
+    glPushMatrix();
+    for (int i = 0; i < numComodos; i ++)
+    {
+        if(_Comodo[i]->isObjectLive)
+        {
+        _Comodo[i]->actions();
         }
     }
     glPopMatrix();

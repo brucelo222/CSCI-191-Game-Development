@@ -84,11 +84,11 @@ void GameLoop::Update()
 
     if(sceneState == LEVEL1)
     {
-        for(int i = 0; i < _level1->getEnemies().size(); i++)
+        for(int i = 0; i < _level1->getComodos().size(); i++)
         {
-            if(_level1->getEnemies().at(i)->getHealth() == 0)
+            if(_level1->getComodos().at(i)->getHealth() == 0)
             {
-                _level1->getEnemies().at(i)->isObjectLive = false;
+                _level1->getComodos().at(i)->isObjectLive = false;
             }
         }
         if(_player->getHealth() == 0)
@@ -98,24 +98,24 @@ void GameLoop::Update()
         }
 
         //add collision checks in update function for environment projectiles and enemies;
-        for(int i = 0; i < _level1->getEnemies().size(); i++)
+        for(int i = 0; i < _level1->getComodos().size(); i++)
         {
-            if(_level1->getEnemies()[i]->isObjectLive && _player->_hurtbox->active == true && _collision->AABB(_player->_hurtbox->collider,_level1->getEnemies()[i]->_hitbox->collider))
+            if(_level1->getComodos()[i]->isObjectLive && _player->_hurtbox->active == true && _collision->AABB(_player->_hurtbox->collider,_level1->getComodos()[i]->_hitbox->collider))
             {
                 cout<<"enemy hit"<<endl;
-                if(_level1->getEnemies()[i]->getDirection() == LEFT)
+                if(_level1->getComodos()[i]->getDirection() == LEFT)
                 {
-                 _level1->getEnemies()[i]->setVelocity(-1.0,0);
+                 _level1->getComodos()[i]->setVelocity(-1.0,0);
                 }
                 else{
-                _level1->getEnemies()[i]->setVelocity(1.0,0);
+                _level1->getComodos()[i]->setVelocity(1.0,0);
                 }
-                _level1->getEnemies()[i]->setHealth(_level1->getEnemies()[i]->getHealth() - 25);
+                _level1->getComodos()[i]->setHealth(_level1->getComodos()[i]->getHealth() - 25);
             }
-            if(_level1->getEnemies()[i]->isObjectLive == true && _collision->AABB(_player->_hitbox->collider,_level1->getEnemies()[i]->_hitbox->collider))
+            if(_level1->getComodos()[i]->isObjectLive == true && _collision->AABB(_player->_hitbox->collider,_level1->getComodos()[i]->_hitbox->collider))
             {
                 cout<<"collide with player"<<endl;
-                if(_level1->getEnemies()[i]->getDirection() == LEFT)
+                if(_level1->getComodos()[i]->getDirection() == LEFT)
                 {
                     cout<<"collide on right"<<endl;
                     _player->setVelocity(0.0,5.0);

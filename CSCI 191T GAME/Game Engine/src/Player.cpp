@@ -120,7 +120,7 @@ void Player::actions()
                     //move pos
                     setPosition(getPosition().x + Accelerate(), getPosition().y);
                     runspeed++;
-                    runspeed = runspeed %2;
+                    runspeed = runspeed %3;
                     T->reset();
                 }
 
@@ -137,7 +137,7 @@ void Player::actions()
                     //move pos
                     setPosition(getPosition().x - Accelerate(), getPosition().y);
                     runspeed++;
-                    runspeed = runspeed %2;
+                    runspeed = runspeed %3;
                     T->reset();
                 }
 
