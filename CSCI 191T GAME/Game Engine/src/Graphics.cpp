@@ -15,6 +15,7 @@ Graphics::~Graphics()
 void Graphics::drawQuad(float width, float height, float Layer, Color color)
 {
     glColor4f(color.r, color.g, color.b, color.a);
+	glPushMatrix();
 	glBegin(GL_QUADS);
 
     glTexCoord2f(0.0f, 0.0f);
@@ -27,6 +28,7 @@ void Graphics::drawQuad(float width, float height, float Layer, Color color)
 	glVertex3f(+width * 0.5f, +height * 0.5f, Layer);
 
 	glEnd();
+	    glPopMatrix();
 }
 
 

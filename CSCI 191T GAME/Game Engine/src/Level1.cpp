@@ -16,6 +16,8 @@ void Level1::Init(Player *player, char* fileName)
     initBackground(fileName);
     initPlayer(player);
     initEnemies();
+    initGoal("images/entrance.png",18,-5);
+
 }
 
 void Level1::Draw(Player *player)
@@ -23,5 +25,5 @@ void Level1::Draw(Player *player)
     drawBackground(50,15);
     drawPlayer(player);
     drawEnemies();
-    //Draw(player,50,15);
+    drawGoal();
 }

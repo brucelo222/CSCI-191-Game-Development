@@ -7,12 +7,13 @@
 #include "Enemy.h"
 #include "Comodo.h"
 #include "Player.h"
+#include "Vector.h"
 
 #include <vector>
 
 //temp
 #include "Graphics.h"
-
+#include "GameObject.h"
 
 class Scene
 {
@@ -24,6 +25,8 @@ class Scene
         void Draw(Player*,int,int);
         void Update(Player*);
 
+        void initGoal(char*,float,float);
+        void drawGoal();
         void initBackground(char*);
         void drawBackground(int, int);
         void initPlayer(Player*);
@@ -51,12 +54,15 @@ class Scene
             }
         };
 
+        GameObject *_goal = new GameObject();
+        Vec2 startPOS;
+        void setInitialPOS(Player* player){player->setPosition(startPOS.x,startPOS.y);};
+        bool spawn;
     private:
         //create a background class with struct that contains background textures, middle, fore, background
         Texture *_backgroundTexture = new Texture();
         Graphics *_shape = new Graphics();
         //array of enemies
-        //create a data class that has level data
         int numHellHounds;
         int numComodos;
         vector<Enemy*> _Hounds;

@@ -9,6 +9,8 @@
 #include "Title.h"
 #include "Level1.h"
 #include "Level2.h"
+#include "Level3.h"
+#include "SceneManager.h"
 
 #include "Particles.h"
 
@@ -16,7 +18,6 @@
 #include <GL/glut.h>
 
 enum GameState{PLAY,QUIT};
-enum SceneState{TITLE,LEVEL1,LEVEL2};
 
 class GameLoop
 {
@@ -31,7 +32,6 @@ class GameLoop
         GLint gameLoop();
 
         GameState gameState;
-        SceneState sceneState;
     private:
         //screen size variables
         float _screenHeight;
@@ -55,6 +55,9 @@ class GameLoop
         Title *_title = new Title();
         Level1 *_level1 = new Level1();
         Level2 *_level2 = new Level2();
+        Level3 *_level3 = new Level3();
+
+        SceneManager *_sceneManager = new SceneManager();
 };
 
 #endif // GAMELOOP_H

@@ -3,7 +3,7 @@
 
 #include "Vector.h"
 #include "Player.h"
-#include <Graphics.h>
+#include "SceneManager.h"
 
 #include <windows.h>
 #include <GL/gl.h>
@@ -13,7 +13,7 @@ class Inputs
     public:
         Inputs();
         virtual ~Inputs();
-        void keyPressed(Player*);
+        void keyPressed(Player*, SceneManager*);
         void keyReleased(Player*);
 
         void setMouseCoords(Player *,float,float);

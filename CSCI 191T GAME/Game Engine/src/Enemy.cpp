@@ -122,6 +122,9 @@ void Enemy::Init()
 
 void Enemy::Update(Vec2 playerPOS)
 {
+
+if(isObjectLive)
+{
     _hitbox->update(getPosition());
     aiManager(playerPOS, getPosition());
     switch (getState())
@@ -138,10 +141,16 @@ void Enemy::Update(Vec2 playerPOS)
         default:
         break;
     }
-return;
+
+    if(getPosition().y > -5)
+    {
+       float Y = _gravity->applyGravity(getPosition().y);
+       setPosition(getPosition().x,Y);
+    }
     //call switch of AI states the preform the logic
     aiManager(playerPOS, getPosition());
-    glTranslated(getPosition().x,getPosition().y, -1.0);
+ //   glTranslated(getPosition().x,getPosition().y, -1.0);
+    }
 }
 
 

@@ -70,43 +70,39 @@ void Comodo::Init()
     glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);//trans
     T->start();
 
-    CatkR[0].bindTexture("images/enemy/lizard/ar1.png");
-    CatkR[1].bindTexture("images/enemy/lizard/ar2.png");
-    CatkR[2].bindTexture("images/enemy/lizard/ar3.png");
-    CatkR[3].bindTexture("images/enemy/lizard/ar4.png");
-    CatkR[4].bindTexture("images/enemy/lizard/ar5.png");
-    CatkR[5].bindTexture("images/enemy/lizard/ar6.png");
+    CatkR[0].bindTexture("images/enemy/bapho/ar1.png");
+    CatkR[1].bindTexture("images/enemy/bapho/ar2.png");
+    CatkR[2].bindTexture("images/enemy/bapho/ar3.png");
+    CatkR[3].bindTexture("images/enemy/bapho/ar4.png");
+    CatkR[4].bindTexture("images/enemy/bapho/ar5.png");
+    CatkR[5].bindTexture("images/enemy/bapho/ar6.png");
 
-    CatkL[0].bindTexture("images/enemy/lizard/atkl01.PNG");
-    CatkL[1].bindTexture("images/enemy/lizard/al2.png");
-    CatkL[2].bindTexture("images/enemy/lizard/al3.png");
-    CatkL[3].bindTexture("images/enemy/lizard/al4.png");
-    CatkL[4].bindTexture("images/enemy/lizard/al5.png");
-    CatkL[5].bindTexture("images/enemy/lizard/al6.png");
+    CatkL[0].bindTexture("images/enemy/bapho/al1.png");
+    CatkL[1].bindTexture("images/enemy/bapho/al2.png");
+    CatkL[2].bindTexture("images/enemy/bapho/al3.png");
+    CatkL[3].bindTexture("images/enemy/bapho/al4.png");
+    CatkL[4].bindTexture("images/enemy/bapho/al5.png");
+    CatkL[5].bindTexture("images/enemy/bapho/al6.png");
 
-    CstandR[0].bindTexture("images/enemy/lizard/ir1.png");
-    CstandR[1].bindTexture("images/enemy/lizard/ir2.png");
+    CstandR[0].bindTexture("images/enemy/bapho/ar1.png");
 
-    CstandL[0].bindTexture("images/enemy/lizard/il1.png");
-    CstandL[1].bindTexture("images/enemy/lizard/il2.png");
+    CstandL[0].bindTexture("images/enemy/bapho/al1.png");
 
-    CrunLeft[0].bindTexture("images/enemy/lizard/l1.PNG");
-    CrunLeft[1].bindTexture("images/enemy/lizard/l2.png");
-    CrunLeft[2].bindTexture("images/enemy/lizard/l3.png");
-    CrunLeft[3].bindTexture("images/enemy/lizard/l4.png");
-    CrunLeft[4].bindTexture("images/enemy/lizard/l5.png");
-    CrunLeft[5].bindTexture("images/enemy/lizard/l6.png");
+    CrunLeft[0].bindTexture("images/enemy/bapho/l1.PNG");
+    CrunLeft[1].bindTexture("images/enemy/bapho/l2.png");
+    CrunLeft[2].bindTexture("images/enemy/bapho/l3.png");
+    CrunLeft[3].bindTexture("images/enemy/bapho/l4.png");
 
-    CrunRight[0].bindTexture("images/enemy/lizard/r1.png");
-    CrunRight[1].bindTexture("images/enemy/lizard/r2.png");
-    CrunRight[2].bindTexture("images/enemy/lizard/r3.png");
-    CrunRight[3].bindTexture("images/enemy/lizard/r4.png");
-    CrunRight[4].bindTexture("images/enemy/lizard/r5.png");
-    CrunRight[5].bindTexture("images/enemy/lizard/r6.png");
+    CrunRight[0].bindTexture("images/enemy/bapho/r1.png");
+    CrunRight[1].bindTexture("images/enemy/bapho/r2.png");
+    CrunRight[2].bindTexture("images/enemy/bapho/r3.png");
+    CrunRight[3].bindTexture("images/enemy/bapho/r4.png");
     return;
 }
 
 void Comodo::Update(Vec2 playerPOS)
+{
+if(isObjectLive)
 {
     _hitbox->update(getPosition());
     aiManager(playerPOS, getPosition());
@@ -124,12 +120,17 @@ void Comodo::Update(Vec2 playerPOS)
         default:
         break;
     }
-return;
+
+    if(getPosition().y > -5)
+    {
+       float Y = _gravity->applyGravity(getPosition().y);
+       setPosition(getPosition().x,Y);
+    }
     //call switch of AI states the preform the logic
     aiManager(playerPOS, getPosition());
-    glTranslated(getPosition().x,getPosition().y, -1.0);
+    //glTranslated(getPosition().x,getPosition().y, -1.0);
+    }
 }
-
 
 void Comodo::actions()
 {
@@ -142,7 +143,7 @@ void Comodo::actions()
            if(T->getTicks()>200){
 
             runspeed++;
-            runspeed = runspeed %2;
+            runspeed = runspeed %1;
             T->reset();
           }
            CstandR[runspeed].binder();
@@ -158,7 +159,7 @@ void Comodo::actions()
                 {
                   //  mX+=xSpeed;
                     runspeed++;
-                    runspeed = runspeed %6;
+                    runspeed = runspeed %4;
                     T->reset();
                 }
 
@@ -175,7 +176,7 @@ void Comodo::actions()
                 {
                     //mX-=xSpeed;
                     runspeed++;
-                    runspeed = runspeed %6;
+                    runspeed = runspeed %4;
                     T->reset();
                 }
 
@@ -191,7 +192,7 @@ void Comodo::actions()
                 if(T->getTicks()>300)
                 {
                     runspeed++;
-                    runspeed = runspeed %2;
+                    runspeed = runspeed %1;
                     T->reset();
                 }
 
@@ -207,7 +208,7 @@ void Comodo::actions()
                 if(T->getTicks()>100)
                 {
                     runspeed++;
-                    runspeed = runspeed %6;
+                    runspeed = runspeed %5;
                     T->reset();
                 }
 
@@ -223,7 +224,7 @@ void Comodo::actions()
                 if(T->getTicks()>100)
                 {
                     runspeed++;
-                    runspeed = runspeed %6;
+                    runspeed = runspeed %5;
                     T->reset();
                 }
 

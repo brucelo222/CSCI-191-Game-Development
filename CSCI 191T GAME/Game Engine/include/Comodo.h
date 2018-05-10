@@ -5,6 +5,7 @@
 #include "Vector.h"
 #include "Agent.h"
 #include "AI.h"
+#include "Physics.h"
 
 
 
@@ -28,11 +29,12 @@ class Comodo : public Agent , public AI
     private:
         float width;
         float height;
+        Gravity *_gravity = new Gravity();
 
-        Texture CrunRight[6];
-        Texture CrunLeft[6];
-        Texture CstandL[2];
-        Texture CstandR[2];
+        Texture CrunRight[4];
+        Texture CrunLeft[4];
+        Texture CstandL[1];
+        Texture CstandR[1];
         Texture CatkR[6];
         Texture CatkL[6];
 };

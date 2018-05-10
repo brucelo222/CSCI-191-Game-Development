@@ -86,7 +86,7 @@ void Player::Update()
     }
     glTranslated(getPosition().x,getPosition().y,-1.0);
     //apply physics
-    if(getPosition().y > 0)
+    if(getPosition().y > -5)
     {
        float Y = _gravity.applyGravity(getPosition().y);
        setPosition(getPosition().x,Y);
@@ -171,6 +171,7 @@ void Player::actions()
                     if (runspeed == 3)
                     {
                         _hurtbox->collider.x = getPosition().x;
+                        _hurtbox->collider.y = getPosition().y;
                         _hurtbox->active = false;
                         setAttacking(false);
                         setAction(STANDR);
@@ -192,6 +193,7 @@ void Player::actions()
                     runspeed++;
                     if (runspeed == 3)
                     {
+                        _hurtbox->collider.y = getPosition().y;
                         _hurtbox->collider.x = getPosition().x;
                         _hurtbox->active = false;
                         setAttacking(false);

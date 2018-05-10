@@ -4,6 +4,7 @@
 #include "Player.h"
 #include "Agent.h"
 #include "AI.h"
+#include "Physics.h"
 
 
 class Enemy : public Agent, public AI
@@ -25,6 +26,9 @@ class Enemy : public Agent, public AI
     private:
         float width;
         float height;
+
+        Gravity *_gravity = new Gravity();
+
         Texture ErunRight[5];
         Texture ErunLeft[5];
         Texture EstandL[6];

@@ -59,12 +59,13 @@
 		<Unit filename="include/Inputs.h" />
 		<Unit filename="include/Level1.h" />
 		<Unit filename="include/Level2.h" />
+		<Unit filename="include/Level3.h" />
 		<Unit filename="include/Particles.h" />
 		<Unit filename="include/Physics.h" />
 		<Unit filename="include/Player.h" />
 		<Unit filename="include/Scene.h" />
+		<Unit filename="include/SceneManager.h" />
 		<Unit filename="include/Texture.h" />
-		<Unit filename="include/TextureManager.h" />
 		<Unit filename="include/Timer.h" />
 		<Unit filename="include/Title.h" />
 		<Unit filename="include/Vector.h" />
@@ -82,9 +83,11 @@
 		<Unit filename="src/Inputs.cpp" />
 		<Unit filename="src/Level1.cpp" />
 		<Unit filename="src/Level2.cpp" />
+		<Unit filename="src/Level3.cpp" />
 		<Unit filename="src/Particles.cpp" />
 		<Unit filename="src/Player.cpp" />
 		<Unit filename="src/Scene.cpp" />
+		<Unit filename="src/SceneManager.cpp" />
 		<Unit filename="src/Texture.cpp" />
 		<Unit filename="src/Timer.cpp" />
 		<Unit filename="src/Title.cpp" />

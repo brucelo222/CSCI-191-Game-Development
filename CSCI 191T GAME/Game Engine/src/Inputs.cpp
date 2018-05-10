@@ -13,8 +13,27 @@ Inputs::~Inputs()
     //dtor
 }
 
-void Inputs::keyPressed(Player* player)
+void Inputs::keyPressed(Player* player, SceneManager* sceneState)
 {
+    if(sceneState->getScene() == TITLE)
+    {
+        switch(_wParam)
+        {
+            case VK_ESCAPE:
+                exit(0);
+            break;
+
+            case 0x4E:
+            break;
+
+            case 0x48:
+            break;
+
+            case VK_RETURN:
+            sceneState->setScene(LEVEL1);
+            break;
+        }
+    }
     switch(_wParam)
     {
     case VK_LEFT:
@@ -58,7 +77,19 @@ void Inputs::keyReleased(Player* player)
     {
 
     }
-    else if(player->getDirection() == RIGHT)
+    else if (player->getAttacking() == false)
+    {
+        if(player->getDirection() == RIGHT)
+        {
+            player->setAction(STANDR);
+        }
+        else if(player->getDirection() == LEFT)
+        {
+            player->setAction(STANDL);
+        }
+    }
+
+    if(player->getDirection() == RIGHT)
     {
         player->setAction(STANDR);
     }

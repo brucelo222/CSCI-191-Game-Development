@@ -14,7 +14,9 @@ class Title : public Scene
         void Draw(Player*);
 
     private:
-       GameObject _buttons[3];
+       GameObject* _play = new GameObject();
+       GameObject* _help = new GameObject();
+       GameObject* _exit = new GameObject();
 };
 
 #endif // TITLE_H

@@ -3,6 +3,7 @@
 Scene::Scene()
 {
     //ctor
+    spawn = true;
 }
 
 Scene::~Scene()
@@ -12,14 +13,24 @@ Scene::~Scene()
 
 void Scene::Init(Player* _player, char* fileName)
 {
-    std::cout<<"scene init\n";
+
     initBackground(fileName);
-    std::cout<<"init background"<<std::endl;
+
     initPlayer(_player);
-    std::cout<<"init players"<<std::endl;
+
     initEnemies();
-    std::cout<<"init enemies"<<std::endl;
 }
+
+void Scene::initGoal(char*, float x, float y)
+{
+    _goal->Init("images/entrance.png",x,y);
+}
+
+void Scene::drawGoal()
+{
+    _goal->Draw(3,3);
+}
+
 
 void Scene::Draw(Player* _player, int width, int height)
 {
@@ -31,9 +42,20 @@ void Scene::Draw(Player* _player, int width, int height)
 void Scene::Update(Player *_player)
 {
     _player->Update();
-    for(int i = 0; i < numComodos; i++)
+
+    if (getComodos().size() > 0)
     {
-        _Comodo[i]->Update(_player->getPosition());
+        for(int i = 0; i < numComodos; i++)
+        {
+            _Comodo[i]->Update(_player->getPosition());
+        }
+    }
+    if (getHellHounds().size() > 0)
+    {
+        for(int i = 0; i < numHellHounds; i++)
+        {
+            _Hounds[i]->Update(_player->getPosition());
+        }
     }
 }
 
@@ -70,11 +92,11 @@ void Scene::drawPlayer(Player* _player)
 
 void Scene::initEnemies()
 {
-    /*
+
     for(int i = 0; i < numHellHounds; i++){
-        _enemies[i]->Init();
-        _enemies[i]->setPosition(((14) + (i*0.25)),0.0);
-    } */
+        _Hounds[i]->Init();
+        _Hounds[i]->setPosition(((16) + (i*0.25)),0.0);
+    }
     for (int i = 0; i < numComodos; i++)
     {
         _Comodo[i]->Init();
@@ -84,17 +106,17 @@ void Scene::initEnemies()
 
 void Scene::drawEnemies()
 {
-    /*
+
     glPushMatrix();
-    for (int i = 0; i < numComodos; i ++)
+    for (int i = 0; i < numHellHounds; i ++)
     {
-        if(_Comodo[i]->isObjectLive)
+        if(_Hounds[i]->isObjectLive)
         {
-        _Comodo[i]->actions();
+        _Hounds[i]->actions();
         }
     }
     glPopMatrix();
-    */
+
     glPushMatrix();
     for (int i = 0; i < numComodos; i ++)
     {

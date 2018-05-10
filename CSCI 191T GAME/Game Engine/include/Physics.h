@@ -7,7 +7,7 @@ class Gravity{
 public:
     float applyGravity(float yVelocity){ return yVelocity += gravity;};
 private:
-    const float gravity = -.002;
+    const float gravity = -.091;
 };
 
 

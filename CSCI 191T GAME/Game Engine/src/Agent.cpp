@@ -16,7 +16,7 @@ void Agent::Draw(float width, float height)
 {
     //glLoadIdentity();
     glTranslated(_Position.x,_Position.y,-1.0);
-    _shape->drawQuad(width,height,-1.0,Color(1.0,1.0,1.0,1.0));
+    _shape->drawQuad(width,height, -1.0,Color(1.0,1.0,1.0,1.0));
 }
 
 float Agent::Accelerate()
