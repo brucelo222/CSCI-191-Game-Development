@@ -23,7 +23,11 @@ GLint GameLoop::Initialize()
     glEnable(GL_DEPTH_TEST);
     glDisable(GL_COLOR_MATERIAL);
     glDepthFunc(GL_LEQUAL);
-
+/**********Music********************/
+    stg1->initSounds();
+    stg2->initSounds();
+    stg3->initSounds();
+/**********************************/
     _title->Init();
     cout<<"init title"<<endl;
     _level1->Init(_player, "images/bak.jpg");
@@ -84,6 +88,7 @@ void GameLoop::Update()
 
     if(sceneState == LEVEL1)
     {
+
         for(int i = 0; i < _level1->getComodos().size(); i++)
         {
             if(_level1->getComodos().at(i)->getHealth() == 0)

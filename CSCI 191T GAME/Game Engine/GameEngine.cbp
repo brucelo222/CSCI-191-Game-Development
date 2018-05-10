@@ -42,6 +42,8 @@
 		</Compiler>
 		<Linker>
 			<Add library="../Common/lib/libSOIL.a" />
+			<Add library="../Common/lib/irrKlang.lib" />
+			<Add library="../Common/lib/libirrKlang.a" />
 			<Add library="opengl32" />
 			<Add library="glu32" />
 			<Add library="gdi32" />
@@ -68,6 +70,7 @@
 		<Unit filename="include/Timer.h" />
 		<Unit filename="include/Title.h" />
 		<Unit filename="include/Vector.h" />
+		<Unit filename="include/sounds.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/AI.cpp" />
 		<Unit filename="src/Agent.cpp" />
@@ -88,6 +91,7 @@
 		<Unit filename="src/Texture.cpp" />
 		<Unit filename="src/Timer.cpp" />
 		<Unit filename="src/Title.cpp" />
+		<Unit filename="src/sounds.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -654,14 +654,14 @@
 1525914641 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\comodo.cpp
 	"Comodo.h"
 
-1525926322 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\main.cpp
+1525945119 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\main.cpp
 	<windows.h>
 	"GameLoop.h"
 	<stdlib.h>
 	<iostream>
 	<windows.h>
 
-1525926322 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\gameloop.h
+1525948118 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\gameloop.h
 	"Inputs.h"
 	"Player.h"
 	"Camera2D.h"
@@ -671,63 +671,65 @@
 	"Level1.h"
 	"Level2.h"
 	"Particles.h"
+	"sounds.h"
 	<windows.h>
 	<GL/glut.h>
 
-1525926322 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\inputs.h
+1525945119 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\inputs.h
 	"Vector.h"
 	"Player.h"
 	<Graphics.h>
 	<windows.h>
 	<GL/gl.h>
 
-1525926322 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\vector.h
+1525945119 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\vector.h
 	<math.h>
 
-1525926322 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\player.h
+1525946431 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\player.h
 	"Graphics.h"
 	"Physics.h"
 	"Vector.h"
 	"Agent.h"
 	"Texture.h"
 	"Timer.h"
+	"sounds.h"
 
-1525926322 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\graphics.h
+1525944794 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\graphics.h
 
-1525926322 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\physics.h
+1525945119 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\physics.h
 	"Vector.h"
 
-1525926322 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\agent.h
+1525945119 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\agent.h
 	<Vector.h>
 	"Graphics.h"
 	"Timer.h"
 	"Hitbox.h"
 
-1525926322 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\timer.h
+1525944794 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\timer.h
 	<time.h>
 
-1525926322 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\hitbox.h
+1525945119 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\hitbox.h
 	<Vector.h>
 	<Graphics.h>
 	<string>
 
-1525926322 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\texture.h
+1525944794 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\texture.h
 	<SOIL.h>
 	<GL/gl.h>
 
-1525926322 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\soil.h
+1525944794 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\soil.h
 
-1525926322 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\camera2d.h
+1525944794 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\camera2d.h
 	"Vector.h"
 
-1525926322 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\collision.h
+1525945119 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\collision.h
 	<Vector.h>
 
-1525926322 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\title.h
+1525945119 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\title.h
 	"Scene.h"
 	"GameObject.h"
 
-1525943848 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\scene.h
+1525945119 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\scene.h
 	"string"
 	"Texture.h"
 	"Enemy.h"
@@ -736,115 +738,219 @@
 	<vector>
 	"Graphics.h"
 
-1525926322 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\enemy.h
+1525945119 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\enemy.h
 	"Player.h"
 	"Agent.h"
 	"AI.h"
 
-1525926322 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\ai.h
+1525944794 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\ai.h
 	"Vector.h"
 
-1525944241 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\comodo.h
+1525945119 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\comodo.h
 	"Texture.h"
 	"Vector.h"
 	"Agent.h"
 	"AI.h"
 
-1525926322 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\gameobject.h
+1525945119 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\gameobject.h
 	<Graphics.h>
 	<Texture.h>
 	<Vector.h>
 
-1525926322 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\level1.h
+1525945119 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\level1.h
 	"Player.h"
 	"Scene.h"
 
-1525926322 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\level2.h
+1525945119 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\level2.h
 
-1525926322 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\particles.h
+1525945119 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\particles.h
 	<Vector.h>
 	<math.h>
 	<stdlib.h>
 	<iostream>
 
-1525926322 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\gl\glut.h
+1525944794 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\gl\glut.h
 	<windows.h>
 	<stdlib.h>
 	<GL/gl.h>
 	<GL/glu.h>
 
-1525926323 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\agent.cpp
+1525945119 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\agent.cpp
 	"Agent.h"
 	<GL/gl.h>
 
-1525926323 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\ai.cpp
+1525945119 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\ai.cpp
 	"AI.h"
 	<iostream>
 
-1525943848 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\camera2d.cpp
+1525945119 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\camera2d.cpp
 	"Camera2D.h"
 	<GL/glu.h>
 
-1525926323 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\collision.cpp
+1525945119 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\collision.cpp
 	"Collision.h"
 	<iostream>
 
-1525944420 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\comodo.cpp
+1525945119 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\comodo.cpp
 	"Comodo.h"
 
-1525926323 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\enemy.cpp
+1525945119 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\enemy.cpp
 	"Enemy.h"
 	"Player.h"
 	<GL/gl.h>
 	<stdlib.h>
 	<iostream>
 
-1525943848 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\gameloop.cpp
+1525945120 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\gameloop.cpp
 	"GameLoop.h"
 	<iostream>
 
-1525926323 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\gameobject.cpp
+1525945120 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\gameobject.cpp
 	"GameObject.h"
 
-1525926323 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\graphics.cpp
+1525944795 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\graphics.cpp
 	"Graphics.h"
 	<GL/gl.h>
 
-1525926323 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\hitbox.cpp
+1525945120 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\hitbox.cpp
 	"Hitbox.h"
 
-1525926323 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\inputs.cpp
+1525945120 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\inputs.cpp
 	"Inputs.h"
 	<iostream>
 
-1525926323 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\level1.cpp
+1525945120 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\level1.cpp
 	"Level1.h"
 	"iostream"
 
-1525926323 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\level2.cpp
+1525945120 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\level2.cpp
 	"Level2.h"
 
-1525926323 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\particles.cpp
+1525945120 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\particles.cpp
 	"Particles.h"
 	<GL/gl.h>
 
-1525926323 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\player.cpp
+1525947790 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\player.cpp
 	"Player.h"
 	<GL/gl.h>
 	<iostream>
 
-1525943848 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\scene.cpp
+1525945120 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\scene.cpp
 	"Scene.h"
 	<iostream>
 
-1525926323 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\texture.cpp
+1525944795 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\texture.cpp
 	"Texture.h"
 	<iostream>
 
-1525926323 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\timer.cpp
+1525944795 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\timer.cpp
 	"Timer.h"
 
-1525926323 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\title.cpp
+1525945120 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\title.cpp
 	"Title.h"
 	<iostream>
+
+1525947209 source:c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\src\sounds.cpp
+	"sounds.h"
+	<iostream>
+
+1522715875 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\game engine\include\sounds.h
+	<SNDS/irrKlang.h>
+
+1517335446 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\snds\irrklang.h
+	"ik_irrKlangTypes.h"
+	"ik_vec3d.h"
+	"ik_IRefCounted.h"
+	"ik_IVirtualRefCounted.h"
+	"ik_ESoundOutputDrivers.h"
+	"ik_ESoundEngineOptions.h"
+	"ik_EStreamModes.h"
+	"ik_SAudioStreamFormat.h"
+	"ik_ISoundEngine.h"
+	"ik_ISoundSource.h"
+	"ik_ISound.h"
+	"ik_IAudioStream.h"
+	"ik_IAudioStreamLoader.h"
+	"ik_ISoundEffectControl.h"
+	"ik_ISoundStopEventReceiver.h"
+	"ik_IFileFactory.h"
+	"ik_IFileReader.h"
+	"ik_ISoundDeviceList.h"
+	"ik_IAudioRecorder.h"
+	"ik_ISoundMixedOutputReceiver.h"
+
+1517256008 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\snds\ik_irrklangtypes.h
+	<wchar.h>
+
+1517256008 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\snds\ik_vec3d.h
+	<math.h>
+	"ik_irrKlangTypes.h"
+
+1517256008 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\snds\ik_irefcounted.h
+	"ik_irrKlangTypes.h"
+
+1517256008 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\snds\ik_ivirtualrefcounted.h
+	"ik_irrKlangTypes.h"
+
+1517256008 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\snds\ik_esoundoutputdrivers.h
+
+1517256008 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\snds\ik_esoundengineoptions.h
+
+1517256008 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\snds\ik_estreammodes.h
+
+1517256008 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\snds\ik_saudiostreamformat.h
+	"ik_IRefCounted.h"
+
+1517256008 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\snds\ik_isoundengine.h
+	"ik_IRefCounted.h"
+	"ik_vec3d.h"
+	"ik_ISoundSource.h"
+	"ik_ISound.h"
+	"ik_EStreamModes.h"
+	"ik_IFileFactory.h"
+	"ik_ISoundMixedOutputReceiver.h"
+
+1517256032 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\snds\ik_isoundsource.h
+	"ik_IVirtualRefCounted.h"
+	"ik_vec3d.h"
+	"ik_EStreamModes.h"
+	"ik_SAudioStreamFormat.h"
+
+1517256008 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\snds\ik_isound.h
+	"ik_IVirtualRefCounted.h"
+	"ik_ISoundEffectControl.h"
+	"ik_vec3d.h"
+
+1517256008 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\snds\ik_isoundeffectcontrol.h
+	"ik_IVirtualRefCounted.h"
+	"ik_vec3d.h"
+
+1517256008 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\snds\ik_ifilefactory.h
+	"ik_IRefCounted.h"
+
+1517256008 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\snds\ik_isoundmixedoutputreceiver.h
+	"ik_IRefCounted.h"
+	"ik_SAudioStreamFormat.h"
+
+1517256008 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\snds\ik_iaudiostream.h
+	"ik_IRefCounted.h"
+	"ik_SAudioStreamFormat.h"
+
+1517256008 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\snds\ik_iaudiostreamloader.h
+	"ik_IRefCounted.h"
+	"ik_IFileReader.h"
+
+1517256008 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\snds\ik_ifilereader.h
+	"ik_IRefCounted.h"
+
+1517256008 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\snds\ik_isoundstopeventreceiver.h
+	"ik_IRefCounted.h"
+	"ik_SAudioStreamFormat.h"
+
+1517256008 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\snds\ik_isounddevicelist.h
+	"ik_IRefCounted.h"
+
+1517256024 c:\users\zarudin\desktop\csci 191 game project\csci-191-game-development\csci 191t game\common\include\snds\ik_iaudiorecorder.h
+	"ik_IRefCounted.h"
+	"ik_ISoundSource.h"
 

@@ -5,6 +5,8 @@
 
 using namespace std;
 
+
+
 Player::Player()
 {
     //ctor
@@ -32,6 +34,9 @@ Player::~Player()
 
 void Player::Init()
 {
+    sfx->initSounds();
+
+
     _hitbox->init(getPosition(),0.25,0.25);
     _hurtbox->init(getPosition(), 0.25,0.25);
 
@@ -161,7 +166,9 @@ void Player::actions()
         break;
 
         case ATKR://stdL
+            sfx->playSound("audio/sfx/Attack3.ogg");
             glPushMatrix();
+
                 //glTranslated(getPosition().x,getPosition().y,-1.0);
                 if(T->getTicks()>175)
                 {
@@ -180,9 +187,11 @@ void Player::actions()
                 }
                 atkR[runspeed].binder();
             glPopMatrix();
+
         break;
 
         case ATKL://stdL
+            sfx->playSound("audio/sfx/Attack3.ogg");
             glPushMatrix();
                 //glTranslated(getPosition().x,getPosition().y,-1.0);
                 if(T->getTicks()>175)

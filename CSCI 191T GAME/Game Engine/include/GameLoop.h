@@ -11,6 +11,7 @@
 #include "Level2.h"
 
 #include "Particles.h"
+#include "sounds.h"
 
 #include <windows.h>
 #include <GL/glut.h>
@@ -55,6 +56,11 @@ class GameLoop
         Title *_title = new Title();
         Level1 *_level1 = new Level1();
         Level2 *_level2 = new Level2();
+
+        /*************stage music************/
+        sounds * stg1 = new sounds();
+        sounds * stg2 = new sounds();
+        sounds * stg3 = new sounds();
 };
 
 #endif // GAMELOOP_H

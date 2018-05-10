@@ -7,6 +7,7 @@
 #include "Agent.h"
 #include "Texture.h"
 #include "Timer.h"
+#include "sounds.h"
 
 class Player : public Agent
 {
@@ -18,6 +19,7 @@ class Player : public Agent
         void Init();
         void Update();
         void actions();
+        sounds * sfx = new sounds();
 
     private:
         Gravity _gravity;
