@@ -18,17 +18,34 @@ void Inputs::keyPressed(Player* player)
     switch(_wParam)
     {
     case VK_LEFT:
-        player->setAction(RUNL);
+
+
         player->setDirection(LEFT);
-       // player->setPosition(player->getPosition().x -0.1, player->getPosition().y);
+        if(player->isJump==false){
+        player->setAction(RUNL);
+            if(player->leftStop!=true){
+            player->setPosition(player->getPosition().x -0.1, player->getPosition().y);
+            }
+        }
+        else{
+             player->setAction(JUMPLEFT);
+
+        }
     break;
     case VK_RIGHT:
-        player->setAction(RUNR);
+
         player->setDirection(RIGHT);
-     //   player->setPosition(player->getPosition().x + 0.1, player->getPosition().y);
+        if(player->isJump==false){
+        player->setAction(RUNR);
+            if(player->rightStop!=true){
+        player->setPosition(player->getPosition().x + 0.1, player->getPosition().y);
+            }
+        }
+        else{
+            player->setAction(JUMPRIGHT);
+        }
     break;
     case 0x58:
-        player->setAttacking(true);
         if (player->getDirection() == RIGHT)
         {
             player->setAction(ATKR);
@@ -36,25 +53,30 @@ void Inputs::keyPressed(Player* player)
         else
         {
             player->setAction(ATKL);
+            player->setAttacking(true);
         }
     break;
     case VK_SPACE:
-        if (player->getDirection() == RIGHT)
-        {
-            player->setAction(JMPR);
-        }
-        else
-        {
-            player->setAction(JMPL);
-        }
+        player->setAction(STANDR);
+        player->setAttacking(true);
     break;
-       default:break;
+    case 0X26:
+        player->setAction(JUMP);
+
+        //player->setPosition(player->getPosition().x, player->getPosition().y+0.1);
+    //std::cout<<"jump"<<std::endl;
+    break;
+    case 0x57:
+        player->setPosition(player->getPosition().x, player->getPosition().y+0.4);
+    default:break;
+
     }
+
 }
 
 void Inputs::keyReleased(Player* player)
 {
-    if(player->getAttacking()==true)
+    /*if(player->getAttacking()==true)
     {
 
     }
@@ -66,13 +88,49 @@ void Inputs::keyReleased(Player* player)
     {
         player->setAction(STANDL);
     }
-
-    switch(_wParam)
+    else
     {
-       default:break;
-    }
-}
+       player->setAction(STANDR);
+    }*/
+switch(_wParam)
+    {
+    case VK_LEFT:
 
+
+        player->setDirection(LEFT);
+        if(player->isJump==false){
+        player->setAction(STANDL);
+        }
+        else{
+             player->setAction(FREEFALL);
+
+        }
+    break;
+    case VK_RIGHT:
+
+        player->setDirection(RIGHT);
+        if(player->isJump==false){
+        player->setAction(STANDR);
+        }
+        else{
+            player->setAction(FREEFALL);
+        }
+    break;
+
+
+    case 0X26:
+        player->setAction(FREEFALL);
+
+        //player->setPosition(player->getPosition().x, player->getPosition().y+0.1);
+    //std::cout<<"jump"<<std::endl;
+    break;
+
+    case 0x57:
+        player->setAction(STANDL);
+    default:break;
+
+}
+}
 
 void Inputs::setMouseCoords(Player* player, float x, float y)
 {
@@ -88,6 +146,8 @@ void Inputs::mouseEvent(Player* player, float x, float y)
         switch(_wParam)
         {
             case MK_LBUTTON:
+               // player->setPosition(x,y);
+                //std::cout<<"left mouse button"<<std::endl;
             break;
 
 

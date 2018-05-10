@@ -448,39 +448,38 @@
 1524089884 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\timer.cpp
 	"Timer.h"
 
-1525746100 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\main.cpp
+1525207816 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\main.cpp
 	<windows.h>
 	"GameLoop.h"
 	<stdlib.h>
 	<iostream>
 	<windows.h>
 
-1525898271 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\gameloop.h
+1525727738 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\include\gameloop.h
+	"Graphics.h"
 	"Inputs.h"
 	"Player.h"
 	"Camera2D.h"
-	"Timer.h"
-	"Collision.h"
-	"Title.h"
-	"Level1.h"
-	"Level2.h"
+	"Enemy.h"
+	"Texture.h"
 	"Particles.h"
+	"stages.h"
 	<windows.h>
 	<GL/glut.h>
 
-1525738290 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\graphics.h
+1525207816 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\include\graphics.h
 
-1525897997 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\inputs.h
+1525207816 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\include\inputs.h
 	"Vector.h"
 	"Player.h"
 	<Graphics.h>
 	<windows.h>
 	<GL/gl.h>
 
-1525738290 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\vector.h
+1525207816 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\include\vector.h
 	<math.h>
 
-1525906376 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\player.h
+1525308935 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\include\player.h
 	"Graphics.h"
 	"Physics.h"
 	"Vector.h"
@@ -488,169 +487,274 @@
 	"Texture.h"
 	"Timer.h"
 
-1525738290 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\physics.h
+1525322783 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\include\physics.h
 	"Vector.h"
 
-1525906627 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\agent.h
+1525643341 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\include\agent.h
 	<Vector.h>
 	"Graphics.h"
 	"Timer.h"
-	"Hitbox.h"
 
-1525738290 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\timer.h
+1525207816 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\include\timer.h
 	<time.h>
 
-1525738290 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\texture.h
+1525207816 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\include\texture.h
 	<SOIL.h>
 	<GL/gl.h>
 
-1525738290 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\soil.h
+1525207816 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\common\include\soil.h
 
-1525738290 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\camera2d.h
+1525207816 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\include\camera2d.h
 	"Vector.h"
 
-1525738290 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\enemy.h
+1525207816 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\include\enemy.h
 	"Player.h"
 	"Agent.h"
 	"AI.h"
 
-1525738290 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\ai.h
+1525207816 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\include\ai.h
 	"Vector.h"
 
-1525825325 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\particles.h
-	<Vector.h>
+1525207816 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\include\particles.h
 	<math.h>
 	<stdlib.h>
 	<iostream>
 
-1525738290 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\gl\glut.h
+1525207816 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\common\include\gl\glut.h
 	<windows.h>
 	<stdlib.h>
 	<GL/gl.h>
 	<GL/glu.h>
 
-1525913960 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\enemy.cpp
+1525303706 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\src\agent.cpp
+	"Agent.h"
+	<GL/gl.h>
+
+1525288664 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\src\ai.cpp
+	"AI.h"
+	<iostream>
+
+1525741102 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\src\camera2d.cpp
+	"Camera2D.h"
+	<GL/glu.h>
+
+1525288664 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\src\enemy.cpp
 	"Enemy.h"
 	"Player.h"
 	<GL/gl.h>
 	<stdlib.h>
 	<iostream>
 
-1525914039 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\gameloop.cpp
+1525728093 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\src\gameloop.cpp
 	"GameLoop.h"
 	<iostream>
 
-1525738290 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\graphics.cpp
+1525207816 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\src\graphics.cpp
 	"Graphics.h"
 	<GL/gl.h>
 
-1525906730 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\inputs.cpp
+1525643341 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\src\inputs.cpp
 	"Inputs.h"
 	<iostream>
 
-1525825305 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\particles.cpp
+1525207816 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\src\particles.cpp
 	"Particles.h"
 	<GL/gl.h>
 
-1525911495 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\player.cpp
+1525727357 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\src\player.cpp
 	"Player.h"
 	<GL/gl.h>
 	<iostream>
 
-1525738290 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\texture.cpp
+1525207816 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\src\texture.cpp
 	"Texture.h"
 	<iostream>
 
-1525738290 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\texturemanager.cpp
+1525207816 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\src\texturemanager.cpp
 	"TextureManager.h"
 
-1525738290 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\texturemanager.h
+1525207816 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\include\texturemanager.h
 
-1525738290 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\timer.cpp
+1525207816 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\src\timer.cpp
 	"Timer.h"
 
-1525738290 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\agent.cpp
+1525291750 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\src\platform.cpp
+	"platform.h"
+
+1525291750 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\include\platform.h
+
+1525374755 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\src\parallax.cpp
+	"Parallax.h"
+	<texture.h>
+
+1525374755 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\include\parallax.h
+	<iostream>
+	<string.h>
+	<gl/gl.h>
+	<windows.h>
+	<Texture.h>
+
+1525587766 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\include\stages.h
+	<SOIL.h>
+	<GL/gl.h>
+	"Texture.h"
+
+1525472028 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development\csci 191t game\game engine\src\stages.cpp
+	"stages.h"
+	<GL/gl.h>
+
+1525207816 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\main.cpp
+	<windows.h>
+	"GameLoop.h"
+	<stdlib.h>
+	<iostream>
+	<windows.h>
+
+1525935477 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\include\gameloop.h
+	"Graphics.h"
+	"Inputs.h"
+	"Player.h"
+	"Camera2D.h"
+	"Enemy.h"
+	"Texture.h"
+	"Particles.h"
+	"stages.h"
+	<windows.h>
+	<GL/glut.h>
+	"platform.h"
+	"platformCollision.h"
+
+1525207816 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\include\graphics.h
+
+1525933550 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\include\inputs.h
+	"Vector.h"
+	"Player.h"
+	<Graphics.h>
+	<windows.h>
+	<GL/gl.h>
+
+1525207816 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\include\vector.h
+	<math.h>
+
+1525934314 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\include\player.h
+	"Graphics.h"
+	"Physics.h"
+	"Vector.h"
+	"Agent.h"
+	"Texture.h"
+	"Timer.h"
+
+1525322783 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\include\physics.h
+	"Vector.h"
+
+1525643341 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\include\agent.h
+	<Vector.h>
+	"Graphics.h"
+	"Timer.h"
+
+1525207816 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\include\timer.h
+	<time.h>
+
+1525207816 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\include\texture.h
+	<SOIL.h>
+	<GL/gl.h>
+
+1525207816 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\common\include\soil.h
+
+1525207816 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\include\camera2d.h
+	"Vector.h"
+
+1525207816 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\include\enemy.h
+	"Player.h"
+	"Agent.h"
+	"AI.h"
+
+1525207816 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\include\ai.h
+	"Vector.h"
+
+1525207816 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\include\particles.h
+	<math.h>
+	<stdlib.h>
+	<iostream>
+
+1525587766 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\include\stages.h
+	<SOIL.h>
+	<GL/gl.h>
+	"Texture.h"
+
+1525207816 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\common\include\gl\glut.h
+	<windows.h>
+	<stdlib.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1525303706 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\src\agent.cpp
 	"Agent.h"
 	<GL/gl.h>
 
-1525738290 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\ai.cpp
+1525288664 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\src\ai.cpp
 	"AI.h"
 	<iostream>
 
-1525901167 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\camera2d.cpp
+1525916699 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\src\camera2d.cpp
 	"Camera2D.h"
 	<GL/glu.h>
 
-1525738290 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\collision.cpp
-	"Collision.h"
-	<iostream>
-
-1525738290 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\collision.h
-	<Vector.h>
-
-1525738290 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\hitbox.h
-	<Vector.h>
-	<Graphics.h>
-	<string>
-
-1525738290 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\hitbox.cpp
-	"Hitbox.h"
-
-1525913905 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\scene.cpp
-	"Scene.h"
-	<iostream>
-
-1525913734 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\scene.h
-	"string"
-	"Texture.h"
+1525288664 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\src\enemy.cpp
 	"Enemy.h"
-	"Comodo.h"
 	"Player.h"
-	<vector>
-	"Graphics.h"
-
-1525893687 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\scenemanager.cpp
-	"SceneManager.h"
-
-1525893682 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\scenemanager.h
-	<vector>
-	"Scene.h"
-
-1525901504 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\title.h
-	"Scene.h"
-	"GameObject.h"
-
-1525903733 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\level1.h
-	"Player.h"
-	"Scene.h"
-
-1525897345 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\level2.h
-
-1525913822 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\level1.cpp
-	"Level1.h"
-	"iostream"
-
-1525897345 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\level2.cpp
-	"Level2.h"
-
-1525902596 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\title.cpp
-	"Title.h"
+	<GL/gl.h>
+	<stdlib.h>
 	<iostream>
 
-1525901070 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\gameobject.h
-	<Graphics.h>
-	<Texture.h>
-	<Vector.h>
+1525936100 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\src\gameloop.cpp
+	"GameLoop.h"
+	<iostream>
 
-1525902695 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\gameobject.cpp
-	"GameObject.h"
+1525207816 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\src\graphics.cpp
+	"Graphics.h"
+	<GL/gl.h>
 
-1525915993 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\comodo.h
+1525934314 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\src\inputs.cpp
+	"Inputs.h"
+	<iostream>
+
+1525207816 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\src\particles.cpp
+	"Particles.h"
+	<GL/gl.h>
+
+1525934314 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\src\player.cpp
+	"Player.h"
+	<GL/gl.h>
+	<iostream>
+
+1525472028 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\src\stages.cpp
+	"stages.h"
+	<GL/gl.h>
+
+1525207816 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\src\texture.cpp
 	"Texture.h"
-	"Vector.h"
-	"Agent.h"
-	"AI.h"
+	<iostream>
 
-1525914641 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\comodo.cpp
-	"Comodo.h"
+1525207816 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\src\texturemanager.cpp
+	"TextureManager.h"
+
+1525207816 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\include\texturemanager.h
+
+1525207816 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\src\timer.cpp
+	"Timer.h"
+
+1525911762 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\src\platform.cpp
+	"platform.h"
+
+1525911762 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\include\platform.h
+
+1525935387 source:c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\src\platformcollision.cpp
+	"platformCollision.h"
+	<iostream>
+
+1525911926 c:\users\cristian lopez\desktop\cscixxx_projects\csci-191-game-development platform\csci 191t game\game engine\include\platformcollision.h
+	<GL/gl.h>
+	"Player.h"
+	"platform.h"
 
