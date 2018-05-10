@@ -27,6 +27,8 @@ GLint GameLoop::Initialize()
     stg1->initSounds();
     stg2->initSounds();
     stg3->initSounds();
+
+
 /**********************************/
     _title->Init();
     cout<<"init title"<<endl;
@@ -66,6 +68,7 @@ void GameLoop::Render()
     }
     else if(sceneState == LEVEL1)
     {
+
         _level1->Draw(_player);
     }
 
