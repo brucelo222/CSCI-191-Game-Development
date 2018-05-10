@@ -31,10 +31,10 @@ class Comodo : public Agent , public AI
 
         Texture CrunRight[6];
         Texture CrunLeft[6];
-        Texture CstandL[2];
-        Texture CstandR[2];
-        Texture CatkR[6];
-        Texture CatkL[6];
+        Texture CstandL[1];
+        Texture CstandR[1];
+        Texture CatkR[8];
+        Texture CatkL[8];
 };
 
 #endif // COMODO_H

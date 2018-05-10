@@ -70,39 +70,44 @@ void Comodo::Init()
     glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);//trans
     T->start();
 
-    CatkR[0].bindTexture("images/enemy/lizard/ar1.png");
-    CatkR[1].bindTexture("images/enemy/lizard/ar2.png");
-    CatkR[2].bindTexture("images/enemy/lizard/ar3.png");
-    CatkR[3].bindTexture("images/enemy/lizard/ar4.png");
-    CatkR[4].bindTexture("images/enemy/lizard/ar5.png");
-    CatkR[5].bindTexture("images/enemy/lizard/ar6.png");
+    CatkR[0].bindTexture("images/enemy/demon/ar1.png");
+    CatkR[1].bindTexture("images/enemy/demon/ar2.png");
+    CatkR[2].bindTexture("images/enemy/demon/ar3.png");
+    CatkR[3].bindTexture("images/enemy/demon/ar4.png");
+    CatkR[4].bindTexture("images/enemy/demon/ar5.png");
+    CatkR[5].bindTexture("images/enemy/demon/ar6.png");
+    CatkR[6].bindTexture("images/enemy/demon/ar7.png");
+     CatkR[7].bindTexture("images/enemy/demon/ar8.png");
 
-    CatkL[0].bindTexture("images/enemy/lizard/atkl01.PNG");
-    CatkL[1].bindTexture("images/enemy/lizard/al2.png");
-    CatkL[2].bindTexture("images/enemy/lizard/al3.png");
-    CatkL[3].bindTexture("images/enemy/lizard/al4.png");
-    CatkL[4].bindTexture("images/enemy/lizard/al5.png");
-    CatkL[5].bindTexture("images/enemy/lizard/al6.png");
+    CatkL[0].bindTexture("images/enemy/demon/al1.png");
+    CatkL[1].bindTexture("images/enemy/demon/al2.png");
+    CatkL[2].bindTexture("images/enemy/demon/al3.png");
+    CatkL[3].bindTexture("images/enemy/demon/al4.png");
+    CatkL[4].bindTexture("images/enemy/demon/al5.png");
+    CatkL[5].bindTexture("images/enemy/demon/al6.png");
+    CatkL[6].bindTexture("images/enemy/demon/al7.png");
+    CatkL[7].bindTexture("images/enemy/demon/al8.png");
 
-    CstandR[0].bindTexture("images/enemy/lizard/ir1.png");
-    CstandR[1].bindTexture("images/enemy/lizard/ir2.png");
+    CstandR[0].bindTexture("images/enemy/demon/r1.png");
 
-    CstandL[0].bindTexture("images/enemy/lizard/il1.png");
-    CstandL[1].bindTexture("images/enemy/lizard/il2.png");
 
-    CrunLeft[0].bindTexture("images/enemy/lizard/l1.PNG");
-    CrunLeft[1].bindTexture("images/enemy/lizard/l2.png");
-    CrunLeft[2].bindTexture("images/enemy/lizard/l3.png");
-    CrunLeft[3].bindTexture("images/enemy/lizard/l4.png");
-    CrunLeft[4].bindTexture("images/enemy/lizard/l5.png");
-    CrunLeft[5].bindTexture("images/enemy/lizard/l6.png");
+    CstandL[0].bindTexture("images/enemy/demon/l1.png");
 
-    CrunRight[0].bindTexture("images/enemy/lizard/r1.png");
-    CrunRight[1].bindTexture("images/enemy/lizard/r2.png");
-    CrunRight[2].bindTexture("images/enemy/lizard/r3.png");
-    CrunRight[3].bindTexture("images/enemy/lizard/r4.png");
-    CrunRight[4].bindTexture("images/enemy/lizard/r5.png");
-    CrunRight[5].bindTexture("images/enemy/lizard/r6.png");
+
+    CrunLeft[0].bindTexture("images/enemy/demon/l1.png");
+    CrunLeft[1].bindTexture("images/enemy/demon/l2.png");
+    CrunLeft[2].bindTexture("images/enemy/demon/l3.png");
+    CrunLeft[3].bindTexture("images/enemy/demon/l4.png");
+    CrunLeft[4].bindTexture("images/enemy/demon/l5.png");
+    CrunLeft[5].bindTexture("images/enemy/demon/l6.png");
+
+
+    CrunRight[0].bindTexture("images/enemy/demon/r1.png");
+    CrunRight[1].bindTexture("images/enemy/demon/r2.png");
+    CrunRight[2].bindTexture("images/enemy/demon/r3.png");
+    CrunRight[3].bindTexture("images/enemy/demon/r4.png");
+    CrunRight[4].bindTexture("images/enemy/demon/r5.png");
+    CrunRight[5].bindTexture("images/enemy/demon/r6.png");
     return;
 }
 
