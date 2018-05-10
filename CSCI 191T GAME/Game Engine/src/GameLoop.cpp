@@ -85,7 +85,7 @@ void GameLoop::Render()
     {
         if(_level1->spawn)
         {
-        stg1->playMusic("audio/bgm/stg1.bgm");
+        stg1->playMusic("audio/bgm/stg1.mp3");
         _player->setPosition(-18,-5);
         _level1->spawn = false;
         }
@@ -95,7 +95,7 @@ void GameLoop::Render()
     {
         if(_level2->spawn)
         {
-        stg2->playMusic("audio/bgm/stg2.bgm");
+        stg2->playMusic("audio/bgm/stg2.mp3");
         _player->setPosition(-12,6);
         _level2->spawn = false;
         }
@@ -105,7 +105,7 @@ void GameLoop::Render()
     {
         if(_level3->spawn)
         {
-        stg3->playMusic("audio/bgm/stg3.bgm");
+        stg3->playMusic("audio/bgm/stg3.mp3");
         _player->setPosition(-11,-5);
         _level3->spawn = false;
         }
