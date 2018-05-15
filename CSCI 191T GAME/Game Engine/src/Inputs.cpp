@@ -28,7 +28,7 @@ void Inputs::keyPressed(Player* player, SceneManager* sceneState)
             break;
 
             case VK_RETURN:
-            sceneState->setScene(LEVEL1);
+                sceneState->setScene(LEVEL1);
             break;
         }
     }
@@ -41,69 +41,75 @@ void Inputs::keyPressed(Player* player, SceneManager* sceneState)
                 sceneState->setScene(LEVEL1);
                 player->setPosition(-18,-5);
                 player->setHealth(100);
+                player->isObjectLive = true;
                 return;
             break;
             case VK_ESCAPE:
-
+                sceneState->setScene(TITLE);
             break;
         }
     }
 
-    switch(_wParam)
-    {
-    case VK_ESCAPE:
-        sceneState->setScene(PAUSE);
-    break;
-    case VK_LEFT:
-        player->setDirection(LEFT);
-        if(player->isJump==false)
+        if(sceneState->getScene() == LEVEL1 || sceneState->getScene() == LEVEL2 || sceneState->getScene() == LEVEL3)
         {
-            player->setAction(RUNL);
-            if(player->leftStop!=true)
-            {
-                player->setPosition(player->getPosition().x -player->Accelerate(), player->getPosition().y);
-            }
-        }
-        else
-        {
-             player->setAction(JUMPLEFT);
+               switch(_wParam)
+               {
+            case VK_ESCAPE:
+                sceneState->setScene(PAUSE);
+                break;
 
-        }
-       // player->setPosition(player->getPosition().x -0.1, player->getPosition().y);
-    break;
-    case VK_RIGHT:
-        player->setDirection(RIGHT);
-        if(player->isJump==false)
-        {
-            cout<<player->rightStop<<endl;
-            player->setAction(RUNR);
-            if(player->rightStop!=true)
-            {
-                player->setPosition(player->getPosition().x + player->Accelerate(), player->getPosition().y);
+            case VK_LEFT:
+                player->setDirection(LEFT);
+                if(player->isJump==false)
+                {
+                    player->setAction(RUNL);
+                    if(player->leftStop!=true)
+                    {
+                        player->setPosition(player->getPosition().x -player->Accelerate(), player->getPosition().y);
+                    }
+                }
+                else
+                {
+                     player->setAction(JUMPLEFT);
+
+                }
+               // player->setPosition(player->getPosition().x -0.1, player->getPosition().y);
+            break;
+
+            case VK_RIGHT:
+                player->setDirection(RIGHT);
+                if(player->isJump==false)
+                {
+                    cout<<player->rightStop<<endl;
+                    player->setAction(RUNR);
+                    if(player->rightStop!=true)
+                    {
+                        player->setPosition(player->getPosition().x + player->Accelerate(), player->getPosition().y);
+                    }
+                }
+                else
+                {
+                    player->setAction(JUMPRIGHT);
+                }
+             //   player->setPosition(player->getPosition().x + 0.1, player->getPosition().y);
+            break;
+            case 0x58:
+                player->setAttacking(true);
+                if (player->getDirection() == RIGHT)
+                {
+                    player->setAction(ATKR);
+                }
+                else
+                {
+                    player->setAction(ATKL);
+                }
+            break;
+            case VK_SPACE:
+                player->setAction(JUMP);
+            break;
+               default:break;
             }
         }
-        else
-        {
-            player->setAction(JUMPRIGHT);
-        }
-     //   player->setPosition(player->getPosition().x + 0.1, player->getPosition().y);
-    break;
-    case 0x58:
-        player->setAttacking(true);
-        if (player->getDirection() == RIGHT)
-        {
-            player->setAction(ATKR);
-        }
-        else
-        {
-            player->setAction(ATKL);
-        }
-    break;
-    case VK_SPACE:
-        player->setAction(JUMP);
-    break;
-       default:break;
-    }
 }
 
 void Inputs::keyReleased(Player* player)

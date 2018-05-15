@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1525962300 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\main.cpp
+1526364246 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\main.cpp
 	<windows.h>
 	"GameLoop.h"
 	<stdlib.h>
 	<iostream>
 	<windows.h>
 
-1525983018 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\gameloop.h
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\gameloop.h
 	"Inputs.h"
 	"Player.h"
 	"Camera2D.h"
@@ -22,17 +22,17 @@
 	<windows.h>
 	<GL/glut.h>
 
-1525951465 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\inputs.h
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\inputs.h
 	"Vector.h"
 	"Player.h"
 	"SceneManager.h"
 	<windows.h>
 	<GL/gl.h>
 
-1525738290 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\vector.h
+1525851002 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\vector.h
 	<math.h>
 
-1525980596 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\player.h
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\player.h
 	"Graphics.h"
 	"Physics.h"
 	"Vector.h"
@@ -41,44 +41,144 @@
 	"Timer.h"
 	"Sounds.h"
 
-1525918636 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\graphics.h
+1525851002 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\graphics.h
 
-1525916945 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\physics.h
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\physics.h
 	"Vector.h"
 
-1525962406 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\agent.h
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\agent.h
 	<Vector.h>
 	"Graphics.h"
 	"Timer.h"
 	"Hitbox.h"
 
-1525738290 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\timer.h
+1525851002 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\timer.h
 	<time.h>
 
-1525738290 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\hitbox.h
+1525851002 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\hitbox.h
 	<Vector.h>
 	<Graphics.h>
 	<string>
 
-1525738290 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\texture.h
+1525851002 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\texture.h
 	<SOIL.h>
 	<GL/gl.h>
 
-1525738290 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\soil.h
+1525851002 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\common\include\soil.h
 
-1525987615 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\scenemanager.h
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\sounds.h
+	<Klang/irrKlang.h>
 
-1525738290 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\camera2d.h
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\irrklang.h
+	"ik_irrKlangTypes.h"
+	"ik_vec3d.h"
+	"ik_IRefCounted.h"
+	"ik_IVirtualRefCounted.h"
+	"ik_ESoundOutputDrivers.h"
+	"ik_ESoundEngineOptions.h"
+	"ik_EStreamModes.h"
+	"ik_SAudioStreamFormat.h"
+	"ik_ISoundEngine.h"
+	"ik_ISoundSource.h"
+	"ik_ISound.h"
+	"ik_IAudioStream.h"
+	"ik_IAudioStreamLoader.h"
+	"ik_ISoundEffectControl.h"
+	"ik_ISoundStopEventReceiver.h"
+	"ik_IFileFactory.h"
+	"ik_IFileReader.h"
+	"ik_ISoundDeviceList.h"
+	"ik_IAudioRecorder.h"
+	"ik_ISoundMixedOutputReceiver.h"
+
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_irrklangtypes.h
+	<wchar.h>
+
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_vec3d.h
+	<math.h>
+	"ik_irrKlangTypes.h"
+
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_irefcounted.h
+	"ik_irrKlangTypes.h"
+
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_ivirtualrefcounted.h
+	"ik_irrKlangTypes.h"
+
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_esoundoutputdrivers.h
+
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_esoundengineoptions.h
+
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_estreammodes.h
+
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_saudiostreamformat.h
+	"ik_IRefCounted.h"
+
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_isoundengine.h
+	"ik_IRefCounted.h"
+	"ik_vec3d.h"
+	"ik_ISoundSource.h"
+	"ik_ISound.h"
+	"ik_EStreamModes.h"
+	"ik_IFileFactory.h"
+	"ik_ISoundMixedOutputReceiver.h"
+
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_isoundsource.h
+	"ik_IVirtualRefCounted.h"
+	"ik_vec3d.h"
+	"ik_EStreamModes.h"
+	"ik_SAudioStreamFormat.h"
+
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_isound.h
+	"ik_IVirtualRefCounted.h"
+	"ik_ISoundEffectControl.h"
+	"ik_vec3d.h"
+
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_isoundeffectcontrol.h
+	"ik_IVirtualRefCounted.h"
+	"ik_vec3d.h"
+
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_ifilefactory.h
+	"ik_IRefCounted.h"
+
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_isoundmixedoutputreceiver.h
+	"ik_IRefCounted.h"
+	"ik_SAudioStreamFormat.h"
+
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_iaudiostream.h
+	"ik_IRefCounted.h"
+	"ik_SAudioStreamFormat.h"
+
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_iaudiostreamloader.h
+	"ik_IRefCounted.h"
+	"ik_IFileReader.h"
+
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_ifilereader.h
+	"ik_IRefCounted.h"
+
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_isoundstopeventreceiver.h
+	"ik_IRefCounted.h"
+	"ik_SAudioStreamFormat.h"
+
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_isounddevicelist.h
+	"ik_IRefCounted.h"
+
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_iaudiorecorder.h
+	"ik_IRefCounted.h"
+	"ik_ISoundSource.h"
+
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\scenemanager.h
+
+1525851002 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\camera2d.h
 	"Vector.h"
 
-1525738290 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\collision.h
+1525851002 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\collision.h
 	<Vector.h>
 
-1525987257 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\title.h
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\title.h
 	"Scene.h"
 	"GameObject.h"
 
-1525984838 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\scene.h
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\scene.h
 	"string"
 	"Texture.h"
 	"Enemy.h"
@@ -91,344 +191,147 @@
 	"Graphics.h"
 	"GameObject.h"
 
-1525933939 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\enemy.h
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\enemy.h
 	"Player.h"
 	"Agent.h"
 	"AI.h"
 	"Physics.h"
 
-1525738290 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\ai.h
+1525851002 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\ai.h
 	"Vector.h"
 
-1525927139 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\comodo.h
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\comodo.h
 	"Texture.h"
 	"Vector.h"
 	"Agent.h"
 	"AI.h"
 	"Physics.h"
 
-1525965974 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\platform.h
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\platform.h
 	"Graphics.h"
 
-1525971250 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\particles.h
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\particles.h
 	<Vector.h>
 	<math.h>
 	<stdlib.h>
 	<iostream>
 
-1525957459 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\gameobject.h
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\gameobject.h
 	<Graphics.h>
 	<Texture.h>
 	<Vector.h>
 	"Hitbox.h"
 
-1525970732 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\level1.h
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\level1.h
 	"Player.h"
 	"Scene.h"
 
-1525973729 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\level2.h
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\level2.h
 	"Player.h"
 	"Scene.h"
 
-1525979078 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\level3.h
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\level3.h
 	"Scene.h"
 
-1525961947 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\platformcollision.h
+1526364246 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\platformcollision.h
 	"Player.h"
 	"platform.h"
 
-1525738290 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\gl\glut.h
+1525851002 c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\common\include\gl\glut.h
 	<windows.h>
 	<stdlib.h>
 	<GL/gl.h>
 	<GL/glu.h>
 
-1525918644 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\agent.cpp
+1526364246 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\agent.cpp
 	"Agent.h"
 	<GL/gl.h>
 
-1525738290 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\ai.cpp
+1525851002 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\ai.cpp
 	"AI.h"
 	<iostream>
 
-1525972478 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\camera2d.cpp
+1525851002 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\camera2d.cpp
 	"Camera2D.h"
 	<GL/glu.h>
 
-1525738290 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\collision.cpp
+1525851002 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\collision.cpp
 	"Collision.h"
 	<iostream>
 
-1525985624 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\comodo.cpp
+1526364246 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\comodo.cpp
 	"Comodo.h"
 
-1525985156 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\enemy.cpp
+1526364246 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\enemy.cpp
 	"Enemy.h"
 	"Player.h"
 	<GL/gl.h>
 	<stdlib.h>
 	<iostream>
 
-1525987522 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\gameloop.cpp
+1526364734 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\gameloop.cpp
 	"GameLoop.h"
 	<iostream>
 
-1525957276 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\gameobject.cpp
+1526364246 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\gameobject.cpp
 	"GameObject.h"
 
-1525918617 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\graphics.cpp
+1526364246 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\graphics.cpp
 	"Graphics.h"
 	<GL/gl.h>
 
-1525738290 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\hitbox.cpp
+1525851002 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\hitbox.cpp
 	"Hitbox.h"
 
-1525987577 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\inputs.cpp
+1526364246 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\inputs.cpp
 	"Inputs.h"
 	<iostream>
 
-1525984784 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\level1.cpp
+1526364246 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\level1.cpp
 	"Level1.h"
 	"iostream"
 
-1525983500 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\level2.cpp
+1526364246 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\level2.cpp
 	"Level2.h"
 
-1525979364 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\level3.cpp
+1526364246 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\level3.cpp
 	"Level3.h"
 
-1525973223 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\particles.cpp
+1526364246 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\particles.cpp
 	"Particles.h"
 	<GL/gl.h>
 
-1525965891 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\platform.cpp
+1526364246 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\platform.cpp
 	"platform.h"
 
-1525980549 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\player.cpp
+1526364246 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\platformcollision.cpp
+	"platformCollision.h"
+	<iostream>
+
+1526364246 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\player.cpp
 	"Player.h"
 	<GL/gl.h>
 	<iostream>
 
-1525985304 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\scene.cpp
+1526364246 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\scene.cpp
 	"Scene.h"
 	<iostream>
 
-1525951012 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\scenemanager.cpp
+1525851002 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\scenemanager.cpp
 	"SceneManager.h"
 
-1525738290 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\texture.cpp
-	"Texture.h"
-	<iostream>
-
-1525738290 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\timer.cpp
-	"Timer.h"
-
-1525987248 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\title.cpp
-	"Title.h"
-	<iostream>
-
-1525977267 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\platformcollision.cpp
-	"platformCollision.h"
-	<iostream>
-
-1525980750 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\include\sounds.h
-	<Klang/irrKlang.h>
-
-1525951051 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\snds\irrklang.h
-	"ik_irrKlangTypes.h"
-	"ik_vec3d.h"
-	"ik_IRefCounted.h"
-	"ik_IVirtualRefCounted.h"
-	"ik_ESoundOutputDrivers.h"
-	"ik_ESoundEngineOptions.h"
-	"ik_EStreamModes.h"
-	"ik_SAudioStreamFormat.h"
-	"ik_ISoundEngine.h"
-	"ik_ISoundSource.h"
-	"ik_ISound.h"
-	"ik_IAudioStream.h"
-	"ik_IAudioStreamLoader.h"
-	"ik_ISoundEffectControl.h"
-	"ik_ISoundStopEventReceiver.h"
-	"ik_IFileFactory.h"
-	"ik_IFileReader.h"
-	"ik_ISoundDeviceList.h"
-	"ik_IAudioRecorder.h"
-	"ik_ISoundMixedOutputReceiver.h"
-
-1525951051 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\snds\ik_irrklangtypes.h
-	<wchar.h>
-
-1525951051 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\snds\ik_vec3d.h
-	<math.h>
-	"ik_irrKlangTypes.h"
-
-1525951051 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\snds\ik_irefcounted.h
-	"ik_irrKlangTypes.h"
-
-1525951051 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\snds\ik_ivirtualrefcounted.h
-	"ik_irrKlangTypes.h"
-
-1525951051 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\snds\ik_esoundoutputdrivers.h
-
-1525951051 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\snds\ik_esoundengineoptions.h
-
-1525951051 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\snds\ik_estreammodes.h
-
-1525951051 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\snds\ik_saudiostreamformat.h
-	"ik_IRefCounted.h"
-
-1525951051 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\snds\ik_isoundengine.h
-	"ik_IRefCounted.h"
-	"ik_vec3d.h"
-	"ik_ISoundSource.h"
-	"ik_ISound.h"
-	"ik_EStreamModes.h"
-	"ik_IFileFactory.h"
-	"ik_ISoundMixedOutputReceiver.h"
-
-1525951051 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\snds\ik_isoundsource.h
-	"ik_IVirtualRefCounted.h"
-	"ik_vec3d.h"
-	"ik_EStreamModes.h"
-	"ik_SAudioStreamFormat.h"
-
-1525951051 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\snds\ik_isound.h
-	"ik_IVirtualRefCounted.h"
-	"ik_ISoundEffectControl.h"
-	"ik_vec3d.h"
-
-1525951051 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\snds\ik_isoundeffectcontrol.h
-	"ik_IVirtualRefCounted.h"
-	"ik_vec3d.h"
-
-1525951051 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\snds\ik_ifilefactory.h
-	"ik_IRefCounted.h"
-
-1525951051 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\snds\ik_isoundmixedoutputreceiver.h
-	"ik_IRefCounted.h"
-	"ik_SAudioStreamFormat.h"
-
-1525951051 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\snds\ik_iaudiostream.h
-	"ik_IRefCounted.h"
-	"ik_SAudioStreamFormat.h"
-
-1525951051 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\snds\ik_iaudiostreamloader.h
-	"ik_IRefCounted.h"
-	"ik_IFileReader.h"
-
-1525951051 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\snds\ik_ifilereader.h
-	"ik_IRefCounted.h"
-
-1525951051 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\snds\ik_isoundstopeventreceiver.h
-	"ik_IRefCounted.h"
-	"ik_SAudioStreamFormat.h"
-
-1525951051 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\snds\ik_isounddevicelist.h
-	"ik_IRefCounted.h"
-
-1525951051 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\snds\ik_iaudiorecorder.h
-	"ik_IRefCounted.h"
-	"ik_ISoundSource.h"
-
-1525951051 source:c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\sounds.cpp
+1526364246 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\sounds.cpp
 	"sounds.h"
 	<iostream>
 
-1517335446 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\irrklang.h
-	"ik_irrKlangTypes.h"
-	"ik_vec3d.h"
-	"ik_IRefCounted.h"
-	"ik_IVirtualRefCounted.h"
-	"ik_ESoundOutputDrivers.h"
-	"ik_ESoundEngineOptions.h"
-	"ik_EStreamModes.h"
-	"ik_SAudioStreamFormat.h"
-	"ik_ISoundEngine.h"
-	"ik_ISoundSource.h"
-	"ik_ISound.h"
-	"ik_IAudioStream.h"
-	"ik_IAudioStreamLoader.h"
-	"ik_ISoundEffectControl.h"
-	"ik_ISoundStopEventReceiver.h"
-	"ik_IFileFactory.h"
-	"ik_IFileReader.h"
-	"ik_ISoundDeviceList.h"
-	"ik_IAudioRecorder.h"
-	"ik_ISoundMixedOutputReceiver.h"
+1525851002 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\texture.cpp
+	"Texture.h"
+	<iostream>
 
-1517256008 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_irrklangtypes.h
-	<wchar.h>
+1525851002 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\timer.cpp
+	"Timer.h"
 
-1517256008 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_vec3d.h
-	<math.h>
-	"ik_irrKlangTypes.h"
-
-1517256008 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_irefcounted.h
-	"ik_irrKlangTypes.h"
-
-1517256008 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_ivirtualrefcounted.h
-	"ik_irrKlangTypes.h"
-
-1517256008 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_esoundoutputdrivers.h
-
-1517256008 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_esoundengineoptions.h
-
-1517256008 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_estreammodes.h
-
-1517256008 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_saudiostreamformat.h
-	"ik_IRefCounted.h"
-
-1517256008 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_isoundengine.h
-	"ik_IRefCounted.h"
-	"ik_vec3d.h"
-	"ik_ISoundSource.h"
-	"ik_ISound.h"
-	"ik_EStreamModes.h"
-	"ik_IFileFactory.h"
-	"ik_ISoundMixedOutputReceiver.h"
-
-1517256032 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_isoundsource.h
-	"ik_IVirtualRefCounted.h"
-	"ik_vec3d.h"
-	"ik_EStreamModes.h"
-	"ik_SAudioStreamFormat.h"
-
-1517256008 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_isound.h
-	"ik_IVirtualRefCounted.h"
-	"ik_ISoundEffectControl.h"
-	"ik_vec3d.h"
-
-1517256008 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_isoundeffectcontrol.h
-	"ik_IVirtualRefCounted.h"
-	"ik_vec3d.h"
-
-1517256008 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_ifilefactory.h
-	"ik_IRefCounted.h"
-
-1517256008 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_isoundmixedoutputreceiver.h
-	"ik_IRefCounted.h"
-	"ik_SAudioStreamFormat.h"
-
-1517256008 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_iaudiostream.h
-	"ik_IRefCounted.h"
-	"ik_SAudioStreamFormat.h"
-
-1517256008 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_iaudiostreamloader.h
-	"ik_IRefCounted.h"
-	"ik_IFileReader.h"
-
-1517256008 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_ifilereader.h
-	"ik_IRefCounted.h"
-
-1517256008 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_isoundstopeventreceiver.h
-	"ik_IRefCounted.h"
-	"ik_SAudioStreamFormat.h"
-
-1517256008 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_isounddevicelist.h
-	"ik_IRefCounted.h"
-
-1517256024 c:\users\seamus\documents\github\csci-191-game-development\csci 191t game\common\include\klang\ik_iaudiorecorder.h
-	"ik_IRefCounted.h"
-	"ik_ISoundSource.h"
+1526364246 source:c:\users\shamus\documents\github\csci-191-game-development\csci 191t game\game engine\src\title.cpp
+	"Title.h"
+	<iostream>
 

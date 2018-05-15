@@ -117,7 +117,9 @@ void GameLoop::Render()
 
 void GameLoop::Update()
 {
-    if(_sceneManager->getScene() != TITLE || _sceneManager->getScene() != RETRY || _sceneManager->getScene() != HELP || _sceneManager->getScene() != PAUSE){
+    if(_sceneManager->getScene() == TITLE || _sceneManager->getScene() == RETRY || _sceneManager->getScene() == HELP || _sceneManager->getScene() == PAUSE){
+    }
+    else {
     if(_sceneManager->getScene() == LEVEL1)
     {
         collideSum=0;
@@ -350,7 +352,6 @@ void GameLoop::Update()
             _player->isFalling=true;
             _player->setAction(JUMP);
 			_player->actions();
-			//cout<<"adfasdfasdf"<<endl;
 
         }
 
